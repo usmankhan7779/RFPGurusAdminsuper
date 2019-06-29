@@ -10,6 +10,7 @@ import { ViewpageComponent } from './viewpage/viewpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarViewComponent } from './sidebar-view/sidebar-view.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { SidebarViewComponent } from './sidebar-view/sidebar-view.component';
     HeaderComponent,
     CommonComponent,
     HomeComponent,
-     
-    SidebarViewComponent
+    SidebarComponent,
+    SidebarViewComponent,
+  
     
   ],
   imports: [

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CommonComponent } from './common/common.component';
+import { SidebarViewComponent } from './sidebar-view/sidebar-view.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -16,6 +17,14 @@ const routes: Routes = [
           
       ]
   },
+  {
+    path: '',
+    component: SidebarViewComponent,
+    children: [
+        { path: 'adminhome', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule' },
+        
+    ]
+},
 
 
 
