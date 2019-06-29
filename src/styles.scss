@@ -2,3 +2,29 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// Start Side Bar
+.sidebarToggle{
+    display: none;
+}
+.sidebar-outlet{
+    display: block;
+}
+.btn-close{
+    display: none;
+}
+// End Side Bar
+@media (min-width:992px) {
+    .sidebar-outlet{
+        display: block;
+    } 
+}
+@media (max-width:992px) {
+    .sidebarToggle{
+        display: block;
+    }
+    .btn-close{
+        display: block;
+    }
+}
