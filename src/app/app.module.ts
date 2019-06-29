@@ -8,13 +8,17 @@ import { HeaderComponent } from './header/header.component';
 import { CommonComponent } from './common/common.component';
 import { ViewpageComponent } from './viewpage/viewpage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { SidebarViewComponent } from './sidebar-view/sidebar-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CommonComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent,
+    SidebarViewComponent
     
   ],
   imports: [
