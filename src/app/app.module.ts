@@ -17,7 +17,7 @@ import { SidebarViewComponent } from './sidebar-view/sidebar-view.component';
     HeaderComponent,
     CommonComponent,
     HomeComponent,
-    SidebarComponent,
+     
     SidebarViewComponent
     
   ],
