@@ -15,26 +15,10 @@ import swal from 'sweetalert2';
 ]
 })
 export class HeaderComponent implements OnInit {
-  public blink = false;
+  
    
   // @Input() public appAutoFocus: boolean;
-
-  response(event) {
-    this.query = event;
-  }
-  uname;
-  local_admin: boolean = false;
-  local;
-  lacal_user: boolean = false;
-  id;
-  title;
-  loaded = false;
-  public query: any;
-  public Rfp: any;
-  public selected: any;
-  wrfp;
-  mainSearch = 0;
-  
+ 
  
   // private homeServ: HomeService,
   constructor(private el: ElementRef,    private _nav: Router) {
