@@ -7,6 +7,7 @@ import { ViewuserComponent } from './viewuser.component';
 import { ViewuserRoutes } from './viewuser.routing';
 import { userService } from './viewuser.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { PagerService } from '../servicefile/paginator.service';
 // import { MdModule } from '../md/md.module';
 // import { MaterialModule } from '../app.module';
 // import { ConsumerDashboardRoutes } from './viewuser.routing';
@@ -28,7 +29,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
       
     ],
     declarations: [ViewuserComponent],
-    providers:[userService]
+    providers:[userService,PagerService]
 })
 
 export class ViewUserModule {}

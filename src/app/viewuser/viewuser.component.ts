@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { userService } from './viewuser.service';
+import { PagerService } from '../servicefile/paginator.service';
 
 @Component({
   selector: 'app-viewuser',
@@ -10,16 +11,22 @@ import { userService } from './viewuser.service';
 export class ViewuserComponent implements OnInit {
   // personal: any ;
   public personal;
-  constructor(private _nav: Router, private _serv: userService, ) { }
+  pager: any = {};
+  pageSize = '10';
+  constructor(private _nav: Router, private _serv: userService,private pagerService: PagerService  ) { }
 
   ngOnInit() {  
-  this._serv.get_user().subscribe(
-    data => {
-        this.personal = data['results'];
- 
-        console.log(this.personal)
-
-    });
+ this.viewuser(1)
+  }
+  viewuser(page){
+    this._serv.get_user(page).subscribe(
+      data => {
+          this.personal = data['results'];
+   
+          console.log(this.personal)
+          this.pager = this.pagerService.getPager(this.personal, page, this.pageSize);
+      });
   }
 
 }
+

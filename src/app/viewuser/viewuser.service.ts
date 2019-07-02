@@ -9,7 +9,7 @@ export class userService {
 
     constructor(private http: HttpClient, private _https : Http) { }
 
-    get_user() {
-        return this.http.get('https://apis.rfpgurus.com/super/userDetailandfilter/');
+    get_user(page) {
+        return this.http.get('https://apis.rfpgurus.com/super/userDetailandfilter/'+ '?page=' + page);
     }
 }
