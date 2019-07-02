@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { CommonComponent } from './common/common.component';
-import { ViewpageComponent } from './viewpage/viewpage.component';
+ 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarViewComponent } from './sidebar-view/sidebar-view.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+ 
+ 
+ 
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HomeComponent,
     SidebarComponent,
     SidebarViewComponent,
-  
+     
+       
     
   ],
   imports: [

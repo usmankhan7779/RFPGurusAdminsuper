@@ -13,7 +13,7 @@ const routes: Routes = [
       path: '',
       component: CommonComponent,
       children: [
-          { path: 'guid', loadChildren: './viewpage/viewpage.module#NewProductModule' },
+        //  { path: 'login', loadChildren: './login/login.module#LoginModule' },
           
       ]
   },
@@ -21,7 +21,8 @@ const routes: Routes = [
     path: '',
     component: SidebarViewComponent,
     children: [
-        { path: 'adminhome', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule' },
+        { path: 'rfpdashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule' },
+        { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule' },
         
     ]
 },
