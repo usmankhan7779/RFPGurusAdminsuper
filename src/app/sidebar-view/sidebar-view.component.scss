@@ -4,7 +4,10 @@
 .content-router-outlet{
     min-height: 400px;
     vertical-align: top;
-    width: 100%;
+    // width: 100%;
+    width: calc(100% - 270px);
+    float: right;
+    margin-top: 75px;
   }
   .sidebar-outlet{
     width: 260px;
