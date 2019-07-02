@@ -10,25 +10,37 @@
         <table>
             <thead>
                 <tr>
-                    <th>User Name</th>
+                    <th>Company Name</th>
                 
-                    <th>First Name</th>
+                    <th>Full Name</th>
                
-                    <th>Last Name</th>
+                    <th>Package Type</th>
                 
-                    <th>Email</th>
-                    <th>Date</th>
+                    <th>Package Duration</th>
+                    <th>Pay Date</th>
+                    <th>End Date</th>
+                    <th>Package Status</th>
                     <th>Action</th>
                   
                 </tr>
             </thead>
             <tbody>
                 <tr  *ngFor="let item of personal">
-                    <td>{{item.username}}</td>
-                    <td>{{item.first_name}}</td>
-                    <td>{{item.last_name}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.date_joined | date}}</td>
+                    <td>{{item.reg_fk.company}}</td>
+                    <td>{{item.reg_fk.user.first_name +" "+ item.reg_fk.user.last_name}}</td>
+                    <td *ngIf="item.pkg_fk.pkg_type == 'B'">Basic</td>
+                    <td *ngIf="item.pkg_fk.pkg_type == 'P'">Premium</td>
+                    <td *ngIf="item.pkg_fk.duration == 'M'">Monthly</td>
+                    <td *ngIf="item.pkg_fk.duration == 'Y'">Yearly</td>
+                  
+                    <td>{{item.pay_date | date}}</td>
+                    <td>{{item.end_date | date}}</td>
+                    <td *ngIf="item.is_expired == false">Active </td>
+                    <td *ngIf="item.is_expired == true">Expire </td>
+                    <!-- <td>{{item.is_expired}}</td> -->
+                    
+                    
+                    
                     <td class="text-center">
                         <button class="detail-btn">Detail</button>
                     </td>

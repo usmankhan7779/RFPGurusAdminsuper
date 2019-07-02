@@ -12,4 +12,8 @@ export class userService {
     get_user(page) {
         return this.http.get('https://apis.rfpgurus.com/super/userDetailandfilter/'+ '?page=' + page);
     }
+    get_user_payment(page) {
+        return this.http.get('https://apis.rfpgurus.com/super/paymentDetailandfilter/'+ '?page=' + page);
+    }
+    
 }

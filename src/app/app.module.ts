@@ -45,7 +45,7 @@ import {
   MatStepperModule,
   MatFormFieldModule,
 } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
  
  
 
@@ -91,7 +91,7 @@ import { FormsModule } from '@angular/forms';
     CommonComponent,
     HomeComponent,
     SidebarComponent,
-    SidebarViewComponent,
+    SidebarViewComponent, 
      
        
     

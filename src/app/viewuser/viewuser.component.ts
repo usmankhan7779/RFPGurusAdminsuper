@@ -19,12 +19,16 @@ export class ViewuserComponent implements OnInit {
  this.viewuser(1)
   }
   viewuser(page){
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+    }
+    alert(page)
     this._serv.get_user(page).subscribe(
       data => {
           this.personal = data['results'];
    
           console.log(this.personal)
-          this.pager = this.pagerService.getPager(this.personal, page, this.pageSize);
+          this.pager = this.pagerService.getPager(data['totalItems'], page, 20);
       });
   }
 
