@@ -1,0 +1,21 @@
+.container-fluid{
+    padding: 0;
+}
+.content-router-outlet{
+    min-height: 400px;
+    vertical-align: top;
+    // width: 100%;
+    width: calc(100% - 270px);
+    float: right;
+    margin-top: 75px;
+  }
+  .sidebar-outlet{
+    width: 260px;
+    vertical-align: top;
+    background: #fff;
+    border-right: 1px solid #ebebeb;
+    position: fixed;
+    top: 74px;
+    left: 0;
+  }
+  
