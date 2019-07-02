@@ -17,16 +17,18 @@
                     <th>Last Name</th>
                 
                     <th>Email</th>
-               
+                    <th>Date</th>
                     <th>Action</th>
+                  
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>usman</td>
-                    <td>usman</td>
-                    <td>usman</td>
-                    <td>usman</td>
+                <tr  *ngFor="let item of personal">
+                    <td>{{item.username}}</td>
+                    <td>{{item.first_name}}</td>
+                    <td>{{item.last_name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.date_joined | date}}</td>
                     <td class="text-center">
                         <button class="detail-btn">Detail</button>
                     </td>
