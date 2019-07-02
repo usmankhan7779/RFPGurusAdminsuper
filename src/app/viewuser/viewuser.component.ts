@@ -22,7 +22,7 @@ export class ViewuserComponent implements OnInit {
     if (page < 1 || page > this.pager.totalPages) {
       return;
     }
-    alert(page)
+    // alert(page)
     this._serv.get_user(page).subscribe(
       data => {
           this.personal = data['results'];
