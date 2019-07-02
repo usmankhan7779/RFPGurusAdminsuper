@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { MaterialModule } from '../app.module';
 import { ConsumerDashboardRoutes } from './dashboard.routing';
 import { DashboardComponent } from './dashboard.component';
+import { PagerService } from '../servicefile/paginator.service';
+import { userService } from '../viewuser/viewuser.service';
  
 
  
@@ -21,7 +23,8 @@ import { DashboardComponent } from './dashboard.component';
       
       
     ],
-    declarations: [DashboardComponent]
+    declarations: [DashboardComponent],
+    providers:[userService,PagerService]
 })
 
 export class ConsumerDashboardModule {}

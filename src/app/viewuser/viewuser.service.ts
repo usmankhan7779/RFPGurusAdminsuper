@@ -15,5 +15,8 @@ export class userService {
     get_user_payment(page) {
         return this.http.get('https://apis.rfpgurus.com/super/paymentDetailandfilter/'+ '?page=' + page);
     }
+    get_user_status() {
+        return this.http.get('http://192.168.29.223:8000/super/maindashboard/');
+    }
     
 }
