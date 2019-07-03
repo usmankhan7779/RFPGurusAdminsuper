@@ -21,7 +21,9 @@ export class HomeComponent implements OnInit {
       'has-feedback': this.isFieldValid(form, field)
     };
   }
-  model: any = {}
+  model: any = {};
+  token ; 
+  // JSON.parse(localStorage.getItem('currentUser')).token;
   constructor(private home : HomeService ,  private _nav: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
@@ -29,56 +31,23 @@ export class HomeComponent implements OnInit {
       username: ['', Validators.compose([Validators.required])],
       password: ['', Validators.compose([Validators.required])]
     });
+    // this.adminrole();
   }
   onLogin() {
    
       this.isequal = true;
-      this.home.login_authenticate(this.login.value.username).subscribe(
-        data => {
+    
           this.home.login(this.model.username, this.model.password).subscribe(
             data => {
+              console.log(data)
+             
+              // localStorage.setItem('token' , this.token);
               swal.fire({
                 type: 'success',
                 title: 'You have successfully logged into RFPGurus - The largest aggregator of RFPs at the Federal, County, City, State, Agency levels.',
                 showConfirmButton: false,
                 timer: 1500, width: '512px',
               });
-
-              if (localStorage.getItem('member')) {
-                let url = localStorage.getItem('member')
-                let last = url.length
-                let ur = url.slice(0, 13)
-                let state = url.slice(0, 5)
-                let category = url.slice(0, 8)
-                let agency = url.slice(0, 6)
-
-
-                if (ur == 'searched-data') { this._nav.navigate([ur], { queryParams: { keyword: url.slice(13, last) } }); }
-                else if (state == 'state') {
-
-                  this._nav.navigate([state], { queryParams: { state: url.slice(5, last) } });
-                }
-                else if (category == 'category') {
-                  this._nav.navigate([category], { queryParams: { cat: url.slice(8, last) } });
-                }
-                else if (agency == 'agency') {
-
-                  this._nav.navigate([agency], { queryParams: { agency: url.slice(6, last) } });
-                }
-                else if (url == 'advanced-search') {
-                  this._nav.navigate([url]);
-                }
-                else if (url == 'latest-rfps') {
-                  this._nav.navigate([url]);
-                }
-                else {
-                  // var val = 'rfp/' + url
-                  // this._nav.navigate([val]);
-                this._nav.navigate(['rfp/'], { queryParams: { query: url } });
-                }
-              } else {
-                this._nav.navigate(['/']);
-              }
               // this._location.back();
             },
            
@@ -87,7 +56,7 @@ export class HomeComponent implements OnInit {
           if (error.status == 400) {
             swal.fire(
               'Error',
-              'First, verify your email address to signin',
+              'You are not super admin',
               'error'
             )
           }
@@ -101,12 +70,20 @@ export class HomeComponent implements OnInit {
           }
         }
       );
+      // this.adminrole();
     }
-    
-    
-      )}
+  //   adminrole() {
+  //     this.home.checkrole().subscribe(data => {
+       
+  //       console.log(this.token)
+  //       this.token = data;
+  //       console.log(this.token);
+  //       // console.log(this.getwtachid.wish_id)
   
-}
+  // });
+  //   }
+    
+  }
   // validateAllFormFields(formGroup: FormGroup) {
   //   Object.keys(formGroup.controls).forEach(field => {
   //     const control = formGroup.get(field);

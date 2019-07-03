@@ -12,7 +12,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { Http, HttpModule } from '@angular/http';
 import { SidebarViewComponent } from './layouts/sidebar-view/sidebar-view.component';
 import { HomeService } from '../app/home/home.service';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 
 import {
   MatAutocompleteModule,
@@ -48,9 +48,17 @@ import {
   MatStepperModule,
   MatFormFieldModule,
 } from '@angular/material';
-import { FormsModule } from '@angular/forms'; 
+
  
- 
+// export class MaterialModule { }
+// @NgModule({
+//   imports: [
+//     MaterialModule
+//   ],
+//   exports:[],
+//   declarations:[],
+
+// })
 
 @NgModule({
   exports: [
@@ -87,7 +95,8 @@ import { FormsModule } from '@angular/forms';
     MatTooltipModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    
   ],
   declarations: [
     AppComponent,
@@ -106,6 +115,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
+    FormsModule,
   ],
   providers: [HomeService],
   bootstrap: [AppComponent],

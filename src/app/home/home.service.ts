@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { tap, map, filter } from 'rxjs/operators';
+import { tap, filter } from 'rxjs/operators';
 import * as jwt_decode from "jwt-decode";
 import { isPlatformBrowser } from '@angular/common';
 import { Inject,  PLATFORM_ID } from '@angular/core';
-
+// import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
+import { Headers, Http, Response } from '@angular/http';
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(private http: HttpClient,private _http: Http, @Inject(PLATFORM_ID) private platformId: Object) { }
   // Http Options
   httpOptions = {
     headers: new HttpHeaders({
@@ -34,13 +36,24 @@ export class HomeService {
           localStorage.setItem('loged_in', '1');
           localStorage.setItem('exp', this.exp_time);
           localStorage.setItem('currentUser', JSON.stringify(user));
+          // localStorage.setItem('token' , JSON.stringify(user.token));
         }
       }))
   }
 
-  login_authenticate(username) {
-    return this.http.post('https://apis.rfpgurus.com/ac_login/', {
-      'username': username
-    }, this.httpOptions);
-  }
+  // login_authenticate(username) {
+  //   return this.http.post('https://apis.rfpgurus.com/ac_login/', {
+  //     'username': username
+  //   }, this.httpOptions);
+  // }
+
+
+  checkrole() {
+    // if (localStorage.getItem('currentUser')) {
+      const headers = new Headers({'Authorization': 'JWT ' + JSON.parse(localStorage.getItem('currentUser')).token});
+      headers.append('Content-Type', 'application/json');
+      return this._http.get('https://apis.rfpgurus.com/super/SuperAdminLoginStatus/', {headers: headers}  );
+    
+  // }
+}
 }

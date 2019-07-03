@@ -6,6 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // import { Routes, RouterModule } from '@angular/router';
 // import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatInputModule, MatFormFieldModule, MatSlideToggleModule, MatIconModule } from '@angular/material';
+
 import { HttpClientModule } from '@angular/common/http';
 import { Http, HttpModule } from '@angular/http';
 // import {MaterialModule} from '../app.module';
@@ -19,7 +20,7 @@ const MainpageRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    CommonModule,
+    
     // MaterialModule,
     FormsModule, ReactiveFormsModule,
     // ReactiveFormsModule,

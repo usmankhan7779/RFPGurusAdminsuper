@@ -7,7 +7,10 @@ a {
     color: #c00 !important;
     text-decoration: underline !important
   }
-  
+  .login{
+    margin-top: 75px;
+    height: 100%;
+  }
   .sh-signup-form-fix .mat-input-element {
     font-size: 24px;
     color: #000;
@@ -101,8 +104,23 @@ a {
   }
   .sh-signin-btn {
   width: 100%;
-  font-size: 24px!important
-  }
+  font-size: 24px !important;
+  background-color: #000;
+  color: #fff;
+  outline: 0;
+  border: none;
+  border-radius: 50px;
+  transition: all .5s;
+  box-shadow: 0 14px 26px -12px rgba(0,0,0,.42),0 4px 23px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2)!important;
+}
+.sh-signin-btn:hover{
+  background: #c00;
+}
+.checkbox .mat-slide-toggle-content {
+  color: #000;
+  font-weight: 600;
+  font-size: 15px;
+}
   .g-f-login>a:hover {
   opacity: .8
   }
@@ -133,7 +151,7 @@ a {
   .login-form-1-img {
   position: relative;
   background-color: black;
-  min-height: 25rem;
+  min-height: 100%;
   width: 100%;
   overflow: hidden;
   }
