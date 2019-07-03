@@ -12,7 +12,7 @@ import { Headers, Http, Response } from '@angular/http';
 })
 export class HomeService {
 
-  constructor(private http: HttpClient,private _http: Http, @Inject(PLATFORM_ID) private platformId: Object) { }
+  constructor(private http: HttpClient, private http2 : Http, @Inject(PLATFORM_ID) private platformId: Object) { }
   // Http Options
   httpOptions = {
     headers: new HttpHeaders({
@@ -22,7 +22,7 @@ export class HomeService {
 
   time;
   exp_time;
-
+  token;
   login(username: string, password: string) {
     return this.http.post('https://apis.rfpgurus.com/user-token-auth/',
       JSON.stringify({ username: username, password: password }), this.httpOptions)
@@ -34,9 +34,8 @@ export class HomeService {
           this.time = new Date()
           // this.exp_time = moment(this.time).add(1, 'days');
           localStorage.setItem('loged_in', '1');
-          localStorage.setItem('exp', this.exp_time);
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          // localStorage.setItem('token' , JSON.stringify(user.token));
+          // localStorage.setItem('exp', this.exp_time);
+          localStorage.setItem('currentUser', JSON.stringify(user.token));
         }
       }))
   }
@@ -49,11 +48,11 @@ export class HomeService {
 
 
   checkrole() {
-    // if (localStorage.getItem('currentUser')) {
-      const headers = new Headers({'Authorization': 'JWT ' + JSON.parse(localStorage.getItem('currentUser')).token});
+   
+      const headers = new Headers({'Authorization': 'JWT ' + JSON.parse(localStorage.getItem('currentUser')).currentUser});
       headers.append('Content-Type', 'application/json');
-      return this._http.get('https://apis.rfpgurus.com/super/SuperAdminLoginStatus/', {headers: headers}  );
+      return this.http2.get('https://apis.rfpgurus.com/super/SuperAdminLoginStatus/', {headers: headers}  ).pipe(map((response: Response) => response.json()));
     
-  // }
+  
 }
 }

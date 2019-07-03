@@ -33,14 +33,23 @@ export class HomeComponent implements OnInit {
     });
     // this.adminrole();
   }
+  user;
   onLogin() {
    
       this.isequal = true;
     
           this.home.login(this.model.username, this.model.password).subscribe(
             data => {
+              
               console.log(data)
-             
+              this.home.checkrole().subscribe(data => {
+       
+                // console.log(this.token)
+                // this.token = data;
+                // console.log(this.token);
+                // console.log(this.getwtachid.wish_id)
+               
+          });
               // localStorage.setItem('token' , this.token);
               swal.fire({
                 type: 'success',
@@ -72,16 +81,16 @@ export class HomeComponent implements OnInit {
       );
       // this.adminrole();
     }
-  //   adminrole() {
-  //     this.home.checkrole().subscribe(data => {
+    adminrole() {
+      this.home.checkrole().subscribe(data => {
        
-  //       console.log(this.token)
-  //       this.token = data;
-  //       console.log(this.token);
-  //       // console.log(this.getwtachid.wish_id)
+        console.log(this.token)
+        this.token = data;
+        console.log(this.token);
+        // console.log(this.getwtachid.wish_id)
   
-  // });
-  //   }
+  });
+    }
     
   }
   // validateAllFormFields(formGroup: FormGroup) {
