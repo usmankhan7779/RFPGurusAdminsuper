@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { Http, HttpModule } from '@angular/http';
 import { SidebarViewComponent } from './layouts/sidebar-view/sidebar-view.component';
+import { HomeService } from '../app/home/home.service';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -83,6 +86,7 @@ import { FormsModule } from '@angular/forms';
     MatToolbarModule,
     MatTooltipModule,
     FormsModule,
+    ReactiveFormsModule,
     MatFormFieldModule
   ],
   declarations: [
@@ -103,7 +107,10 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     HttpModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HomeService],
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule { }
