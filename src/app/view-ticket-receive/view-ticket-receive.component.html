@@ -66,10 +66,10 @@
                             <li [ngClass]="{hide:pager.currentPage === pager.totalPages}" *ngIf="(pager.startPage  + 3) <= pager.totalPages">
                               <a   (click)="viewuser(pager.currentPage + 3)">...</a>
                             </li>
-                            <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>OF</a></li>
+                            <!-- <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>OF</a></li>
                             <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
                               <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
-                            </li>
+                            </li> -->
                             <li *ngIf="pager.currentPage === pager.totalPages"> <a>OF</a></li>
                             <li *ngIf="pager.currentPage === pager.totalPages">
                               <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
