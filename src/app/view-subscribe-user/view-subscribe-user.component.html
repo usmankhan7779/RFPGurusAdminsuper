@@ -1,0 +1,139 @@
+<div class="view">
+        <div class="table-box">
+            <div class="date-bar">
+                <label>To Date:</label>
+                <input type="text">
+                <label>From Date:</label>
+                <input type="text">
+                <button class="serch-btn">Search</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company USer</th>
+                    
+                        <th>Name</th>
+                   
+                        <th>Start Date</th>
+                    
+                        <th>End Date</th>
+                        <th>Paid</th>
+                        <!-- <th>Action</th> -->
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  *ngFor="let item of personal?.results">
+                        <td>{{item.User.company}}</td>
+                        <td>{{item.User.user.first_name +" "+ item.User.user.last_name}}</td>
+                        
+                        <td>{{item.timecreated |date}}</td>
+                        <td>{{item.endtime | date}}</td>
+                        <td *ngIf="item.payed == false">Active </td>
+                        <td *ngIf="item.payed == true">Expire </td>
+                        
+                        <!-- <td class="text-center">
+                            <button class="detail-btn">Detail</button>
+                        </td> -->
+                    </tr>
+                </tbody>
+              
+            </table>  
+              <!-- <div class="pagination-nav">
+    
+                    <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
+                        <li [ngClass]="{hide:pager.currentPage === 1}">
+                            <a   (click)="viewuser(1)" class="view-1s" class="btn btn-fill">
+                                <i class="fa fa-angle-double-left"></i>
+                            </a>
+                        </li>
+                        <li [ngClass]="{hide:pager.currentPage === 1}">
+                            <a   (click)="viewuser(pager.currentPage - 1)" class="view-1s" class="btn btn-fill">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        </li>
+                         
+                        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                            <a  (click)="viewuser(page)" class="view-plan-details">{{page | number}}</a>
+                        </li>
+    
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"
+                            *ngIf="(pager.startPage  + 3) <= pager.totalPages">
+                            <a   (click)="viewuser(pager.currentPage + 3)">...</a>
+                        </li>
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>Of</a></li>
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                            <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
+                                        | number}}</a>
+                        </li>
+                        <li *ngIf="pager.currentPage === pager.totalPages"> <a>Of</a></li>
+                        <li *ngIf="pager.currentPage === pager.totalPages">
+                            <a    (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
+                                        | number}}</a>
+                        </li>
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                            <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details"
+                                class="btn btn-fill" type="Next">
+                                <i class="fa fa-angle-right top-set"></i>
+                            </a>
+                        </li>
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                            <a   (click)="viewuser(pager.totalPages)" class="view-plan-details"
+                                class="btn btn-fill" type="Next">
+                                <i class="fa fa-angle-double-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>  -->
+                <div class="pagination-nav">   
+                <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
+    
+    
+                        <li [ngClass]="{hide:pager.currentPage === 1}">
+                          <a (click)="viewuser(pager.currentPage - 1)" class="view-1s" class="btn btn-fill">
+                            <i class="fa fa-angle-left"></i>
+                          </a>
+                        </li>
+                        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                          <a   (click)="viewuser(page)" class="view-plan-details">{{page}}</a>
+                        </li>
+      
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}" *ngIf="(pager.startPage  + 3) <= pager.totalPages">
+                          <a   (click)="viewuser(pager.currentPage + 3)">...</a>
+                        </li>
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>OF</a></li>
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                          <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
+                        </li>
+                        <!-- <li *ngIf="pager.currentPage === pager.totalPages"> <a>OF</a></li>
+                        <li *ngIf="pager.currentPage === pager.totalPages">
+                          <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
+                        </li> -->
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                          <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details" class="btn bd-color" type="Next">
+                            <i class="fa fa-angle-right top-set"></i>
+                          </a>
+                        </li>
+      
+                      </ul>
+                      </div>
+                      <!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                            <li [ngClass]="{hide:pager.currentPage === 1}">
+                              <a (click)=" viewuser(1)" class="btn btn-fill">First</a>
+                            </li>
+                            <li [ngClass]="{hide:pager.currentPage === 1}">
+                              <a (click)=" viewuser(pager.currentPage - 1)" class="btn btn-fill">Previous</a>
+                            </li>
+                            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                              <a (click)=" viewuser(page)" class="btn btn-fill">{{page}}</a>
+                            </li>
+                            <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                              <a (click)=" viewuser(pager.currentPage + 1)" class="btn btn-fill" type="Next">Next</a>
+                            </li>
+                            <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                              <a (click)=" viewuser(pager.totalPages)" class="btn btn-fill" type="Last">Last</a>
+                            </li>
+                          </ul> -->
+        </div>
+    </div>
+    

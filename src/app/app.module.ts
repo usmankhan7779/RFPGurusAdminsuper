@@ -46,6 +46,9 @@ import { Http, HttpModule } from '@angular/http';
 import { SidebarViewComponent } from './layouts/sidebar-view/sidebar-view.component';
 import { HomeService } from '../app/home/home.service';
 import { ReactiveFormsModule , FormsModule} from '@angular/forms';
+import { ViewsignaluserComponent } from './viewsignaluser/viewsignaluser.component';
+import { ViewSubscribeUserComponent } from './view-subscribe-user/view-subscribe-user.component';
+import { ViewTicketReceiveComponent } from './view-ticket-receive/view-ticket-receive.component';
 
 
  
@@ -86,6 +89,7 @@ import { ReactiveFormsModule , FormsModule} from '@angular/forms';
     FormsModule,
     MatFormFieldModule
   ],
+  declarations: [],
   
 })
 export class MaterialModule { }

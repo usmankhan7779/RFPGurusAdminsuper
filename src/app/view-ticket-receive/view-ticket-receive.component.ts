@@ -4,12 +4,13 @@ import { Router } from '@angular/router';
 import { PagerService } from '../servicefile/paginator.service';
 import { userService } from '../viewuser/viewuser.service';
 
+
 @Component({
-  selector: 'app-viewuserpayment',
-  templateUrl: './viewuserpayment.component.html',
-  styleUrls: ['./viewuserpayment.component.scss']
+  selector: 'app-view-ticket-receive',
+  templateUrl: './view-ticket-receive.component.html',
+  styleUrls: ['./view-ticket-receive.component.scss']
 })
-export class ViewuserpaymentComponent implements OnInit {
+export class ViewTicketReceiveComponent implements OnInit {
 // personal: any ;
 public personal;
 pager: any = {};
@@ -24,7 +25,7 @@ viewuser(page){
     return;
   }
   // alert(page)
-  this._serv.get_user_payment(page).subscribe(
+  this._serv.get_user_ticket(page).subscribe(
     data => {
         this.personal = data.json();
  
