@@ -1,19 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { CommonComponent } from './layouts/common/common.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { Http, HttpModule } from '@angular/http';
-import { SidebarViewComponent } from './layouts/sidebar-view/sidebar-view.component';
-import { HomeService } from '../app/home/home.service';
-import { ReactiveFormsModule , FormsModule} from '@angular/forms';
-
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -48,18 +34,22 @@ import {
   MatStepperModule,
   MatFormFieldModule,
 } from '@angular/material';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { CommonComponent } from './layouts/common/common.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { Http, HttpModule } from '@angular/http';
+import { SidebarViewComponent } from './layouts/sidebar-view/sidebar-view.component';
+import { HomeService } from '../app/home/home.service';
+import { ReactiveFormsModule , FormsModule} from '@angular/forms';
+
 
  
-// export class MaterialModule { }
-// @NgModule({
-//   imports: [
-//     MaterialModule
-//   ],
-//   exports:[],
-//   declarations:[],
-
-// })
-
+ 
 @NgModule({
   exports: [
     MatAutocompleteModule,
@@ -94,10 +84,13 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    
+    MatFormFieldModule
   ],
+  
+})
+export class MaterialModule { }
+  @NgModule({
+
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -110,12 +103,17 @@ import {
     
   ],
   imports: [
-    BrowserModule,
+    BrowserModule /* or CommonModule */, 
+   
+     ReactiveFormsModule,
+    
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     HttpModule,
     FormsModule,
+    BrowserTransferStateModule,
+    BrowserAnimationsModule,
   ],
   providers: [HomeService],
   bootstrap: [AppComponent],

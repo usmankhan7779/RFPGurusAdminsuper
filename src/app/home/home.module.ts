@@ -5,11 +5,11 @@ import {HomeComponent} from './home.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // import { Routes, RouterModule } from '@angular/router';
 // import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { MatInputModule, MatFormFieldModule, MatSlideToggleModule, MatIconModule } from '@angular/material';
 
 import { HttpClientModule } from '@angular/common/http';
 import { Http, HttpModule } from '@angular/http';
-// import {MaterialModule} from '../app.module';
+import { MaterialModule } from '../app.module';
+ 
 
 
 const MainpageRoutes: Routes = [ 
@@ -21,28 +21,22 @@ const MainpageRoutes: Routes = [
   imports: [
     CommonModule,
     
-    // MaterialModule,
-    FormsModule, ReactiveFormsModule,
+    MaterialModule,
+    FormsModule, 
+    ReactiveFormsModule,
     // ReactiveFormsModule,
-    FormsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatIconModule,
-    HttpModule,
-    MatSlideToggleModule,
+     
   
     HttpClientModule,
     RouterModule.forChild(MainpageRoutes),
  
-   
+
     
      
     
-    ,
+    
   ],
   declarations: [],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+  
 })
 export class HomeModule { }
