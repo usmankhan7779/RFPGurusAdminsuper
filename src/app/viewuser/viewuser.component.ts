@@ -34,6 +34,16 @@ export class ViewuserComponent implements OnInit {
           this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
       });
   }
+  datefrom;
+  model : any = {}
+  postoffer() {
+    // var currentdate = moment(new Date, ' YYYY-MM-DD ');
+    // var new_date = currentdate.add(this.end_time, 'days');
+    return this._serv.postdate(this.model.datefrom, this.model.dateto ).subscribe(
 
+  data => {
+    
+  })
+  }
 }
 
