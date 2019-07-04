@@ -52,6 +52,11 @@ export class userService {
     headers.append('Content-Type', 'application/json');
         return this._https.get('http://192.168.29.223:8000/super/alltikketadmin/'+ '?page=' + page,{headers:headers});
     }
+    get_user_single() {
+        let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+    headers.append('Content-Type', 'application/json');
+        return this._https.get('http://192.168.29.223:8000/super/alltikketadmin/',{headers:headers});
+    }
     // https://apis.rfpgurus.com/super/trialsubscriptionuser/
     // http://192.168.29.223:8000/super/alltikketadmin/
 }
