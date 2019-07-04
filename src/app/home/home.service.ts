@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, filter } from 'rxjs/operators';
-import * as jwt_decode from "jwt-decode";
+
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, PLATFORM_ID } from '@angular/core';
 // import 'rxjs/add/operator/map';
