@@ -9,6 +9,105 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mt-75px{
     margin-top: 75px;
 }
+.width-full{
+    width: 100%;
+}
+.margin-t-10{
+    margin-top: 10px;
+}
+.swal2-title{
+    font-size: 20px !important;
+}
+////////////////////////////Start pagination//////////////////////////////
+.pagination-nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.pagination-nav .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover, .pagination-nav .pagination > .active > a {
+    background-color: #c00;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    padding: 6px 11px;
+}
+.pagination-nav .pagination > li > a, .pagination > li > span {
+    border: 0;
+    border-radius: 30px!important;
+    transition: all .3s;
+    padding: 0 11px;
+    margin: 0 3px;
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #999;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: 0 0;
+    cursor: pointer;
+}
+.pagination-nav .btn-fill {
+    color: #fff!important;
+    background-color: #000!important;
+    font-weight: 600!important;
+}
+.pagination-nav .btn-fill:hover {
+    color: #fff!important;
+    background-color: #c00!important;
+}
+///////////////////////////End pagination////////////////////////////////
+
+
+//////////////////////////////Start Form//////////////////////////////////
+.sh-signup-form-fix .mat-form-field-underline{
+    bottom: 18px;
+}
+.sh-signup-form-fix .mat-input-element {
+    font-size: 24px;
+    color: #000;
+    padding-bottom: 8px;
+    font-weight: 500;
+  }
+  .login-form-1 .mat-form-field-appearance-legacy .mat-form-field-label{
+    top: 30px;
+    color: rgba(0,0,0,.54)!important;
+    font-weight: 600;
+  }
+  .login-form-1 .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    -webkit-transform: translateY(-26px) scale(.75) perspective(100px) translateZ(.001px)!important;
+    transform: translateY(-26px) scale(.75) perspective(100px) translateZ(.001px)!important;
+    -ms-transform: translateY(-26px) scale(.75)!important;
+}
+.sh-signup-form-fix .mat-form-field-appearance-legacy .mat-form-field-wrapper{
+    padding-bottom: 12px;
+}
+
+
+
+.checkbox .mat-slide-toggle-content {
+    color: #000;
+    font-weight: 600;
+    font-size: 15px;
+}
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: rgba(0,0,0,.47)!important;
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #000!important;
+}
+.mat-slide-toggle-thumb {
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  background-color: #fafafa;
+}
+
+/////////////////////////////End Form/////////////////////////////////////
+
+
+
+
+
+
 // Start Side Bar
 .sidebarToggle{
     display: none;
@@ -64,6 +163,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @media (max-width:660px) {
     .box{
         margin-bottom: 10px;
+    }
+    .login-form-1-center {
+        width: 100% !important;
     }
 }
 html, body { height: 100%; }

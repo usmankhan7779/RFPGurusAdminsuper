@@ -32,7 +32,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatStepperModule,
-  MatFormFieldModule,
+  MatFormFieldModule
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -106,7 +106,7 @@ export class MaterialModule { }
     BrowserModule /* or CommonModule */, 
    
      ReactiveFormsModule,
-    
+     MaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
