@@ -24,6 +24,13 @@ const routes: Routes = [
         { path: 'dashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule' },
         { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule' },
         { path: 'viewuserpay', loadChildren: './viewuserpayment/viewuserpayment.module#ViewUPModule' },
+        { path: 'viewsingleuser', loadChildren: './viewsignaluser/viewsignaluser.module#ViewUserSingleModule' },
+        { path: 'viewsubscribeuser', loadChildren: './view-subscribe-user/viewsubscribeuser.module#ViewsubscribeUserModule' },
+        { path: 'viewticket', loadChildren: './view-ticket-receive/viewticketuser.module#ViewticketUserModule' },
+
+
+        
+        
         
     ]
 },

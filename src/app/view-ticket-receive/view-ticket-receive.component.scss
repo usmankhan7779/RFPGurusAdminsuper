@@ -1,0 +1,48 @@
+.date-bar label{
+    margin: 0 10px 0 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+.date-bar input{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+.date-bar button{
+    background: #000;
+    color: #fff;
+    padding: 4px 15px;
+    border-radius: 30px;
+    border: none;
+}
+.date-bar button:hover{
+    background: #C00;
+}
+.table-box table{
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+.table-box table th{
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.table-box tbody tr{
+    border-bottom: 1px solid #ccc;
+}
+.table-box table td{
+    padding: 5px;
+}
+.table-box table .detail-btn{
+    background: #000;
+    color: #fff;
+    padding: 4px 15px;
+    border-radius: 30px;
+    border: none;
+}
+.table-box table .detail-btn:hover{
+    background: #C00;
+}

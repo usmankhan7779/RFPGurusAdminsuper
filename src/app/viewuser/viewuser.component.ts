@@ -13,6 +13,7 @@ export class ViewuserComponent implements OnInit {
   personal :any;
   pager: any = {};
   pageSize = '10';
+  pagers;
   constructor(private _nav: Router, private _serv: userService,private pagerService: PagerService  ) { }
 
   ngOnInit() {  
@@ -26,9 +27,11 @@ export class ViewuserComponent implements OnInit {
     this._serv.get_user(page).subscribe(
       data => {
           this.personal = data.json();
-   
+          this.pagers = data['totalItems']
+
+  //  console.log(this.pagers.json())
           console.log(this.personal)
-          this.pager = this.pagerService.getPager(data['totalItems'], page, 20);
+          this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
       });
   }
   datefrom;
