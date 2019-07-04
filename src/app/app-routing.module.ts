@@ -21,7 +21,7 @@ const routes: Routes = [
     path: '',
     component: SidebarViewComponent,
     children: [
-        { path: 'rfpdashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule' },
+        { path: 'dashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule' },
         { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule' },
         { path: 'viewuserpay', loadChildren: './viewuserpayment/viewuserpayment.module#ViewUPModule' },
         

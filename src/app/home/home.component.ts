@@ -39,25 +39,33 @@ export class HomeComponent implements OnInit {
       this.isequal = true;
     
           this.home.login(this.model.username, this.model.password).subscribe(
-            data => {
+            datasss => {
               
-              console.log(data)
+              console.log(datasss['token'])
               this.home.checkrole().subscribe(data => {
-       
-                // console.log(this.token)
-                // this.token = data;
-                // console.log(this.token);
-                // console.log(this.getwtachid.wish_id)
-               
+                console.log(data['status'])
+                if(data['status'] = 200){
+                  swal.fire({
+                    type: 'success',
+                    title: 'You have successfully logged into RFPGurus',
+                    showConfirmButton: false,
+                    timer: 1500, width: '512px',
+                  });
+                  this._nav.navigate(['dashboard'])
+                }else if (data['status'] = 400)
+                {
+                  swal.fire({
+                    type: 'error',
+                    title: 'Your Username and Password Does not match! Please Try again ',
+                    showConfirmButton: true,
+                    timer: 1500, width: '512px',
+                  });
+                }
+                // console.log(data['msg'])
+                
+                
           });
-              // localStorage.setItem('token' , this.token);
-              swal.fire({
-                type: 'success',
-                title: 'You have successfully logged into RFPGurus - The largest aggregator of RFPs at the Federal, County, City, State, Agency levels.',
-                showConfirmButton: false,
-                timer: 1500, width: '512px',
-              });
-              // this._location.back();
+              
             },
            
         
@@ -81,16 +89,16 @@ export class HomeComponent implements OnInit {
       );
       // this.adminrole();
     }
-    adminrole() {
-      this.home.checkrole().subscribe(data => {
+  //   adminrole() {
+  //     this.home.checkrole().subscribe(data => {
        
-        console.log(this.token)
-        this.token = data;
-        console.log(this.token);
-        // console.log(this.getwtachid.wish_id)
+  //       console.log(this.token)
+  //       this.token = data;
+  //       console.log(this.token);
+  //       // console.log(this.getwtachid.wish_id)
   
-  });
-    }
+  // });
+  //   }
     
   }
   // validateAllFormFields(formGroup: FormGroup) {
