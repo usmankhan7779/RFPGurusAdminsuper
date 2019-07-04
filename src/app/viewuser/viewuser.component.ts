@@ -10,7 +10,7 @@ import { PagerService } from '../servicefile/paginator.service';
 })
 export class ViewuserComponent implements OnInit {
   // personal: any ;
-  public personal;
+  personal :any;
   pager: any = {};
   pageSize = '10';
   constructor(private _nav: Router, private _serv: userService,private pagerService: PagerService  ) { }
@@ -25,7 +25,7 @@ export class ViewuserComponent implements OnInit {
     // alert(page)
     this._serv.get_user(page).subscribe(
       data => {
-          this.personal = data['results'];
+          this.personal = data.json();
    
           console.log(this.personal)
           this.pager = this.pagerService.getPager(data['totalItems'], page, 20);

@@ -10,7 +10,7 @@ import { PagerService } from '../servicefile/paginator.service';
 })
 export class DashboardComponent implements OnInit {
   // public personal;
-  personal: any ;
+  personal: any= []; 
   constructor(private _nav: Router, private _serv: userService,private pagerService: PagerService  ) { }
 
   ngOnInit() {
@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     // alert(page)
     this._serv.get_user_status().subscribe(
       data => {
-          this.personal = data;
+          this.personal = data.json();
    
           // console.log(this.personal['Total_Yearly_Subscriber'])
           // this.pager = this.pagerService.getPager(data['totalItems'], page, 20);
