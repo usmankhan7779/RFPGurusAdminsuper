@@ -26,7 +26,7 @@ viewuser(page){
   // alert(page)
   this._serv.get_user_payment(page).subscribe(
     data => {
-        this.personal = data['results'];
+        this.personal = data.json();
  
         console.log(this.personal)
         this.pager = this.pagerService.getPager(data['totalItems'], page, 20);
