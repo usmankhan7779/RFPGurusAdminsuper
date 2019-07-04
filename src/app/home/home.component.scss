@@ -11,11 +11,6 @@ a {
     margin-top: 75px;
     height: 100%;
   }
-  .sh-signup-form-fix .mat-input-element {
-    font-size: 24px;
-    color: #000;
-    padding-bottom: 8px
-  }
   
   .card-content .mat-input-infix {
     border-top: 0px solid transparent;
@@ -48,9 +43,15 @@ a {
   }
   
   .login-form-1-img .checkbox {
-  margin-top: 0
+    margin-top: -7px;
+    padding: 0;
   }
-  
+
+
+ 
+
+
+
   .login-form-1-img .no_account {
   font-weight: 700;
   font-size: 16px

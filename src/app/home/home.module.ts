@@ -24,17 +24,11 @@ const MainpageRoutes: Routes = [
     MaterialModule,
     FormsModule, 
     ReactiveFormsModule,
-    // ReactiveFormsModule,
      
   
     HttpClientModule,
     RouterModule.forChild(MainpageRoutes),
- 
 
-    
-     
-    
-    
   ],
   declarations: [],
   

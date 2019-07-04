@@ -15,8 +15,8 @@
                         </div>
                     </div>
                     <div class="card-content margin-t-10">
-                        <div class="form-group label-floating" >
-                            <mat-form-field>
+                        <div class="" >
+                            <mat-form-field class="width-full">
                                 <input matInput type="text" id="username" autofocus  [(ngModel)]="model.username"
                                     placeholder="Username" required name="username" />
                                 <!-- <mat-error *ngIf="login.controls.username.value == ''">
@@ -24,9 +24,9 @@
                                 </mat-error> -->
                             </mat-form-field>
                         </div>
-                        <div class="margin-t-mines15 form-group label-floating"
+                        <div class=""
                             [ngClass]="displayFieldCss(login, 'password')">
-                            <mat-form-field>
+                            <mat-form-field class="width-full">
                                 <input matInput type="password" id="password" [type]="hide ? 'password' : 'text'" name="password"
                                 onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false"
                                      [(ngModel)]="model.password" placeholder="Password" required />

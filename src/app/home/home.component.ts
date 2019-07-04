@@ -24,7 +24,8 @@ export class HomeComponent implements OnInit {
   model: any = {};
   token ; 
   // JSON.parse(localStorage.getItem('currentUser')).token;
-  constructor(private home : HomeService ,  private _nav: Router, private formBuilder: FormBuilder) { }
+  constructor(private home : HomeService ,  private _nav: Router, 
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.login = this.formBuilder.group({
