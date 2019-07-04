@@ -31,7 +31,10 @@
                     <td>{{item.email}}</td>
                     <td>{{item.date_joined | date}}</td>
                     <td class="text-center">
+                        <a [routerLink]="['/viewsingleuser']"
+                        [queryParams]="{ ProID:item.id}">
                         <button class="detail-btn">Detail</button>
+                      </a>
                     </td>
                 </tr>
             </tbody>

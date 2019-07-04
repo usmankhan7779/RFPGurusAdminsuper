@@ -14,6 +14,7 @@ export class ViewuserComponent implements OnInit {
   pager: any = {};
   pageSize = '10';
   pagers;
+
   constructor(private _nav: Router, private _serv: userService,private pagerService: PagerService  ) { }
 
   ngOnInit() {  
@@ -36,13 +37,17 @@ export class ViewuserComponent implements OnInit {
   }
   datefrom;
   model : any = {}
-  postoffer() {
-    // var currentdate = moment(new Date, ' YYYY-MM-DD ');
-    // var new_date = currentdate.add(this.end_time, 'days');
+  postpage:any;
+  postoffer(page) {
+   
     return this._serv.postdate(this.model.datefrom, this.model.dateto ).subscribe(
 
   data => {
-    
+
+    console.log(data)
+    this.postpage = data
+    console.log(this.postpage)
+    this.pager = this.pagerService.getPager(this.postpage['totalItems'], page, 10);
   })
   }
 }

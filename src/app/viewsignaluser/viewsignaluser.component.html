@@ -3,43 +3,43 @@
         <div class="row">
             <div class="col-md-12 detail-box">
                 <label>First Name:</label>
-                <span>Ali</span>
+                <span>{{personal.user.first_name}}</span>
             </div>
             <div class="col-md-12 detail-box">
                 <label>Last Name:</label>
-                <span>Headir</span>
+                <span>{{personal.user.last_name}}</span>
             </div>
             <div class="col-md-12 detail-box">
-                <label>First Name:</label>
-                <span>Ali</span>
+                <label>UserName:</label>
+                <span>{{personal.user.username}}</span>
             </div>
             <div class="col-md-12 detail-box">
                 <label>Zip Code:    </label>
-                <span>7500</span>
+                <span>{{personal.zipcode}}</span>
             </div>
             <div class="col-md-12 detail-box">
                 <label>City:</label>
-                <span>Ali</span>
+                <span>{{personal.city}}</span>
             </div>
             <div class="col-md-12 detail-box">
                 <label>Country:</label>
-                <span>Ali</span>
+                <span>{{personal.country}}</span>
             </div>
             <div class="col-md-12 detail-box">
                 <label>States:</label>
-                <span>Ali</span>
+                <span>{{personal.state}}</span>
             </div>
             <div class="col-md-12 detail-box">
                 <label>Phone no:</label>
-                <span>Ali</span>
+                <span>{{personal.phone_no}}</span>
             </div>
             <div class="col-md-12 detail-box">
                 <label>Comapany:</label>
-                <span>Ali</span>
+                <span>{{personal.company}}</span>
             </div>
             <div class="col-md-12 detail-box">
                     <label>Address:</label>
-                    <span>Ali</span>
+                    <span>{{personal.address}}</span>
                 </div>
         </div>
     </div>
@@ -59,19 +59,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr >
-                            <td>ksjdak</td>
-                            <td>dsfasdffdsfsa</td>
-                            <td >Basic</td>
-                            <td >Premium</td>
-                            <td >Monthly</td>
-                          
-                            <!-- <td>{{item.is_expired}}</td> -->
+
+                        <tr *ngFor="let items of pagers"  >
+                            <td >{{items?.user_preference}}</td>
+                             
+                
                             
                             
                             
                             
                         </tr>
+                      
                     </tbody>
                   
                 </table> 
