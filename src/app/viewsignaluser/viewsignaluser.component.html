@@ -41,9 +41,30 @@
                     <label>Address:</label>
                     <span>{{personal.address}}</span>
                 </div>
+                <div class="col-md-12 detail-box">
+                    <label>User Preference:</label>
+                    <span>{{personal.user_preference}}</span>
+                </div>
+                <div class="col-md-12 detail-box">
+                    <label>State Preference:</label>
+                    <span>{{personal.state_preference}}</span>
+                </div>
+                <div class="col-md-12 detail-box">
+                    <label>Country Preference:</label>
+                    <span>{{personal.county_preference}}</span>
+                </div>
+                <div class="col-md-12 detail-box">
+                    <label>Agency Preference:</label>
+                    <span>{{personal.agency_preference}}</span>
+                </div>
+                
+                <ng-template #pkg1>
+                   ---
+                  </ng-template>
+                <!-- county_preference -->
         </div>
     </div>
-    <div class="table-box">
+    <!-- <div class="table-box">
             <table>
                     <thead>
                         <tr>
@@ -60,8 +81,8 @@
                     </thead>
                     <tbody>
 
-                        <tr *ngFor="let items of pagers"  >
-                            <td >{{items?.user_preference}}</td>
+                        <tr  >
+                            <td > </td>
                              
                 
                             
@@ -73,5 +94,5 @@
                     </tbody>
                   
                 </table> 
-    </div>
+    </div> -->
 </div>

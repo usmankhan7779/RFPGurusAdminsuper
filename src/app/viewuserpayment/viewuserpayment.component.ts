@@ -33,12 +33,17 @@ viewuser(page){
         this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
     });
 }
-postoffer() {
-  
+postpage:any;
+postoffer(page) {
+   
   return this._serv.postdate(this.model.datefrom, this.model.dateto ).subscribe(
 
 data => {
-  
+
+  console.log(data)
+  this.postpage = data
+  console.log(this.postpage)
+  this.pager = this.pagerService.getPager(this.postpage['totalItems'], page, 10);
 })
 }
 }
