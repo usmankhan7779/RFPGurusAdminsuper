@@ -45,12 +45,17 @@ export class userService {
     get_user_subscriber(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
     headers.append('Content-Type', 'application/json');
-        return this._https.get('http://192.168.29.223:8000/super/trialsubscriptionuser/'+ '?page=' + page,{headers:headers});
+        return this._https.get('https://apis.rfpgurus.com/super/trialsubscriptionuser/'+ '?page=' + page,{headers:headers});
     }
     get_user_ticket(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
     headers.append('Content-Type', 'application/json');
-        return this._https.get('http://192.168.29.223:8000/super/alltikketadmin/'+ '?page=' + page,{headers:headers});
+        return this._https.get('https://apis.rfpgurus.com/super/alltikketadmin/'+ '?page=' + page,{headers:headers});
+    }
+    get_user_single(id) {
+        let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+    headers.append('Content-Type', 'application/json');
+        return this._https.get('https://apis.rfpgurus.com/super/singleuserdetail/'+id+'/',{headers:headers});
     }
     // https://apis.rfpgurus.com/super/trialsubscriptionuser/
     // http://192.168.29.223:8000/super/alltikketadmin/
