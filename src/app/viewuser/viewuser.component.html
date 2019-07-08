@@ -1,11 +1,30 @@
 <div class="view">
     <div class="table-box">
         <div class="date-bar">
-            <label>From Date:</label>
+            <!-- <label>From Date:</label>
                   <input type="text" [(ngModel)]="model.datefrom" placeholder="yyyy-mm-dd" name="datefrom">
             <label>To Date:</label>
-            <input type="text" [(ngModel)]="model.dateto" placeholder="yyyy-mm-dd" name="dateto">
+            <input type="text" [(ngModel)]="model.dateto" placeholder="yyyy-mm-dd" name="dateto"> -->
          
+
+            <mat-form-field>
+              <mat-label>From Date:</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{food.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>To Date:</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{food.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
             <button class="serch-btn" (click)="postoffer()">Search</button>
         </div>
         <table>

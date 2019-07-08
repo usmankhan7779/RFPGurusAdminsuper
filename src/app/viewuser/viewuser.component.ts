@@ -3,11 +3,26 @@ import { Router } from '@angular/router';
 import { userService } from './viewuser.service';
 import { PagerService } from '../servicefile/paginator.service';
 
+
+export interface Food {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-viewuser',
   templateUrl: './viewuser.component.html',
   styleUrls: ['./viewuser.component.scss']
 })
+
+export class SelectOverviewExample {
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+}
+
+
 export class ViewuserComponent implements OnInit {
   // personal: any ;
   personal :any;
