@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Http, HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
@@ -31,7 +31,10 @@ import { userService } from '../viewuser/viewuser.service';
       
     ],
     declarations: [ViewuserpaymentComponent],
-    providers:[userService,PagerService]
+    providers:[userService,PagerService],
+    schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
 })
 
 export class ViewUPModule {}

@@ -10,13 +10,6 @@ import * as moment from 'moment';
   styleUrls: ['./viewuser.component.scss']
 })
 
-export class SelectOverviewExample {
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
-}
 
 
 export class ViewuserComponent implements OnInit {

@@ -1,13 +1,26 @@
 <div class="view">
     <div class="table-box">
-      <!-- <div class="date-bar">
+      <div class="date-bar">
+        <form [formGroup]="date">
         <label>From Date:</label>
-              <input type="text" [(ngModel)]="model.datefrom" placeholder="yyyy-mm-dd" name="datefrom">
-        <label>To Date:</label>
-        <input type="text" [(ngModel)]="model.dateto" placeholder="yyyy-mm-dd" name="dateto">
+              <input type="text" [(ngModel)]="model.datefrom" placeholder="yyyy-mm-dd" name="datefrom"> 
+              <!-- <mat-form-field>
+                <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "Choose a date">
+                <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+             </mat-form-field> -->
+         <label>To Date:</label>
+        <input type="text" [(ngModel)]="model.dateto" placeholder="yyyy-mm-dd" name="dateto"> 
+        <!-- <mat-form-field>
+          <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "Choose a date">
+          <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+       </mat-form-field> -->
      
+
         <button class="serch-btn" (click)="postoffer()">Search</button>
-    </div> -->
+        </form>
+    </div>
         <table>
             <thead>
                 <tr>
@@ -74,7 +87,7 @@
                           <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
                         </li>
                         <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                          <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details" class="btn bd-color" type="Next">
+                          <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details" class="btn btn-fill  " type="Next">
                             <i class="fa fa-angle-right top-set"></i>
                           </a>
                         </li>

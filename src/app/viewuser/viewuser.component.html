@@ -1,40 +1,22 @@
 <div class="view">
     <div class="table-box">
         <div class="date-bar">
-            <form [formGroup]="date">
+            <form [formGroup]="date" class="date-picker">
             <!-- <label>From Date:</label>
                   <input type="text" [(ngModel)]="model.datefrom" placeholder="yyyy-mm-dd" name="datefrom"> -->
                   <mat-form-field>
-                    <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "Choose a date">
+                    <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
                     <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                  </mat-form-field>
             <!-- <label>To Date:</label>
             <input type="text" [(ngModel)]="model.dateto" placeholder="yyyy-mm-dd" name="dateto"> -->
             <mat-form-field>
-              <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "Choose a date">
+              <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
               <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
               <mat-datepicker #picker1></mat-datepicker>
            </mat-form-field>
          
-
-            <mat-form-field>
-              <mat-label>From Date:</mat-label>
-              <mat-select>
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                  {{food.viewValue}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-
-            <mat-form-field>
-              <mat-label>To Date:</mat-label>
-              <mat-select>
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                  {{food.viewValue}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
 
             <button class="serch-btn" (click)="postoffer()">Search</button>
             </form>
@@ -142,7 +124,7 @@
                       <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
                     </li> -->
                     <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                      <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details" class="btn bd-color" type="Next">
+                      <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details" class="btn btn-fill" type="Next">
                         <i class="fa fa-angle-right top-set"></i>
                       </a>
                     </li>
