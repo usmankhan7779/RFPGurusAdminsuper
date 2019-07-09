@@ -68,18 +68,17 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <input matInput placeholder="Package Type" value="{{package}}">
                         
                             <input matInput placeholder="Package Price"  [(ngModel)]="price" value="{{price}}" [ngModelOptions]="{standalone: true}">   
-                            <button type="submit"  
-                            (click)="activeClick(price)"
-                            >Deactive</button>
+                           
                     </form>
         </div>
         <div class="modal-footer text-center"> 
           
                
-                <a routerLink="/pricing"> <button title="Subscribe Now" type="button"
-                    class="btn btn-fill" data-dismiss="modal">Cencel</button> </a>
-                <a routerLink="/pricing"> <button title="Subscribe Now" type="button"
-                    class="btn btn-fill" data-dismiss="modal">Update</button> </a>
+                 
+                     <button title="Subscribe Now" type="button"
+                    class="btn btn-fill" data-dismiss="modal">Cancel</button>  
+                 <button title="Subscribe Now" type="button" (click)="activeClick(price)"
+                    class="btn btn-fill" data-dismiss="modal">Update</button> 
 
                      
         </div>
