@@ -1,23 +1,44 @@
 <div class="view">
     <div class="table-box">
-  
-        <table>
-            <thead>
-                <tr>
-                    <th>User Name</th>
-                
-                    <th>First Name</th>
-               
-                    <th>Last Name</th>
-                
-                    <th>Email</th>
-                    <th>Date</th>
-                    <th>Action</th>
+        <div class="date-bar">
+            <form [formGroup]="date" class="date-picker">
+            <!-- <label>From Date:</label>
+                  <input type="text" [(ngModel)]="model.datefrom" placeholder="yyyy-mm-dd" name="datefrom"> -->
+                  <mat-form-field>
+                    <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
+                    <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                 </mat-form-field>
+            <!-- <label>To Date:</label>
+            <input type="text" [(ngModel)]="model.dateto" placeholder="yyyy-mm-dd" name="dateto"> -->
+            <mat-form-field>
+              <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
+              <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+           </mat-form-field>
+         
+
+            <button class="serch-btn" (click)="postoffer()">Search</button>
+            </form>
+        </div>
+
+        <div class="table-responsive">
+          <table>
+              <thead>
+                  <tr>
+                      <th>User Name</th>
                   
+                      <th>First Name</th>
+                
+                      <th>Last Name</th>
+                      <th>Email</th>
+                      <th>Date</th>
+                      <th>Action</th>
+
                 </tr>
             </thead>
             <tbody>
-                <tr  *ngFor="let item of personal">
+                <tr  *ngFor="let item of personal?.results">
                     <td>{{item.username}}</td>
                     <td>{{item.first_name}}</td>
                     <td>{{item.last_name}}</td>
@@ -34,5 +55,108 @@
           
         </table>  
         
+
+                      
+                    
+                  
+            
+    
+        </div>  
+          <!-- <div class="pagination-nav">
+
+                <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
+                    <li [ngClass]="{hide:pager.currentPage === 1}">
+                        <a   (click)="viewuser(1)" class="view-1s" class="btn btn-fill">
+                            <i class="fa fa-angle-double-left"></i>
+                        </a>
+                    </li>
+                    <li [ngClass]="{hide:pager.currentPage === 1}">
+                        <a   (click)="viewuser(pager.currentPage - 1)" class="view-1s" class="btn btn-fill">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    </li>
+                     
+                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                        <a  (click)="viewuser(page)" class="view-plan-details">{{page | number}}</a>
+                    </li>
+
+                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"
+                        *ngIf="(pager.startPage  + 3) <= pager.totalPages">
+                        <a   (click)="viewuser(pager.currentPage + 3)">...</a>
+                    </li>
+                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>Of</a></li>
+                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                        <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
+                                    | number}}</a>
+                    </li>
+                    <li *ngIf="pager.currentPage === pager.totalPages"> <a>Of</a></li>
+                    <li *ngIf="pager.currentPage === pager.totalPages">
+                        <a    (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
+                                    | number}}</a>
+                    </li>
+                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                        <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details"
+                            class="btn btn-fill" type="Next">
+                            <i class="fa fa-angle-right top-set"></i>
+                        </a>
+                    </li>
+                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                        <a   (click)="viewuser(pager.totalPages)" class="view-plan-details"
+                            class="btn btn-fill" type="Next">
+                            <i class="fa fa-angle-double-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>  -->
+            <div class="pagination-nav">   
+            <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
+
+
+                    <li [ngClass]="{hide:pager.currentPage === 1}">
+                      <a (click)="viewuser(pager.currentPage - 1)" class="view-1s" class="btn btn-fill">
+                        <i class="fa fa-angle-left"></i>
+                      </a>
+                    </li>
+                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                      <a   (click)="viewuser(page)" class="view-plan-details">{{page}}</a>
+                    </li>
+  
+                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}" *ngIf="(pager.startPage  + 3) <= pager.totalPages">
+                      <a   (click)="viewuser(pager.currentPage + 3)">...</a>
+                    </li>
+                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>OF</a></li>
+                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                      <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
+                    </li>
+                    <!-- <li *ngIf="pager.currentPage === pager.totalPages"> <a>OF</a></li>
+                    <li *ngIf="pager.currentPage === pager.totalPages">
+                      <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
+                    </li> -->
+                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                      <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details" class="btn btn-fill" type="Next">
+                        <i class="fa fa-angle-right top-set"></i>
+                      </a>
+                    </li>
+  
+                  </ul>
+                  </div>
+                  <!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                        <li [ngClass]="{hide:pager.currentPage === 1}">
+                          <a (click)=" viewuser(1)" class="btn btn-fill">First</a>
+                        </li>
+                        <li [ngClass]="{hide:pager.currentPage === 1}">
+                          <a (click)=" viewuser(pager.currentPage - 1)" class="btn btn-fill">Previous</a>
+                        </li>
+                        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                          <a (click)=" viewuser(page)" class="btn btn-fill">{{page}}</a>
+                        </li>
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                          <a (click)=" viewuser(pager.currentPage + 1)" class="btn btn-fill" type="Next">Next</a>
+                        </li>
+                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                          <a (click)=" viewuser(pager.totalPages)" class="btn btn-fill" type="Last">Last</a>
+                        </li>
+                      </ul> -->
+ 
     </div>
 </div>

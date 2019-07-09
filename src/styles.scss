@@ -18,6 +18,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .swal2-title{
     font-size: 20px !important;
 }
+.btn-fill{
+    background: #000;
+    color: #fff;
+    padding: 4px 15px;
+    border-radius: 30px;
+    border: none;
+}
+.btn-fill:hover{
+    background: #c00;
+    color: #fff;
+}
 ////////////////////////////Start pagination//////////////////////////////
 .pagination-nav{
     display: flex;
@@ -134,12 +145,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: none;
 }
 // End Side Bar
+.table-responsive {
+    overflow-x: scroll;
+}
+
+
+
 @media (min-width:992px) {
     .sidebar-outlet{
-        display: block;
+        display: block !important;
     } 
 }
 @media (max-width:991px) {
+    .table-box{
+        padding: 0 15px;
+    }
     .view{
         padding: 0;
     }
@@ -176,6 +196,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     } 
 }
 @media (max-width:660px) {
+    .date-picker .mat-form-field {
+        width: 32% !important;
+    }
     .box{
         margin-bottom: 10px;
     }

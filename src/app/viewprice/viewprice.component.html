@@ -59,15 +59,26 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="on-load-popup">
             <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
                     aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
-             
-             <img src="../../../../assets/img/Independance-Day-Sale-Banner.png">
-            
+
+                    <form class="popup-form">
+                    
+                            <input matInput placeholder="Duration">
+                        
+                        
+                            <input matInput placeholder="Package Type">
+                        
+                            <input matInput placeholder="Package Price">    
+                    </form>
         </div>
-        <div class="modal-footer"> 
+        <div class="modal-footer text-center"> 
           
-                     <a routerLink="/pricing"> <button title="Subscribe Now" type="button"
-                    class="btn btn-primary btn-must-signup Sub-btn" data-dismiss="modal">Subscribe
-                    Now</button> </a>
+               
+                <a routerLink="/pricing"> <button title="Subscribe Now" type="button"
+                    class="btn btn-fill" data-dismiss="modal">Cencel</button> </a>
+                <a routerLink="/pricing"> <button title="Subscribe Now" type="button"
+                    class="btn btn-fill" data-dismiss="modal">Update</button> </a>
+
+                     
         </div>
                     <!-- <countdown class="benner-conter mainpagee"  [text]="text" units=" Days | Hours | Minutes | Seconds" end="July 08, 2019 18:40:00"> </countdown> -->
 
