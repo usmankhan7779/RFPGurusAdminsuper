@@ -19,6 +19,11 @@ export class userService {
     headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/userDetailandfilter/'+ '?page=' + page,{headers:headers});
     }
+    hamzasaeed() {
+    //     let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+    // headers.append('Content-Type', 'application/json');
+        return this.http.get('http://192.168.29.223:7000/payment/testreq/');
+    }
     get_user_payment(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
     headers.append('Content-Type', 'application/json');
@@ -57,6 +62,12 @@ export class userService {
     headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/singleuserdetail/'+id+'/',{headers:headers});
     }
+    get_price_payment() {
+        let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+    headers.append('Content-Type', 'application/json');
+        return this._https.get('https://apis.rfpgurus.com/super/pakagepriceset/',{headers:headers});
+    }
+    // https://apis.rfpgurus.com/super/pakagepriceset/
     // https://apis.rfpgurus.com/super/trialsubscriptionuser/
     // http://192.168.29.223:8000/super/alltikketadmin/
 }

@@ -49,6 +49,7 @@ import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { ViewsignaluserComponent } from './viewsignaluser/viewsignaluser.component';
 import { ViewSubscribeUserComponent } from './view-subscribe-user/view-subscribe-user.component';
 import { ViewTicketReceiveComponent } from './view-ticket-receive/view-ticket-receive.component';
+import { ViewpriceComponent } from './viewprice/viewprice.component';
 
 
  
