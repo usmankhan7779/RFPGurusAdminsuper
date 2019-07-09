@@ -1,5 +1,5 @@
 <div class="view">
-        <div class="table-box">
+        <!-- <div class="table-box">
             
             <table>
                 <thead>
@@ -22,8 +22,6 @@
                         <td><img src="{{personal?.yearly_plan}}"></td>
                       
                        
-                       
-                        <!-- <td>{{item.date_joined | date}}</td> -->
                         <td class="text-center">
                             
                             <button class="detail-btn" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price)">
@@ -37,6 +35,60 @@
               
             </table>  
               
+        </div> -->
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="header">
+                        <h2>Free Trial</h2>
+                    </div>
+                    <div class="body">
+                        <div class="img">
+                            <img src="{{personal?.free_trial}}"> 
+                        </div>
+                    </div>
+                    <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price)">
+                                
+                            Update</button>
+                </div>
+            </div>
+
+            
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="header">
+                        <h2>Monthly Trial</h2>
+                    </div>
+                    <div class="body">
+                        <div class="img">
+                            <img src="{{personal?.monthly_plan}}"> 
+                        </div>
+                    </div>
+                    <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price)">
+                                
+                            Update</button>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="header">
+                        <h2>Yealy Trial</h2>
+                    </div>
+                    <div class="body">
+                        <div class="img">
+                            <img src="{{personal?.yearly_plan}}"> 
+                        </div>
+                    </div>
+                    <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price)">
+                                
+                            Update</button>
+                </div>
+            </div>
         </div>
+        
+
     </div>
      
