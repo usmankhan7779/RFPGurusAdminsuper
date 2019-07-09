@@ -35,7 +35,7 @@
                     <!-- <td>{{item.date_joined | date}}</td> -->
                     <td class="text-center">
                         
-                        <button class="detail-btn" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price)">
+                        <button class="detail-btn" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price,item.id)">
                             
                             Detail</button>
 
@@ -62,12 +62,15 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
                     <form class="popup-form">
                     
-                            <input matInput placeholder="Duration">
+                            <input matInput placeholder="Duration" value={{duration}}>
                         
                         
-                            <input matInput placeholder="Package Type">
+                            <input matInput placeholder="Package Type" value="{{package}}">
                         
-                            <input matInput placeholder="Package Price">    
+                            <input matInput placeholder="Package Price"  [(ngModel)]="price" value="{{price}}" [ngModelOptions]="{standalone: true}">   
+                            <button type="submit"  
+                            (click)="activeClick(price)"
+                            >Deactive</button>
                     </form>
         </div>
         <div class="modal-footer text-center"> 
