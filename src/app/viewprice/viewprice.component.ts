@@ -96,7 +96,7 @@ console.log(val1,val2,val3)
         })
 
         this.viewuser();
-    }, error => {
-    });
+    }
+    );
 }
 }

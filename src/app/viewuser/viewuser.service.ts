@@ -46,17 +46,36 @@ export class userService {
             }),{headers:headers})
           }
         }
-        postprice(id,price) {
-            if (localStorage.getItem('currentUser')) {
-              const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
-              headers.append('Content-Type', 'application/json');
-              return this._https.put('https://apis.rfpgurus.com/super/pakagepricesetupdate/'+id,
-                JSON.stringify({
-                  prcie:price
+        // postprice(id,price) {
+        //     // if (localStorage.getItem('currentUser')) {
+        //       const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+        //       headers.append('Content-Type', 'application/json');
+        //       return this._https.put('https://apis.rfpgurus.com/super/pakagepricesetupdate/'+id,
+        //         JSON.stringify({
+                 
       
-                }),{headers:headers})
-              }
-            }
+        //         }),{headers:headers}).map((response: Response) => response.json());
+        //       }
+        //     // }
+
+        postprice(id,price) {
+                //mydate,updateddate,id,updatedtitle,updatedprofileurl,upactive,updatedprofile_logo,updatedrating_logo,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedcancelation_fee,updatedfact_sheet,updatedterms_of_service,updatedphone,updatedsign_up,updatedproduct_name,updatedterms_month,updatedrenewable,updatedrate_type,updatedcustomer_type
+                console.log(" service object",id,price)
+                // const headers = new Headers();
+                const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+                      headers.append('Content-Type', 'application/json');
+            
+                return this._https.put('http://192.168.18.40:8000/super/pakagepricesetupdate/'+ id +'/', JSON.stringify({
+               
+                    "price":price
+                  // "check":false,
+                  
+                }), 
+                {headers: headers}).map((response: Response) => response.json());
+                }
+
+
+
     get_user_subscriber(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
     headers.append('Content-Type', 'application/json');
