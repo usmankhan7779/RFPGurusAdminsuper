@@ -11,7 +11,7 @@ import {  ViewsubscriberuserRoutes } from './viewsubscribeuser.routing';
 import { userService } from '../viewuser/viewuser.service';
 import { ViewSubscribeUserComponent } from './view-subscribe-user.component';
 
- 
+import { MaterialModule } from '../app.module';
  
 
  
@@ -24,6 +24,7 @@ import { ViewSubscribeUserComponent } from './view-subscribe-user.component';
         ReactiveFormsModule,
         HttpClientModule,
         HttpModule,
+        MaterialModule
        
       
       

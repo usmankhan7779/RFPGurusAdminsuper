@@ -8,6 +8,7 @@ import {  HttpClientModule } from '@angular/common/http';
 import { PagerService } from '../servicefile/paginator.service';
  
  
+import { MaterialModule } from '../app.module';
 import { userService } from '../viewuser/viewuser.service';
 import { ViewticketrecRoutes } from './viewticketuser.routing';
 import { ViewTicketReceiveComponent } from './view-ticket-receive.component';
@@ -26,6 +27,7 @@ import { ViewTicketReceiveComponent } from './view-ticket-receive.component';
         ReactiveFormsModule,
         HttpClientModule,
         HttpModule,
+        MaterialModule
        
       
       

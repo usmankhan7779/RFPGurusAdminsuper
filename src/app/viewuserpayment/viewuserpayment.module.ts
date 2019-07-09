@@ -15,7 +15,7 @@ import { userService } from '../viewuser/viewuser.service';
 // import { ConsumerDashboardRoutes } from './viewuser.routing';
  
  
-
+import { MaterialModule } from '../app.module';
  
  
 @NgModule({
@@ -26,6 +26,7 @@ import { userService } from '../viewuser/viewuser.service';
         ReactiveFormsModule,
         HttpClientModule,
         HttpModule,
+        MaterialModule
        
       
       

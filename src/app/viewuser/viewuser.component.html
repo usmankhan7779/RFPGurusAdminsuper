@@ -21,38 +21,41 @@
             <button class="serch-btn" (click)="postoffer()">Search</button>
             </form>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>User Name</th>
-                
-                    <th>First Name</th>
-               
-                    <th>Last Name</th>
-                
-                    <th>Email</th>
-                    <th>Date</th>
-                    <th>Action</th>
+
+        <div class="table-responsive">
+          <table>
+              <thead>
+                  <tr>
+                      <th>User Name</th>
                   
-                </tr>
-            </thead>
-            <tbody>
-                <tr  *ngFor="let item of personal?.results">
-                    <td>{{item.username}}</td>
-                    <td>{{item.first_name}}</td>
-                    <td>{{item.last_name}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.date_joined | date}}</td>
-                    <td class="text-center">
-                        <a [routerLink]="['/viewsingleuser']"
-                        [queryParams]="{ ProID:item.id}">
-                        <button class="detail-btn">Detail</button>
-                      </a>
-                    </td>
-                </tr>
-            </tbody>
-          
-        </table>  
+                      <th>First Name</th>
+                
+                      <th>Last Name</th>
+                  
+                      <th>Email</th>
+                      <th>Date</th>
+                      <th>Action</th>
+                    
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr  *ngFor="let item of personal?.results">
+                      <td>{{item.username}}</td>
+                      <td>{{item.first_name}}</td>
+                      <td>{{item.last_name}}</td>
+                      <td>{{item.email}}</td>
+                      <td>{{item.date_joined | date}}</td>
+                      <td class="text-center">
+                          <a [routerLink]="['/viewsingleuser']"
+                          [queryParams]="{ ProID:item.id}">
+                          <button class="detail-btn">Detail</button>
+                        </a>
+                      </td>
+                  </tr>
+              </tbody>
+            
+          </table>
+        </div>  
           <!-- <div class="pagination-nav">
 
                 <ul class="pagination" *ngIf="pager.pages && pager.pages.length">

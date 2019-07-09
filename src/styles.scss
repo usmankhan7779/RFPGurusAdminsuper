@@ -134,12 +134,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: none;
 }
 // End Side Bar
+.table-responsive {
+    overflow-x: scroll;
+}
+
+
+
 @media (min-width:992px) {
     .sidebar-outlet{
-        display: block;
+        display: block !important;
     } 
 }
 @media (max-width:991px) {
+    .table-box{
+        padding: 0 15px;
+    }
     .view{
         padding: 0;
     }
@@ -176,6 +185,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     } 
 }
 @media (max-width:660px) {
+    .date-picker .mat-form-field {
+        width: 32% !important;
+    }
     .box{
         margin-bottom: 10px;
     }
