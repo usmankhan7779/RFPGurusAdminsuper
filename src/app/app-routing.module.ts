@@ -28,8 +28,9 @@ const routes: Routes = [
         { path: 'viewsubscribeuser', loadChildren: './view-subscribe-user/viewsubscribeuser.module#ViewsubscribeUserModule' },
         { path: 'viewticket', loadChildren: './view-ticket-receive/viewticketuser.module#ViewticketUserModule' },
         { path: 'viewprice', loadChildren: './viewprice/viewprice.module#ViewpriceModule' },
+        { path: 'viewimage', loadChildren: './viewimage/viewimage.module#ViewimageModule' },
         
-
+        
 
         
         

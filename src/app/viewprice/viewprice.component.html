@@ -34,12 +34,12 @@
                    
                     <!-- <td>{{item.date_joined | date}}</td> -->
                     <td class="text-center">
-                        <a >
-                        <button class="detail-btn" data-toggle="modal" data-target="#exampleModalCenter">
+                        
+                        <button class="detail-btn" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price)">
                             
                             Detail</button>
 
-                      </a>
+                      
                     </td>
                 </tr>
             </tbody>

@@ -67,7 +67,10 @@ export class userService {
     headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/pakagepriceset/',{headers:headers});
     }
-    // https://apis.rfpgurus.com/super/pakagepriceset/
-    // https://apis.rfpgurus.com/super/trialsubscriptionuser/
-    // http://192.168.29.223:8000/super/alltikketadmin/
+    get_price_img() {
+        let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+    headers.append('Content-Type', 'application/json');
+        return this._https.get('https://apis.rfpgurus.com/super/pricing_images/',{headers:headers});
+    }
+  
 }

@@ -50,6 +50,7 @@ import { ViewsignaluserComponent } from './viewsignaluser/viewsignaluser.compone
 import { ViewSubscribeUserComponent } from './view-subscribe-user/view-subscribe-user.component';
 import { ViewTicketReceiveComponent } from './view-ticket-receive/view-ticket-receive.component';
 import { ViewpriceComponent } from './viewprice/viewprice.component';
+import { ViewimageComponent } from './viewimage/viewimage.component';
 
 
  
