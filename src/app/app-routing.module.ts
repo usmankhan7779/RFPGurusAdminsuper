@@ -27,6 +27,8 @@ const routes: Routes = [
         { path: 'viewsingleuser', loadChildren: './viewsignaluser/viewsignaluser.module#ViewUserSingleModule' },
         { path: 'viewsubscribeuser', loadChildren: './view-subscribe-user/viewsubscribeuser.module#ViewsubscribeUserModule' },
         { path: 'viewticket', loadChildren: './view-ticket-receive/viewticketuser.module#ViewticketUserModule' },
+        { path: 'viewprice', loadChildren: './viewprice/viewprice.module#ViewpriceModule' },
+        
 
 
         
