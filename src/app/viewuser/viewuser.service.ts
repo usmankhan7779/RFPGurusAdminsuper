@@ -46,7 +46,17 @@ export class userService {
             }),{headers:headers})
           }
         }
-    
+        postprice(id,price) {
+            if (localStorage.getItem('currentUser')) {
+              const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+              headers.append('Content-Type', 'application/json');
+              return this._https.put('https://apis.rfpgurus.com/super/pakagepricesetupdate/'+id,
+                JSON.stringify({
+                  prcie:price
+      
+                }),{headers:headers})
+              }
+            }
     get_user_subscriber(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
     headers.append('Content-Type', 'application/json');
