@@ -41,3 +41,22 @@
 .table-box table .detail-btn:hover{
     background: #C00;
 }
+.popup-form{
+    width: 100%;
+    padding: 10px;
+}
+.popup-form input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 2px 10px;
+    margin-bottom: 5px;
+}
+.modal-footer{
+    justify-content: center;
+    padding: 7px;
+}
+.close{
+    font-size: 30px;
+    margin-right: 8px;
+}

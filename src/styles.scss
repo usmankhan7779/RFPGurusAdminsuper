@@ -18,6 +18,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .swal2-title{
     font-size: 20px !important;
 }
+.btn-fill{
+    background: #000;
+    color: #fff;
+    padding: 4px 15px;
+    border-radius: 30px;
+    border: none;
+}
+.btn-fill:hover{
+    background: #c00;
+    color: #fff;
+}
 ////////////////////////////Start pagination//////////////////////////////
 .pagination-nav{
     display: flex;
