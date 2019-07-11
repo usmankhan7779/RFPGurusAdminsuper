@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CommonComponent } from './layouts/common/common.component';
+import { AuthGuard } from './AuthGuards/auth.guard';
 import { SidebarViewComponent } from './layouts/sidebar-view/sidebar-view.component';
 
 const routes: Routes = [
@@ -21,14 +22,14 @@ const routes: Routes = [
     path: '',
     component: SidebarViewComponent,
     children: [
-        { path: 'dashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule' },
-        { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule' },
-        { path: 'viewuserpay', loadChildren: './viewuserpayment/viewuserpayment.module#ViewUPModule' },
-        { path: 'viewsingleuser', loadChildren: './viewsignaluser/viewsignaluser.module#ViewUserSingleModule' },
-        { path: 'viewsubscribeuser', loadChildren: './view-subscribe-user/viewsubscribeuser.module#ViewsubscribeUserModule' },
-        { path: 'viewticket', loadChildren: './view-ticket-receive/viewticketuser.module#ViewticketUserModule' },
-        { path: 'viewprice', loadChildren: './viewprice/viewprice.module#ViewpriceModule' },
-        { path: 'viewimage', loadChildren: './viewimage/viewimage.module#ViewimageModule' },
+        { path: 'dashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule',canActivate: [AuthGuard] },
+        { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule',canActivate: [AuthGuard] },
+        { path: 'viewuserpay', loadChildren: './viewuserpayment/viewuserpayment.module#ViewUPModule',canActivate: [AuthGuard]  },
+        { path: 'viewsingleuser', loadChildren: './viewsignaluser/viewsignaluser.module#ViewUserSingleModule',canActivate: [AuthGuard]  },
+        { path: 'viewsubscribeuser', loadChildren: './view-subscribe-user/viewsubscribeuser.module#ViewsubscribeUserModule',canActivate: [AuthGuard]  },
+        { path: 'viewticket', loadChildren: './view-ticket-receive/viewticketuser.module#ViewticketUserModule',canActivate: [AuthGuard]  },
+        { path: 'viewprice', loadChildren: './viewprice/viewprice.module#ViewpriceModule',canActivate: [AuthGuard]  },
+        { path: 'viewimage', loadChildren: './viewimage/viewimage.module#ViewimageModule',canActivate: [AuthGuard]  },
         
         
 

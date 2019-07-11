@@ -13,11 +13,10 @@ import { userService } from '../viewuser/viewuser.service';
 })
 export class ViewimageComponent implements OnInit {
   personal :any;
-  pager: any = {};
-  pageSize = '10';
-  pagers;
-  pagersss;
-  date;
+
+  item;
+  
+  veiwvalue
   constructor(private _nav: Router, private _serv: userService,private pagerService: PagerService  ) { }
   ngOnInit() {
     this.viewuser()
