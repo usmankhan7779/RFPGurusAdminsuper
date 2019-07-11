@@ -91,7 +91,7 @@ console.log(val1,val2,val3)
         Swal.fire({
             type: 'success',
             title: 'Successfully updated',
-            showConfirmButton: false,
+            showConfirmButton: true,
             timer: 1500
         })
 

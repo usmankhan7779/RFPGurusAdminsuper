@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   isequal;
+  hide;
   login: FormGroup;
+  foremail;
   isFieldValid(form: FormGroup, field: string) {
     return !form.get(field).valid && form.get(field).touched;
   }
@@ -35,6 +37,7 @@ export class HomeComponent implements OnInit {
     // this.adminrole();
   }
   user;
+  status;
   onLogin() {
    
       this.isequal = true;
@@ -44,17 +47,24 @@ export class HomeComponent implements OnInit {
               
               console.log(datasss['token'])
               this.home.checkrole().subscribe(data => {
-                console.log(data['status'])
-                if(data['status'] = 200){
+                console.log(data.json())
+                this.status= data.json()['msg']
+                console.log(this.status)
+                // status: false
+                // alert(this.status)
+                if(this.status == "Super User" ){
+                  // alert(this.status)
+                  this._nav.navigate(['/dashboard'])
                   swal.fire({
                     type: 'success',
                     title: 'You have successfully logged into RFPGurus',
                     showConfirmButton: false,
                     timer: 1500, width: '512px',
                   });
-                  this._nav.navigate(['dashboard'])
-                }else if (data['status'] = 400)
+                  
+                }else if (this.status == "You are Not Super Admin Userr")
                 {
+                  // alert(this.status)
                   swal.fire({
                     type: 'error',
                     title: 'Your Username and Password Does not match! Please Try again ',
@@ -67,49 +77,8 @@ export class HomeComponent implements OnInit {
                 
           });
               
-            },
-           
-        
-        error => {
-          if (error.status == 400) {
-            swal.fire(
-              'Error',
-              'You are not super admin',
-              'error'
-            )
-          }
-          else if (error.status == 500) {
-            // this.captcha.resetImg();
-            swal.fire(
-              'Error',
-              'User does not exist',
-              'error'
-            )
-          }
-        }
+            }
       );
-      // this.adminrole();
+     
     }
-  //   adminrole() {
-  //     this.home.checkrole().subscribe(data => {
-       
-  //       console.log(this.token)
-  //       this.token = data;
-  //       console.log(this.token);
-  //       // console.log(this.getwtachid.wish_id)
-  
-  // });
-  //   }
-    
-  }
-  // validateAllFormFields(formGroup: FormGroup) {
-  //   Object.keys(formGroup.controls).forEach(field => {
-  //     const control = formGroup.get(field);
-  //     if (control instanceof FormControl) {
-  //       control.markAsTouched({ onlySelf: true });
-  //     } else if (control instanceof FormGroup) {
-  //       this.validateAllFormFields(control);
-  //     }
-  //   });
-  // }
-
+}

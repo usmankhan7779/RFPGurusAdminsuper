@@ -51,6 +51,7 @@ import { ViewSubscribeUserComponent } from './view-subscribe-user/view-subscribe
 import { ViewTicketReceiveComponent } from './view-ticket-receive/view-ticket-receive.component';
 import { ViewpriceComponent } from './viewprice/viewprice.component';
 import { ViewimageComponent } from './viewimage/viewimage.component';
+import { AuthGuard } from './AuthGuards/auth.guard';
 
 
  
@@ -121,7 +122,7 @@ export class MaterialModule { }
     BrowserTransferStateModule,
     BrowserAnimationsModule,
   ],
-  providers: [HomeService],
+  providers: [HomeService, AuthGuard],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
