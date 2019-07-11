@@ -48,7 +48,7 @@
           
     </div>
 </div>
-<button id="openModal " type="button" #openModal [hidden]="true" class="btn btn-primary modal-hide"
+<button id="openModal" type="button" #openModal [hidden]="true" class="btn btn-primary modal-hide"
 data-toggle="modal" data-target="#exampleModalCenter">
 </button>
 <div  class="modal fade login-or-signup" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -68,7 +68,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <input matInput placeholder="Package Type" value="{{package}}">
                         
                             <input matInput placeholder="Package Price"  [(ngModel)]="price" value="{{price}}" [ngModelOptions]="{standalone: true}">   
-                            <button type="submit"  
+                            <button type="submit" class="btn btn-fill" 
                             (click)="activeClick(price)"
                             >Deactive</button>
                     </form>
