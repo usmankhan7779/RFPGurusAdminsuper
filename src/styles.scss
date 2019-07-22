@@ -127,6 +127,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .date-picker .mat-form-field-appearance-legacy .mat-form-field-wrapper {
     padding-bottom: 0;
 }
+
+.date-picker .mat-form-field-appearance-legacy .mat-form-field-label{
+    font-weight: bold;
+}
+.date-picker input.mat-input-element {
+    font-size: 20px;
+    font-weight: bold;
+}
 /////////////////////////////End Form/////////////////////////////////////
 
 

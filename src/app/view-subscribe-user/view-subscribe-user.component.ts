@@ -11,6 +11,9 @@ import * as moment from 'moment';
   templateUrl: './view-subscribe-user.component.html',
   styleUrls: ['./view-subscribe-user.component.scss']
 })
+
+
+
 export class ViewSubscribeUserComponent implements OnInit {
 // personal: any ;
 personal :any;
