@@ -9,12 +9,12 @@
     border-radius: 5px;
     padding: 10px 10px;
     display: block;
-    min-height: 117px;
+    min-height: 90px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
 }
-.box i{
-    color: #3f51b5;
-    font-size: 60px;
-    margin-bottom: 10px;
+.box:hover{
+    transform: scale(1.05);
 }
 .box h3{
     font-size: 38px;
@@ -22,8 +22,8 @@
     margin: 0;
 }
 .box .icon{
-    width: 100px;
-    height: 100px;
+    width: 59px;
+    height: 59px;
     border-radius: 100px;
     border: 1px solid #ccc;
     display: flex;
@@ -31,7 +31,13 @@
     align-items: center;
     margin-right: 7px;
     float: left;
+    transition: 1s;
+}
+.box .icon img{
+    width: 60%;
+    transition: 1s;
 }
 .box p{
     margin: 0;
+    line-height: 17px;
 }
