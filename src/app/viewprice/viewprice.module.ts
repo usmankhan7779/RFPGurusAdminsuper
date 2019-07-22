@@ -14,7 +14,7 @@ import { ViewpriceComponent } from './viewprice.component';
  
  
 
- 
+import { MaterialModule } from '../app.module';
 
  
 @NgModule({
@@ -25,7 +25,7 @@ import { ViewpriceComponent } from './viewprice.component';
         ReactiveFormsModule,
         HttpClientModule,
         HttpModule,
-       
+        MaterialModule
       
       
     ],
