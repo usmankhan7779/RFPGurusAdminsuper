@@ -21,6 +21,7 @@ pager: any = {};
 pageSize = '10';
 pagers;
 date;
+selected;
 constructor(private _nav: Router,private formbuilders : FormBuilder, private _serv: userService,private pagerService: PagerService  ) { }
 
 ngOnInit() {  

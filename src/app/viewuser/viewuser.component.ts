@@ -56,9 +56,9 @@ export class ViewuserComponent implements OnInit {
   data => {
 
     console.log(data)
-    this.postpage = data.json()
+    this.personal = data.json()
     console.log(this.postpage)
-    this.pager = this.pagerService.getPager(this.postpage['totalItems'], page, 10);
+    this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
   })
   }
 }

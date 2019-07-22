@@ -16,7 +16,7 @@
                 </form> -->
     
                 <div class="admin-home-palceholder">
-                    <span>Total Records: 13</span>
+                    <span>Total Records: {{personal?.totalItems}}</span>
                     <div class="icons">
                        <button class="refrash">
                           <i class="fa fa-refresh"></i>
@@ -126,18 +126,18 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
        <form>
         <div class="date-bar">
-            <form  class="date-picker">
-                <mat-form-field>
-                        <input matInput [matDatepicker] = "picker"   placeholder = "From Date">
-                        <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                     </mat-form-field>
-                <mat-form-field>
-                  <input matInput [matDatepicker] = "picker1"  placeholder = "To Date">
-                  <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
-                  <mat-datepicker #picker1></mat-datepicker>
-               </mat-form-field>
-             
+          <form [formGroup]="date" class="date-picker">
+            <mat-form-field>
+                    <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
+                    <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                 </mat-form-field>
+            <mat-form-field>
+              <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
+              <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+           </mat-form-field>
+         
                <mat-form-field class="example-full-width">
                 <input matInput placeholder="First Name">
               </mat-form-field>
@@ -152,7 +152,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
                 <mat-form-field>
                     <mat-label>Subscription</mat-label>
-                    <mat-select [(value)]="selected">
+                    <mat-select >
                       <mat-option>None</mat-option>
                       <mat-option value="option2">Active</mat-option>
                       <mat-option value="option3">Expire</mat-option>
@@ -168,7 +168,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <a > <button title="Subscribe Now" type="button"
                     class="btn btn-fill" data-dismiss="modal">Cencel</button> </a>
                 <a > <button title="Subscribe Now" type="button"
-                    class="btn btn-fill" data-dismiss="modal"  (click)="onSubmityear()">Search</button> </a>
+                    class="btn btn-fill" data-dismiss="modal"  (click)="postoffer2(1)" data-dismiss="modal">Search</button> </a>
 
                      
         </div>

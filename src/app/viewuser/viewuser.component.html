@@ -16,14 +16,14 @@
             </form> -->
 
             <div class="admin-home-palceholder">
-                <span>Total Records: 13</span>
+                <span>Total Records: {{personal?.totalItems}}</span>
                 <div class="icons">
                    <button class="refrash">
                       <i class="fa fa-refresh"></i>
                    </button> 
                   
             
-                   <button data-toggle="modal" data-target="#exampleModalCenter2" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price,item.id)">
+                   <button data-toggle="modal" data-target="#exampleModalCenter2" >
                                         
                       <i class="fa fa-search"></i></button>
             
@@ -77,7 +77,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           
                
                  
-            <button class="btn btn-fill" (click)="postoffer(1)">Search</button>
+            <button class="btn btn-fill" (click)="postoffer(1)" data-dismiss="modal">Search</button>
 
                     
                      

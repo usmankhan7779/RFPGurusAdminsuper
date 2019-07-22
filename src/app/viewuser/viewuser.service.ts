@@ -34,18 +34,42 @@ export class userService {
     headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/maindashboard/',{headers:headers});
     }
-    postdate(datefrom, dateto) {
-        if (localStorage.getItem('currentUser')) {
-          const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
-          headers.append('Content-Type', 'application/json');
-          return this._https.post('https://apis.rfpgurus.com/super/userDetailandfilter/',
-            JSON.stringify({
-              datefrom: datefrom,
-              dateto : dateto
-  
-            }),{headers:headers})
-          }
+postdate(datefrom, dateto) {
+    if (localStorage.getItem('currentUser')) {
+        const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+        headers.append('Content-Type', 'application/json');
+        return this._https.post('https://apis.rfpgurus.com/super/userDetailandfilter/',
+        JSON.stringify({
+            datefrom: datefrom,
+            dateto : dateto
+
+        }),{headers:headers})
         }
+    }
+postdatepayment(datefrom, dateto,page) {
+    if (localStorage.getItem('currentUser')) {
+        const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+        headers.append('Content-Type', 'application/json');
+        return this._https.post('https://apis.rfpgurus.com/super/paymentDetailandfilter/' + '?page =' +page,
+        JSON.stringify({
+            datefrom: datefrom,
+            dateto : dateto
+
+        }),{headers:headers})
+        }
+    }
+postdate2(datefrom, dateto, page) {
+    if (localStorage.getItem('currentUser')) {
+        const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+        headers.append('Content-Type', 'application/json');
+        return this._https.post('https://apis.rfpgurus.com/super/alltikketadmin/' + '?page =' +page,
+        JSON.stringify({
+            datefrom: datefrom,
+            dateto : dateto
+
+        }),{headers:headers})
+        }
+    }
         // postprice(id,price) {
         //     // if (localStorage.getItem('currentUser')) {
         //       const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });

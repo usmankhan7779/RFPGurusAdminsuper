@@ -14,7 +14,7 @@
             <a class="nav-link" href="#" *ngIf="!check_login()">Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" *ngIf="!check_login()">Welcome to RFPGurus Protel</a>
+            <a class="nav-link" href="#" *ngIf="check_login()" routerLink="/dashboard">Welcome to RFPGurus Protel</a>
           </li>
         </ul>
       </div>

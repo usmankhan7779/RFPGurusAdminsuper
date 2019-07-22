@@ -16,7 +16,7 @@
         </form> -->
 
         <div class="admin-home-palceholder">
-            <span>Total Records: 13</span>
+            <span>Total Records: {{personal?.totalItems}}</span>
             <div class="icons">
 
               <label>Sort by</label>
@@ -32,7 +32,7 @@
                </button> 
               
         
-               <button data-toggle="modal" data-target="#exampleModalCenter2" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price,item.id)">
+               <button data-toggle="modal" data-target="#exampleModalCenter2" >
                                     
                   <i class="fa fa-search"></i></button>
         
@@ -77,7 +77,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
                         <mat-form-field>
                             <mat-label>Subscription</mat-label>
-                            <mat-select [(value)]="selected">
+                            <mat-select >
                               <mat-option value="option2">Active</mat-option>
                               <mat-option value="option3">Expire</mat-option>
                             </mat-select>
@@ -85,7 +85,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
                           <mat-form-field>
                               <mat-label>Package Type</mat-label>
-                              <mat-select [(value)]="selected">
+                              <mat-select >
                                 <mat-option value="option2">Monthly</mat-option>
                                 <mat-option value="option3">Yearly</mat-option>
                               </mat-select>
@@ -99,7 +99,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           
                
                  
-            <button class="btn btn-fill" (click)="postoffer(1)">Search</button>
+            <button class="btn btn-fill" (click)="postoffer(1)" data-dismiss="modal">Search</button>
 
                     
                      
