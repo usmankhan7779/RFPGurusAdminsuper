@@ -6,15 +6,32 @@
 }
 .box{
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 5px 8px 0 rgba(0,0,0,.14), 0 1px 14px 0 rgba(0,0,0,.12);
-    border-radius: 2px;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    display: block;
+    min-height: 117px;
 }
 .box i{
     color: #3f51b5;
-    font-size: 30px;
+    font-size: 60px;
     margin-bottom: 10px;
 }
 .box h3{
     font-size: 38px;
     font-weight: 700;
+    margin: 0;
+}
+.box .icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+    float: left;
+}
+.box p{
+    margin: 0;
 }
