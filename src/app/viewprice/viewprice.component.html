@@ -23,11 +23,11 @@
                    </button> 
                   
             
-                   <button data-toggle="modal2" data-target="#exampleModalCenter2" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price,item.id)">
-                                        
-                      <i class="fa fa-search"></i></button>
-            
                    
+            
+                      <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter3" >
+                                
+                            <i class="fa fa-search"></i></button>
 
 
 
@@ -140,3 +140,29 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 </div>
 </div>
 
+<div  class="modal fade login-or-signup" id="exampleModalCenter3" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered custom-model" style="animation-delay: 15s" role="document">
+    <div class="modal-content login-template">
+       <form>
+        <div class="img-userprofile s_uploaded_img" *ngIf="ImgSrc"> <img accept=".jpg, .jpeg, .png" src="{{ImgSrc}}"
+            alt="" allowmultiple="false" /> </div><!-- <input class="btn-file margin-top-10" type="file" (change)="onChange($event)" accept="image/gif, image/jpeg, image/png" required> <img *ngIf="imagePreview" src="{{imagePreview}}"> -->
+    <span class="btn-file file-input">Upload Yearly Plan Image <input (change)="onChange($event)" type="file"
+            #yearly_image accept="image/gif, image/jpeg, image/png" required> </span>
+            
+        <div class="modal-footer text-center"> 
+          
+               
+                <a > <button title="Subscribe Now" type="button"
+                    class="btn btn-fill" data-dismiss="modal">Cencel</button> </a>
+                <a > <button title="Subscribe Now" type="button"
+                    class="btn btn-fill" data-dismiss="modal"  (click)="onSubmityear()">Update</button> </a>
+
+                     
+        </div>
+        </form>
+                    <!-- <countdown class="benner-conter mainpagee"  [text]="text" units=" Days | Hours | Minutes | Seconds" end="July 08, 2019 18:40:00"> </countdown> -->
+
+    </div>
+</div>
+</div>

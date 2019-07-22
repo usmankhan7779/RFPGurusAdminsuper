@@ -91,3 +91,28 @@
     font-size: 30px;
     margin-right: 8px;
 }
+
+
+
+input[type="file"]::-webkit-file-upload-button{
+    background: #000;
+    border: none;
+    color: #fff;
+    width: 200px;
+    border-radius: 30px;
+    padding: 5px;
+ }
+ .file-input{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px auto;
+    text-transform: capitalize;
+    width: 100%;
+    text-align: center;
+    display: block;
+ }
+ .file-input input{
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 30px;
+ }

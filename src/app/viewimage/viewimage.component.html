@@ -99,8 +99,10 @@
            <form>
             <div class="img-userprofile s_uploaded_img" *ngIf="ImgSrc"> <img accept=".jpg, .jpeg, .png" src="{{ImgSrc}}"
                 alt="" allowmultiple="false" /> </div><!-- <input class="btn-file margin-top-10" type="file" (change)="onChange($event)" accept="image/gif, image/jpeg, image/png" required> <img *ngIf="imagePreview" src="{{imagePreview}}"> -->
-        <span class="btn-file margin-top-10">Upload Free Trial Image <input (change)="onChange($event)" type="file"
-                #course_image accept="image/gif, image/jpeg, image/png" required> </span>
+            <span class="btn-file file-input">Upload Free Trial Image 
+            <input (change)="onChange($event)" type="file"
+                #course_image accept="image/gif, image/jpeg, image/png" required> 
+            </span>
                 
             <div class="modal-footer text-center"> 
               
@@ -128,7 +130,7 @@
            <form>
             <div class="img-userprofile s_uploaded_img" *ngIf="ImgSrc"> <img accept=".jpg, .jpeg, .png" src="{{ImgSrc}}"
                 alt="" allowmultiple="false" /> </div><!-- <input class="btn-file margin-top-10" type="file" (change)="onChange($event)" accept="image/gif, image/jpeg, image/png" required> <img *ngIf="imagePreview" src="{{imagePreview}}"> -->
-        <span class="btn-file margin-top-10">Upload Monthly plan Image <input (change)="onChange($event)" type="file"
+        <span class="btn-file file-input">Upload Monthly plan Image <input (change)="onChange($event)" type="file"
                 #monthly_image accept="image/gif, image/jpeg, image/png" required> </span>
                 
             <div class="modal-footer text-center"> 
@@ -155,7 +157,7 @@
            <form>
             <div class="img-userprofile s_uploaded_img" *ngIf="ImgSrc"> <img accept=".jpg, .jpeg, .png" src="{{ImgSrc}}"
                 alt="" allowmultiple="false" /> </div><!-- <input class="btn-file margin-top-10" type="file" (change)="onChange($event)" accept="image/gif, image/jpeg, image/png" required> <img *ngIf="imagePreview" src="{{imagePreview}}"> -->
-        <span class="btn-file margin-top-10">Upload Yearly Plan Image <input (change)="onChange($event)" type="file"
+        <span class="btn-file file-input">Upload Yearly Plan Image <input (change)="onChange($event)" type="file"
                 #yearly_image accept="image/gif, image/jpeg, image/png" required> </span>
                 
             <div class="modal-footer text-center"> 
