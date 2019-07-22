@@ -22,6 +22,11 @@ export class ViewpriceComponent implements OnInit {
   constructor(private _nav: Router, private _serv: userService,private pagerService: PagerService  ) { }
 
   ngOnInit() {
+
+
+
+
+    
     this.viewuser()
   }
   viewuser(){

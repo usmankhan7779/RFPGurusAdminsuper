@@ -1,6 +1,47 @@
 <div class="view">
     <div class="table-box">
+        <div class="">
+            <!-- <form [formGroup]="date" class="date-picker">
+            <mat-form-field>
+                    <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
+                    <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                 </mat-form-field>
+           <mat-form-field>
+              <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
+              <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+           </mat-form-field>
+            <button class="serch-btn" (click)="postoffer(1)">Search</button>
+            </form> -->
+
+            <div class="admin-home-palceholder">
+                <span>Total Records: 13</span>
+                <div class="icons">
+                   <button class="refrash">
+                      <i class="fa fa-refresh"></i>
+                   </button> 
+                  
+            
+                   <button data-toggle="modal2" data-target="#exampleModalCenter2" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price,item.id)">
+                                        
+                      <i class="fa fa-search"></i></button>
+            
+                   
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
         
+
+
+
+        <div class="table-responsive">
         <table>
             <thead>
                 <tr>
@@ -44,8 +85,17 @@
                 </tr>
             </tbody>
           
-        </table>  
-          
+        </table>
+        
+        
+        
+
+
+
+        </div>
+
+
+
     </div>
 </div>
 <button id="openModal" type="button" #openModal [hidden]="true" class="btn btn-primary modal-hide"
@@ -89,3 +139,4 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     </div>
 </div>
 </div>
+
