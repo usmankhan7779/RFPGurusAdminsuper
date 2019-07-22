@@ -29,5 +29,16 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     
   }
-  
+
+
+
+check_login() {
+  // if (isPlatformBrowser(this.platformId)) {
+    if (localStorage.getItem('currentUser')) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }

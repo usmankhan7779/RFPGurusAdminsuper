@@ -48,7 +48,8 @@
                             <img src="{{personal?.free_trial}}"> 
                         </div>
                     </div>
-                    <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price)">
+                  
+                    <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter">
                                 
                             Update</button>
                 </div>
@@ -65,7 +66,7 @@
                             <img src="{{personal?.monthly_plan}}"> 
                         </div>
                     </div>
-                    <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price)">
+                    <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter2" >
                                 
                             Update</button>
                 </div>
@@ -82,7 +83,7 @@
                             <img src="{{personal?.yearly_plan}}"> 
                         </div>
                     </div>
-                    <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price)">
+                    <button class="btn-fill btn-width" data-toggle="modal" data-target="#exampleModalCenter3" >
                                 
                             Update</button>
                 </div>
@@ -95,32 +96,79 @@
     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered custom-model" style="animation-delay: 15s" role="document">
         <div class="modal-content login-template">
-           
-            <div class="on-load-popup">
-                <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
-                        aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
-    
-                        <form class="popup-form">
-                        
-                                <input matInput placeholder="Duration" value={{duration}}>
-                            
-                            
-                                <input matInput placeholder="Package Type" value="{{package}}">
-                            
-                                <input matInput placeholder="Package Price"  [(ngModel)]="price" value="{{price}}" [ngModelOptions]="{standalone: true}">   
-                               
-                        </form>
-            </div>
+           <form>
+            <div class="img-userprofile s_uploaded_img" *ngIf="ImgSrc"> <img accept=".jpg, .jpeg, .png" src="{{ImgSrc}}"
+                alt="" allowmultiple="false" /> </div><!-- <input class="btn-file margin-top-10" type="file" (change)="onChange($event)" accept="image/gif, image/jpeg, image/png" required> <img *ngIf="imagePreview" src="{{imagePreview}}"> -->
+        <span class="btn-file margin-top-10">Upload Free Trial Image <input (change)="onChange($event)" type="file"
+                #course_image accept="image/gif, image/jpeg, image/png" required> </span>
+                
             <div class="modal-footer text-center"> 
               
                    
-                    <a routerLink="/pricing"> <button title="Subscribe Now" type="button"
+                    <a > <button title="Subscribe Now" type="button"
                         class="btn btn-fill" data-dismiss="modal">Cencel</button> </a>
-                    <a routerLink="/pricing"> <button title="Subscribe Now" type="button"
-                        class="btn btn-fill" data-dismiss="modal">Update</button> </a>
+                    <a > <button title="Subscribe Now" type="button"
+                        class="btn btn-fill" data-dismiss="modal"  (click)="onSubmit()">Update</button> </a>
     
                          
             </div>
+            </form>
+                        <!-- <countdown class="benner-conter mainpagee"  [text]="text" units=" Days | Hours | Minutes | Seconds" end="July 08, 2019 18:40:00"> </countdown> -->
+    
+        </div>
+    </div>
+    </div>
+
+
+
+    <div  class="modal fade login-or-signup" id="exampleModalCenter2" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-model" style="animation-delay: 15s" role="document">
+        <div class="modal-content login-template">
+           <form>
+            <div class="img-userprofile s_uploaded_img" *ngIf="ImgSrc"> <img accept=".jpg, .jpeg, .png" src="{{ImgSrc}}"
+                alt="" allowmultiple="false" /> </div><!-- <input class="btn-file margin-top-10" type="file" (change)="onChange($event)" accept="image/gif, image/jpeg, image/png" required> <img *ngIf="imagePreview" src="{{imagePreview}}"> -->
+        <span class="btn-file margin-top-10">Upload Monthly plan Image <input (change)="onChange($event)" type="file"
+                #monthly_image accept="image/gif, image/jpeg, image/png" required> </span>
+                
+            <div class="modal-footer text-center"> 
+              
+                   
+                    <a > <button title="Subscribe Now" type="button"
+                        class="btn btn-fill" data-dismiss="modal">Cencel</button> </a>
+                    <a > <button title="Subscribe Now" type="button"
+                        class="btn btn-fill" data-dismiss="modal"  (click)="onSubmitmonthly()">Update</button> </a>
+    
+                         
+            </div>
+            </form>
+                        <!-- <countdown class="benner-conter mainpagee"  [text]="text" units=" Days | Hours | Minutes | Seconds" end="July 08, 2019 18:40:00"> </countdown> -->
+    
+        </div>
+    </div>
+    </div>
+
+    <div  class="modal fade login-or-signup" id="exampleModalCenter3" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-model" style="animation-delay: 15s" role="document">
+        <div class="modal-content login-template">
+           <form>
+            <div class="img-userprofile s_uploaded_img" *ngIf="ImgSrc"> <img accept=".jpg, .jpeg, .png" src="{{ImgSrc}}"
+                alt="" allowmultiple="false" /> </div><!-- <input class="btn-file margin-top-10" type="file" (change)="onChange($event)" accept="image/gif, image/jpeg, image/png" required> <img *ngIf="imagePreview" src="{{imagePreview}}"> -->
+        <span class="btn-file margin-top-10">Upload Yearly Plan Image <input (change)="onChange($event)" type="file"
+                #yearly_image accept="image/gif, image/jpeg, image/png" required> </span>
+                
+            <div class="modal-footer text-center"> 
+              
+                   
+                    <a > <button title="Subscribe Now" type="button"
+                        class="btn btn-fill" data-dismiss="modal">Cencel</button> </a>
+                    <a > <button title="Subscribe Now" type="button"
+                        class="btn btn-fill" data-dismiss="modal"  (click)="onSubmityear()">Update</button> </a>
+    
+                         
+            </div>
+            </form>
                         <!-- <countdown class="benner-conter mainpagee"  [text]="text" units=" Days | Hours | Minutes | Seconds" end="July 08, 2019 18:40:00"> </countdown> -->
     
         </div>
