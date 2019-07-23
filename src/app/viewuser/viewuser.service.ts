@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { Subject } from 'rxjs';
 // import { pipe } from 'rxjs/add/operators;
 import { map } from 'rxjs/operators';
+import { findReadVarNames } from '@angular/compiler/src/output/output_ast';
 // import 'rxjs/add/operator/map';
 
 
@@ -34,14 +35,18 @@ export class userService {
     headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/maindashboard/',{headers:headers});
     }
-postdate(datefrom, dateto) {
+postdate(datefrom, dateto, fname, lname ,email) {
     if (localStorage.getItem('currentUser')) {
         const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.post('https://apis.rfpgurus.com/super/userDetailandfilter/',
+        return this._https.post('http://192.168.29.234:8000/super/userDetailandfilter/',
         JSON.stringify({
             datefrom: datefrom,
-            dateto : dateto
+            dateto : dateto,
+            fname : fname,
+            lname : lname,
+            email : email
+
 
         }),{headers:headers})
         }
