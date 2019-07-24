@@ -18,7 +18,7 @@
             <div class="admin-home-palceholder">
                 <span>Total Records: {{personal?.totalItems}}</span>
                 <div class="icons">
-                   <button class="refrash">
+                   <button class="refrash" (click)="viewuser(1)">
                       <i class="fa fa-refresh"></i>
                    </button> 
                   
@@ -45,32 +45,35 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
 
                    <div class="date-bar">
-                      <form  class="date-picker">
-                          <mat-form-field>
-                                  <input matInput [matDatepicker] = "picker"  placeholder = "From Date" #datefrom name="datefrom">
-                                  <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
-                                  <mat-datepicker #picker></mat-datepicker>
-                               </mat-form-field>
-                          <mat-form-field>
-                            <input matInput [matDatepicker] = "picker1"  placeholder = "To Date"  #dateto name="dateto">
-                            <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
-                            <mat-datepicker #picker1></mat-datepicker>
-                         </mat-form-field>
-                       
-                         <mat-form-field class="example-full-width">
-                          <input matInput placeholder="First Name"  [(ngModel)]="model.fname" #fname name="fname">
-                        </mat-form-field>
+                    <form  class="date-picker">
+                      <mat-form-field>
+                              <input matInput [matDatepicker] = "picker"   placeholder = "From Date" [(ngModel)]="model.datefrom" name="datefrom" >
+                              <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+                              <mat-datepicker #picker></mat-datepicker>
+                           </mat-form-field>
+                      <mat-form-field>
+                        <input matInput [matDatepicker] = "picker1"  placeholder = "To Date" [(ngModel)]="model.dateto" name="datefrom">
+                        <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                     </mat-form-field>
+                   
+                     <mat-form-field class="example-full-width">
+                      <input matInput placeholder="First Name" [(ngModel)]="model.fname" name="fname">
+                    </mat-form-field>
 
-                        <mat-form-field class="example-full-width">
-                          <input matInput placeholder="Last Name"  [(ngModel)]="model.lname" #lname name="lname">
-                        </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Last Name" [(ngModel)]="model.lname" name="lname">
+                    </mat-form-field>
 
-                        <mat-form-field class="example-full-width">
-                          <input matInput placeholder="Email"  [(ngModel)]="model.email" #email name="email">
-                        </mat-form-field>
                   
-                          
-                          </form>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Email" [(ngModel)]="model.email" name="email">
+                    </mat-form-field>
+
+
+                  
+                      
+                      </form>
                    </div>
         </div>
         <div class="modal-footer text-center"> 

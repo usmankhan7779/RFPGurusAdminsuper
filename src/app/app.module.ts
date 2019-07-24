@@ -52,9 +52,10 @@ import { ViewTicketReceiveComponent } from './view-ticket-receive/view-ticket-re
 import { ViewpriceComponent } from './viewprice/viewprice.component';
 import { ViewimageComponent } from './viewimage/viewimage.component';
 import { AuthGuard } from './AuthGuards/auth.guard';
-
-
- 
+import { PagerService } from './servicefile/paginator.service';
+import { ViewuserComponent } from './viewuser/viewuser.component';
+ import { userService} from './viewuser/viewuser.service'
+import { from } from 'rxjs';
  
 @NgModule({
   exports: [
@@ -105,6 +106,7 @@ export class MaterialModule { }
     HomeComponent,
     SidebarComponent,
     SidebarViewComponent, 
+    ViewuserComponent
      
        
     
@@ -122,7 +124,7 @@ export class MaterialModule { }
     BrowserTransferStateModule,
     BrowserAnimationsModule,
   ],
-  providers: [HomeService, AuthGuard],
+  providers: [HomeService, AuthGuard, userService, PagerService],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

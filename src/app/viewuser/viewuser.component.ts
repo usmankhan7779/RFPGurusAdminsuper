@@ -56,8 +56,7 @@ export class ViewuserComponent implements OnInit {
   
   postoffer(page) {
   
-    return this._serv.postdate(this.datefrom, this.dateto, this.model.fname , this.model.lname , this.model.eamil
-     ).subscribe(
+    return this._serv.postdate(this.model.datefrom, this.model.dateto, this.model.fname , this.model.lname , this.model.email ).subscribe(
       // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
   data => {
 

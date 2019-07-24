@@ -58,9 +58,9 @@ postoffer(page) {
 data => {
 
   console.log(data)
-  this.postpage = data.json()
-  console.log(this.postpage)
-  this.pager = this.pagerService.getPager(this.postpage['totalItems'], page, 10);
+  this.personal = data.json()
+  console.log(this.personal)
+  this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
 })
 }
 }

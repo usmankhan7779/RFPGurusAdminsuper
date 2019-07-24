@@ -5,6 +5,7 @@ import { CommonComponent } from './layouts/common/common.component';
 import { AuthGuard } from './AuthGuards/auth.guard';
 import { SidebarViewComponent } from './layouts/sidebar-view/sidebar-view.component';
 
+import { ViewuserComponent } from './viewuser/viewuser.component';
 const routes: Routes = [
   { path: "", component: HomeComponent },
      
@@ -23,7 +24,9 @@ const routes: Routes = [
     component: SidebarViewComponent,
     children: [
         { path: 'dashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule',canActivate: [AuthGuard] },
-        { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule',canActivate: [AuthGuard] },
+        // { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule',canActivate: [AuthGuard] },
+         { path : 'viewuser' , component: ViewuserComponent},
+
         { path: 'viewuserpay', loadChildren: './viewuserpayment/viewuserpayment.module#ViewUPModule',canActivate: [AuthGuard]  },
         { path: 'viewsingleuser', loadChildren: './viewsignaluser/viewsignaluser.module#ViewUserSingleModule',canActivate: [AuthGuard]  },
         { path: 'viewsubscribeuser', loadChildren: './view-subscribe-user/viewsubscribeuser.module#ViewsubscribeUserModule',canActivate: [AuthGuard]  },
