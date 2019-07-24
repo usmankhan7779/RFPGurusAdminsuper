@@ -141,7 +141,7 @@ export class ViewimageComponent implements OnInit {
   monthly_image;
   imagesuppload(){
     this.home.postimg(this.course_image).subscribe( data => {
-      swal.fire({
+      swal({
         type: 'success',
         title:
           'Update free trial image ',
@@ -151,7 +151,7 @@ export class ViewimageComponent implements OnInit {
   }
   imagesuppload2(){
     this.home.postimgmonthly(this.monthly_image).subscribe( data => {
-      swal.fire({
+      swal({
         type: 'success',
         title:
           'Update monthly plan image',
@@ -161,7 +161,7 @@ export class ViewimageComponent implements OnInit {
   }
   imagesuppload3(){
     this.home.postimgyear(this.yearly_image).subscribe( data => {
-      swal.fire({
+      swal({
         type: 'success',
         title:
           'Update yearly plan image',

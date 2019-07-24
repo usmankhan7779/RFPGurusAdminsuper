@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
                 if(this.status == "Super User" ){
                   // alert(this.status)
                   this._nav.navigate(['/dashboard'])
-                  swal.fire({
+                  swal({
                     type: 'success',
                     title: 'You have successfully logged into RFPGurus',
                     showConfirmButton: false,
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
                 }else if (this.status == "You are Not Super Admin Userr")
                 {
                   // alert(this.status)
-                  swal.fire({
+                  swal({
                     type: 'error',
                     title: 'Your Username and Password Does not match! Please Try again ',
                     showConfirmButton: true,

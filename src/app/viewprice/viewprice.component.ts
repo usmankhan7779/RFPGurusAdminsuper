@@ -93,7 +93,7 @@ console.log(val1,val2,val3)
     this._serv.postprice(this.id,price).subscribe(data => {
         console.log(data);
         // this.catagoryId,
-        Swal.fire({
+        Swal({
             type: 'success',
             title: 'Successfully updated',
             showConfirmButton: true,

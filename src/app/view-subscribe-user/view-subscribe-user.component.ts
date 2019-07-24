@@ -47,10 +47,13 @@ viewuser(page){
         this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
     });
 }
+model : any = {};
 postpage;
+lname;
+email;
 postoffer(page) {
    
-  return this._serv.postdate(moment(this.date.value['datefrom']).format('YYYY-MM-DD'),  moment(this.date.value['dateto']).format('YYYY-MM-DD') ).subscribe(
+  return this._serv.postdate(this.model.datefrom,this.model.dateto, this.model.fname , this.model.lname , this.model.email ).subscribe(
     // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
 data => {
 

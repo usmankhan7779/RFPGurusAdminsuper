@@ -50,24 +50,24 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
 
                    <div class="date-bar">
-                      <form [formGroup]="date" class="date-picker">
+                      <form  class="date-picker">
                           <mat-form-field>
-                                  <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
+                                  <input matInput [matDatepicker] = "picker"   placeholder = "From Date">
                                   <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
                                   <mat-datepicker #picker></mat-datepicker>
                                </mat-form-field>
                           <mat-form-field>
-                            <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
+                            <input matInput [matDatepicker] = "picker1"  placeholder = "To Date">
                             <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
                             <mat-datepicker #picker1></mat-datepicker>
                          </mat-form-field>
                        
                          <mat-form-field class="example-full-width">
-                          <input matInput placeholder="First Name">
+                          <input matInput placeholder="First Name" [(ngModel)]="model.fname" name="fname">
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width">
-                          <input matInput placeholder="Last Name">
+                          <input matInput placeholder="Last Name" [(ngModel)]="model.lname" name="lname">
                         </mat-form-field>
 
                       
