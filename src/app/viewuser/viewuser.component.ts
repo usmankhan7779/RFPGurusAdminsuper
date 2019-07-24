@@ -55,8 +55,7 @@ export class ViewuserComponent implements OnInit {
   dateto;
   
   postoffer(page) {
-    let datefrom = moment(new Date, "YYYY-MM-DD");
-    let dateto = moment(new Date, "YYYY-MM-DD");
+  
     return this._serv.postdate(this.datefrom, this.dateto, this.model.fname , this.model.lname , this.model.eamil
      ).subscribe(
       // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
