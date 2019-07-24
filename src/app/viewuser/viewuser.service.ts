@@ -63,6 +63,18 @@ postdatepayment(datefrom, dateto,page) {
         }),{headers:headers})
         }
     }
+    postdatepaymentmonthly(sort) {
+        if (localStorage.getItem('currentUser')) {
+            const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+            headers.append('Content-Type', 'application/json');
+            return this._https.post('https://apis.rfpgurus.com/super/paymentDetailandfilter/' ,
+            JSON.stringify({
+                sort: sort,
+               
+    
+            }),{headers:headers})
+            }
+        }
 postdate2(datefrom, dateto, page) {
     if (localStorage.getItem('currentUser')) {
         const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });

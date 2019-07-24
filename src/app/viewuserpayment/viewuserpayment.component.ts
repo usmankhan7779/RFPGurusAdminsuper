@@ -42,7 +42,9 @@ viewuser(page){
         this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
     });
 }
+sorting;
 postpage:any;
+
 postoffer(page) {
    
   return this._serv.postdatepayment(moment(this.date.value['datefrom']).format('YYYY-MM-DD'),  moment(this.date.value['dateto']).format('YYYY-MM-DD'),this.pager ).subscribe(
@@ -53,6 +55,18 @@ data => {
   this.personal = data.json()
   console.log(this.postpage)
   this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
+})
+}
+postoffersort() {
+   
+  return this._serv.postdatepaymentmonthly( this.model.sorting ).subscribe(
+    // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
+data => {
+
+  console.log(data)
+  this.personal = data.json()
+  console.log(this.postpage)
+  // this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
 })
 }
 }
