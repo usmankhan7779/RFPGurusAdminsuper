@@ -25,11 +25,14 @@ export class ViewuserComponent implements OnInit {
 
   ngOnInit() {  
  this.viewuser(1)
- this.date = this.formbuilders.group({
-  datefrom : [''],
-  dateto : [''],
+//  this.date = this.formbuilders.group({
+//   datefrom : [''],
+//   dateto : [''],
+//   fname :[''],
+//   lname : [''],
+//   email : ['']
  
-  })
+//   })
   }
   viewuser(page){
     if (page < 1 || page > this.pager.totalPages) {
@@ -49,9 +52,13 @@ export class ViewuserComponent implements OnInit {
   datefrom;
   model : any = {}
   postpage:any;
+  dateto;
+  
   postoffer(page) {
-   
-    return this._serv.postdate(moment(this.date.value['datefrom']).format('YYYY-MM-DD'),  moment(this.date.value['dateto']).format('YYYY-MM-DD') ).subscribe(
+    let datefrom = moment(new Date, "YYYY-MM-DD");
+    let dateto = moment(new Date, "YYYY-MM-DD");
+    return this._serv.postdate(this.datefrom, this.dateto, this.model.fname , this.model.lname , this.model.eamil
+     ).subscribe(
       // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
   data => {
 
