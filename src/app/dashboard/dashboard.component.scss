@@ -37,6 +37,9 @@
     width: 60%;
     transition: 1s;
 }
+.box:hover img{
+    transform: rotate(360deg)
+}
 .box p{
     margin: 0;
     line-height: 17px;
