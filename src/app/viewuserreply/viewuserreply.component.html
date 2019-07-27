@@ -1,3 +1,34 @@
-<p>
-  viewuserreply works!
-</p>
+<div class="container">
+  <div class="chat-box">
+     
+    <form class="example-form" [formGroup]="form">
+      <div class="no-replay">
+        <h3 *ngIf="show.length == '0'">No Reply yet</h3>
+      </div>
+      <div class="msg-area">
+
+        <div >
+        <div class="">
+          <div class="user-text">
+            <span class="me">Me</span>
+            User Replay 
+          </div>
+        </div>
+        <div class="">
+        <div class="admin-text" >
+            <span class="admin">A</span>
+            Admin Reply
+        </div>
+        </div>
+        </div>
+        
+        </div>
+        <!-- <div class="admin-text" *ngFor="let data of show; let i=index">
+     
+      </div> -->
+        <textarea placeholder="Description" formControlName="des"></textarea>
+        
+      <button (click)="descriptionpost()" [disabled]="!form.valid">Submit</button>
+    </form>
+  </div>
+</div>
