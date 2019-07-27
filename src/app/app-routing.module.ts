@@ -24,8 +24,8 @@ const routes: Routes = [
     component: SidebarViewComponent,
     children: [
         { path: 'dashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule',canActivate: [AuthGuard] },
-        // { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule',canActivate: [AuthGuard] },
-         { path : 'viewuser' , component: ViewuserComponent},
+        { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule',canActivate: [AuthGuard] },
+        //  { path : 'viewuser' , component: ViewuserComponent},
          { path: 'viewreply', loadChildren: './viewuserreply/viewuserreply.module#ViewUserReplyModule',canActivate: [AuthGuard] },
 
          
