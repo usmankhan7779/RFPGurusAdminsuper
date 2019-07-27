@@ -26,6 +26,9 @@ const routes: Routes = [
         { path: 'dashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule',canActivate: [AuthGuard] },
         // { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule',canActivate: [AuthGuard] },
          { path : 'viewuser' , component: ViewuserComponent},
+         { path: 'viewreply', loadChildren: './viewuserreply/viewuserreply.module#ViewUserReplyModule',canActivate: [AuthGuard] },
+
+         
 
         { path: 'viewuserpay', loadChildren: './viewuserpayment/viewuserpayment.module#ViewUPModule',canActivate: [AuthGuard]  },
         { path: 'viewsingleuser', loadChildren: './viewsignaluser/viewsignaluser.module#ViewUserSingleModule',canActivate: [AuthGuard]  },

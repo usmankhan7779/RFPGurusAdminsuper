@@ -56,6 +56,7 @@ import { PagerService } from './servicefile/paginator.service';
 import { ViewuserComponent } from './viewuser/viewuser.component';
  import { userService} from './viewuser/viewuser.service'
 import { from } from 'rxjs';
+import { ViewuserreplyComponent } from './viewuserreply/viewuserreply.component';
  
 @NgModule({
   exports: [
