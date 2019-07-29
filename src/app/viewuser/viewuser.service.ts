@@ -104,7 +104,7 @@ postdate2(datefrom, dateto, page) {
              
             headers.append('Authorization', 'JWT ' + localStorage.getItem('currentUser'));
             headers.append('Content-Type', 'application/json');      
-        return this._https.get('https://apis.rfpgurus.com/ticket/Tickereply_admin/' + id +'/' , {headers: headers}).map((response: Response) => response.json());
+        return this._https.get('https://apis.rfpgurus.com/ticket/Ticketreply_admin/' + id +'/' , {headers: headers}).map((response: Response) => response.json());
     }
     }
         
