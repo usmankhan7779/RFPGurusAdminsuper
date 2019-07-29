@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { userService } from '../viewuser/viewuser.service';
-
+import swal from 'sweetalert2';
 @Component({
   selector: 'app-viewuserreply',
   templateUrl: './viewuserreply.component.html',
@@ -43,5 +43,19 @@ console.log(this.subjests);
     })
   }
 descr
+descriptionpost(){
+  this._serv.postdesc(this.form.value['des'], this.replyid).subscribe(data => {
+console.log(this.form.value['des']);
 
+swal({
+  type: 'success',
+  title: 'Successfully post',
+  showConfirmButton: false,
+  width: '512px',
+  timer: 2000
+})
+  })
+  this.form.reset();
+  this.showrecord();
+}
 }
