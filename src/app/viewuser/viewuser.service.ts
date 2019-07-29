@@ -87,17 +87,17 @@ postdate2(datefrom, dateto, page) {
         }),{headers:headers})
         }
     }
-        // postprice(id,price) {
-        //     // if (localStorage.getItem('currentUser')) {
-        //       const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
-        //       headers.append('Content-Type', 'application/json');
-        //       return this._https.put('https://apis.rfpgurus.com/super/pakagepricesetupdate/'+id,
-        //         JSON.stringify({
-                 
-      
-        //         }),{headers:headers}).map((response: Response) => response.json());
-        //       }
-        //     // }
+    eachview(id){
+        if (localStorage.getItem('currentUser')){
+            // alert(JSON.parse(localStorage.getItem('currentUser')).token)
+            let headers = new Headers();
+             
+            headers.append('Authorization', 'JWT ' + localStorage.getItem('currentUser'));
+            headers.append('Content-Type', 'application/json');      
+        return this._https.get('https://apis.rfpgurus.com/ticket/Tickereply_admin/' + id +'/' , {headers: headers}).map((response: Response) => response.json());
+    }
+    }
+        
 
         postprice(id,price) {
                 //mydate,updateddate,id,updatedtitle,updatedprofileurl,upactive,updatedprofile_logo,updatedrating_logo,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedcancelation_fee,updatedfact_sheet,updatedterms_of_service,updatedphone,updatedsign_up,updatedproduct_name,updatedterms_month,updatedrenewable,updatedrate_type,updatedcustomer_type
@@ -106,7 +106,7 @@ postdate2(datefrom, dateto, page) {
                 const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
                       headers.append('Content-Type', 'application/json');
             
-                return this._https.put('http://192.168.18.40:8000/super/pakagepricesetupdate/'+ id +'/', JSON.stringify({
+                return this._https.put('https://apis.rfpgurus.com/super/pakagepricesetupdate/'+ id +'/', JSON.stringify({
                
                     "price":price
                   // "check":false,

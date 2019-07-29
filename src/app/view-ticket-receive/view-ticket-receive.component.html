@@ -75,7 +75,12 @@
                         <td class="text-center">
                             <button class="detail-btn" >
                             
-                              Reply</button>
+                <a class="slider-img" [routerLink]="['/viewreply']" [queryParams]="{ id:  item.id }" 
+                style="color: white">{{
+                                Reply</a>
+                                </button>
+ 
+              
                         </td>
                     </tr>
                 </tbody>
