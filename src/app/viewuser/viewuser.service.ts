@@ -30,6 +30,16 @@ export class userService {
     headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/paymentDetailandfilter/'+ '?page=' + page,{headers:headers});
     }
+    postdesc( des, id){  
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');     
+        headers.append('Authorization', 'JWT ' + localStorage.getItem('currentUser'));   
+return this._https.post("https://apis.rfpgurus.com/ticket/reply_ticket_User/" + id + '/',    
+ JSON.stringify({
+    
+"description": des,
+}), { headers: headers }).map((res : Response) => res.json())
+    }
     get_user_status() {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
     headers.append('Content-Type', 'application/json');
