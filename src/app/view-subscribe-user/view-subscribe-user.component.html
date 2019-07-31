@@ -46,10 +46,15 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-content login-template">
        
         <div class="on-load-popup">
-            <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
-                    aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
+            
 
                    <div class="date-bar">
+                      <div class="pop-header">
+                          <h1>Filter</h1>
+                          <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
+                              aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                          </div>
+                      </div>
                       <form  class="date-picker">
                           <mat-form-field>
                                   <input matInput [matDatepicker] = "picker"   placeholder = "From Date">
@@ -88,7 +93,8 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         </div>
         <div class="modal-footer text-center"> 
           
-               
+            <button title="Subscribe Now" type="button"
+              class="btn btn-fill" data-dismiss="modal">Cencel</button> 
                  
             <button class="btn btn-fill" (click)="postoffer(1)" data-dismiss="modal">Search</button>
 

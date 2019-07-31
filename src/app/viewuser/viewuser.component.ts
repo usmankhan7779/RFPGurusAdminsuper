@@ -33,6 +33,9 @@ export class ViewuserComponent implements OnInit {
 //   email : ['']
  
 //   })
+
+
+
   }
   viewuser(page){
     if (page < 1 || page > this.pager.totalPages) {

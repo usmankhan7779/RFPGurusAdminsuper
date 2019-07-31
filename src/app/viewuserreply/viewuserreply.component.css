@@ -108,14 +108,13 @@
     overflow-x: hidden;
 }
 .heading {
-    display: flex;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: normal;
     text-transform: capitalize;
     margin: 10px 0 0 !important;
 }
-.des{
-    margin-left: auto;
+.heading span{
+    display: block;
 }
 .no-replay{
     display: flex;

@@ -3,6 +3,30 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+
+
 .view{
     padding: 20px 0px;
 }
@@ -160,9 +184,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // End Side Bar
 .table-responsive {
     overflow-x: scroll;
+    max-height: 388px;
+    overflow-y: scroll;
 }
-
-
+.table-box table th{
+    white-space: nowrap;
+}
+.table-box table td{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
 
 @media (min-width:992px) {
     .sidebar-outlet{

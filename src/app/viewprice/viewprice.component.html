@@ -107,21 +107,28 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-content login-template">
        
         <div class="on-load-popup">
-            <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
-                    aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
-
-                    <form class="popup-form">
-                    
+            
+                <div class="date-bar">
+                    <div class="pop-header">
+                        <h1>Package Price</h1>
+                        <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
+                            aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                        </div>
+                    </div>
+                    <form class="date-picker">
+                        <mat-form-field class="example-full-width">
                             <input matInput placeholder="Duration" value={{duration}}>
-                        
-                        
+                          </mat-form-field>
+            
+                          <mat-form-field class="example-full-width">
                             <input matInput placeholder="Package Type" value="{{package}}">
-                        
+                          </mat-form-field>
+
+                          <mat-form-field class="example-full-width">
                             <input matInput placeholder="Package Price"  [(ngModel)]="price" value="{{price}}" [ngModelOptions]="{standalone: true}">   
-                            <!-- <button type="submit" class="btn btn-fill" 
-                            (click)="activeClick(price)"
-                            >Deactive</button> -->
+                          </mat-form-field>  
                     </form>
+                </div>
         </div>
         <div class="modal-footer text-center"> 
           
@@ -144,8 +151,17 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered custom-model" style="animation-delay: 15s" role="document">
     <div class="modal-content login-template">
+           
        <form>
         <div class="date-bar">
+
+                <div class="pop-header">
+                        <h1>Filter</h1>
+                        <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
+                            aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                        </div>
+                    </div>
+
             <form  class="date-picker">
                 <mat-form-field>
                         <input matInput [matDatepicker] = "picker"   placeholder = "From Date">

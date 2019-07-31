@@ -10,13 +10,6 @@
     font-size: 18px;
     font-weight: 500;
 }
-.date-bar button{
-    background: #000;
-    color: #fff;
-    padding: 4px 15px;
-    border-radius: 30px;
-    border: none;
-}
 .icons button{
     background: #000;
     color: #fff;
@@ -24,7 +17,7 @@
     border-radius: 30px;
     border: none;
 }
-.date-bar button:hover{
+.icons button:hover{
     background: #C00;
 }
 .table-box table{
@@ -68,7 +61,37 @@
 .admin-home-palceholder .icons button{
     margin: 0 3px;
 }
-.close{
+.pop-header{
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px 2px #ccc;
+    position: relative;
+    margin: -30px 0 0 0;
+    padding: 5px 10px;
+    text-align: center;
+}
+.pop-header h1{
+    margin: 0;
     font-size: 30px;
-    margin-right: 8px;
+}
+.date-bar button{
+    position: absolute;
+    color: #fff;
+    border-radius: 30px;
+    border: none;
+    top: 0px;
+    right: 5px;
+    opacity: 9;
+}
+.date-bar button:hover{
+    background: #000;
+}
+.close{
+    font-size: 25px;
+}
+
+.modal-footer {
+    justify-content: center;
+    padding: 7px;
 }
