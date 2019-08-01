@@ -1,62 +1,63 @@
 <div class="single-page">
     <div class="card">
         <div class="row">
-            <div class="col-md-12 detail-box">
+            <div class="col-md-6 detail-box">
                 <label>First Name:</label>
                 <span>{{personal.user.first_name}}</span>
             </div>
-            <div class="col-md-12 detail-box">
+            <div class="col-md-6 detail-box">
                 <label>Last Name:</label>
                 <span>{{personal.user.last_name}}</span>
             </div>
-            <div class="col-md-12 detail-box">
+            <div class="col-md-6 detail-box">
                 <label>UserName:</label>
                 <span>{{personal.user.username}}</span>
             </div>
-            <div class="col-md-12 detail-box">
+            <div class="col-md-6 detail-box">
                 <label>Zip Code:    </label>
                 <span>{{personal.zipcode}}</span>
             </div>
-            <div class="col-md-12 detail-box">
+            <div class="col-md-6 detail-box">
                 <label>City:</label>
                 <span>{{personal.city}}</span>
             </div>
-            <div class="col-md-12 detail-box">
+            <div class="col-md-6 detail-box">
                 <label>Country:</label>
                 <span>{{personal.country}}</span>
             </div>
-            <div class="col-md-12 detail-box">
+            <div class="col-md-6 detail-box">
                 <label>States:</label>
                 <span>{{personal.state}}</span>
             </div>
-            <div class="col-md-12 detail-box">
+            <div class="col-md-6 detail-box">
                 <label>Phone no:</label>
                 <span>{{personal.phone_no}}</span>
             </div>
-            <div class="col-md-12 detail-box">
+            <div class="col-md-6 detail-box">
                 <label>Comapany:</label>
                 <span>{{personal.company}}</span>
             </div>
             <div class="col-md-12 detail-box">
-                    <label>Address:</label>
+                    <label class="width">Address:</label>
                     <span>{{personal.address}}</span>
                 </div>
-                <div class="col-md-12 detail-box">
-                    <label>User Preference:</label>
-                    <span>{{personal.user_preference}}</span>
-                </div>
-                <div class="col-md-12 detail-box">
-                    <label>State Preference:</label>
-                    <span>{{personal.state_preference}}</span>
-                </div>
-                <div class="col-md-12 detail-box">
-                    <label>Country Preference:</label>
-                    <span>{{personal.county_preference}}</span>
-                </div>
-                <div class="col-md-12 detail-box">
-                    <label>Agency Preference:</label>
-                    <span>{{personal.agency_preference}}</span>
-                </div>
+            <div class="col-md-12 detail-box">
+                <label class="width">User Preference:</label>
+                <span>{{personal.user_preference}}</span>
+            </div>
+            <div class="col-md-12 detail-box">
+                <label class="width">State Preference:</label>
+                <span>{{personal.state_preference}}</span>
+            </div>
+            <div class="col-md-6 detail-box">
+                <label class="width">Country Preference:</label>
+                <span>{{personal.county_preference}}</span>
+            </div>
+            
+            <div class="col-md-12 detail-box">
+                <label class="width">Agency Preference:</label>
+                <span>{{personal.agency_preference}}</span>
+            </div>
                 
                 <ng-template #pkg1>
                    ---
@@ -64,35 +65,29 @@
                 <!-- county_preference -->
         </div>
     </div>
-    <!-- <div class="table-box">
+    <div class="table-box">
+        <h3> Crad Detail </h3>
             <table>
                     <thead>
                         <tr>
-                            <th>User Preference</th>
+                            <th>Cardholder Name</th>
                         
-                            <th>State Preference</th>
+                            <th>Card Number</th>
                        
-                            <th>City Preference</th>
-                        
-                            <th>Country Preference</th>
-                            <th>Agency Preference</th>
+                            <th>Expiry Date</th>
                             
                         </tr>
                     </thead>
                     <tbody>
 
-                        <tr  >
-                            <td > </td>
-                             
-                
-                            
-                            
-                            
-                            
+                        <tr>
+                            <td >laraib </td>
+                            <td>************4383</td>
+                            <td>09/2021</td>
                         </tr>
                       
                     </tbody>
                   
                 </table> 
-    </div> -->
+    </div>
 </div>

@@ -4,6 +4,8 @@ import { userService } from './viewuser.service';
 import { PagerService } from '../servicefile/paginator.service';
 import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl, FormGroupDirective, NgForm } from '@angular/forms';
 import * as moment from 'moment';
+import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
+declare var $: any; 
 @Component({
   selector: 'app-viewuser',
   templateUrl: './viewuser.component.html',
@@ -33,7 +35,6 @@ export class ViewuserComponent implements OnInit {
 //   email : ['']
  
 //   })
-
 
 
   }

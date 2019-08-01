@@ -1,23 +1,22 @@
 .card{
-    width: 60%;
+    width: 80%;
     margin: 10px auto;
     box-shadow: 1px 1px 5px 1px #ccc;
-    background: #fff7f7;
+    background: #fdfdfd;
     padding: 7px 16px 0;
 }
 .detail-box label{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
-    margin-right: 20px;
+    width: 25%;
 }
 .detail-box span{
-    font-size: 20px;
-    font-weight: 600;
-    margin-right: 20px;
+    font-size: 16px;
+    text-transform: capitalize;
 }
 .table-box table{
-    width: 100%;
-    margin-top: 10px;
+    width: 80%;
+    margin: 10px auto;
     border: 1px solid #ccc;
 }
 .table-box table th{
@@ -42,4 +41,12 @@
 }
 .table-box table .detail-btn:hover{
     background: #C00;
+}
+.width{
+    width: auto !important;
+    margin-right: 10px;
+}
+.table-box h3{
+    text-align: center;
+    margin: 20px 0 10px;
 }

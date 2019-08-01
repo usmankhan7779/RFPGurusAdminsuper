@@ -96,7 +96,24 @@
     font-size: 25px;
 }
 
-.modal-footer[_ngcontent-c4] {
+.modal-footer {
     justify-content: center;
     padding: 7px;
 }
+
+
+
+
+table{
+    width:100%;
+    table-layout: fixed;
+  }
+  .tbl-header{
+    background-color: rgba(255,255,255,0.3);
+   }
+  .tbl-content{
+    height:300px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
