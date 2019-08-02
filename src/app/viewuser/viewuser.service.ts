@@ -50,7 +50,7 @@ postdate(datefrom, dateto, fname, lname ,email) {
     if (localStorage.getItem('currentUser')) {
         const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.post('http://192.168.29.234:8000/super/userDetailandfilter/',
+        return this._https.post('https://apis.rfpgurus.com/super/userDetailandfilter/',
         JSON.stringify({
             datefrom: datefrom,
             dateto : dateto,
