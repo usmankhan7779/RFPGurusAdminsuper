@@ -50,16 +50,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 4px 15px;
     border-radius: 30px;
     border: none;
+    box-shadow: 1px 1px 7px 2px #ccc;
 }
 .btn-fill:hover{
     background: #c00;
     color: #fff;
 }
+.detail-btn{
+    box-shadow: 1px 1px 7px 2px #ccc;
+}
 .cdk-overlay-container ,
 .cdk-overlay-pane {
  z-index: 9999 !important
 }
-
+.admin-home-palceholder span{
+ margin-top: 5px;
+}
 ////////////////////////////Start pagination//////////////////////////////
 .pagination-nav{
     display: flex;
@@ -199,6 +205,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     cursor: pointer;
     white-space: nowrap;
 }
+.icons button{
+    box-shadow: 1px 1px 7px 2px #ccc;
+}
+
+
+
 
 @media (min-width:992px) {
     .sidebar-outlet{
