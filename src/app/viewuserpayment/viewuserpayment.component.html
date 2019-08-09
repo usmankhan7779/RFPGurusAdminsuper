@@ -16,7 +16,7 @@
         </form> -->
 
         <div class="admin-home-palceholder">
-            <span>Total Records: {{personal?.totalItems}}</span>
+            <span>Total Subscriptions: {{personal?.totalItems}}</span>
             <div class="icons">
 <form>
               <label>Sort by</label>
@@ -26,7 +26,7 @@
                 <option value="M" name="M" >Monthly</option>
                 <option value="Y"  name="Y" >Yearly</option>
               </select>
-              <button (click)="postoffersort()">done</button>
+              <button (click)="postoffersort()">Done</button>
               </form>
               &nbsp;
                <button class="refrash" (click)="viewuser(1)">
@@ -53,10 +53,14 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-content login-template">
        
         <div class="on-load-popup">
-            <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
-                    aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
-
+           
                    <div class="date-bar">
+                      <div class="pop-header">
+                          <h1>Filter</h1>
+                          <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
+                              aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                          </div>
+                      </div>
                       <form [formGroup]="date" class="date-picker">
                           <mat-form-field>
                                   <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
@@ -100,7 +104,8 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-footer text-center"> 
           
                
-                 
+            <button title="Subscribe Now" type="button"
+            class="btn btn-fill" data-dismiss="modal">Cancel</button> 
             <button class="btn btn-fill" (click)="postoffer(1)" data-dismiss="modal">Search</button>
 
                     

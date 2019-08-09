@@ -2,12 +2,8 @@ import { Routes } from '@angular/router';
 import { ViewuserComponent } from './viewuser.component';
  
  
- 
- 
- 
- 
 
-export const ViewUserRoutes: Routes = [
+export const ViewuserRoutes: Routes = [
     {
 
       path: '',

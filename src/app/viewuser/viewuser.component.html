@@ -1,234 +1,245 @@
 <div class="view">
-    <div class="table-box">
-        <div class="">
-            <!-- <form [formGroup]="date" class="date-picker">
-            <mat-form-field>
-                    <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
-                    <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                 </mat-form-field>
-           <mat-form-field>
-              <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
-              <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
-              <mat-datepicker #picker1></mat-datepicker>
-           </mat-form-field>
-            <button class="serch-btn" (click)="postoffer(1)">Search</button>
-            </form> -->
+  <div class="table-box">
+      <div class="">
+          <!-- <form [formGroup]="date" class="date-picker">
+          <mat-form-field>
+                  <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
+                  <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+               </mat-form-field>
+         <mat-form-field>
+            <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
+            <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+         </mat-form-field>
+          <button class="serch-btn" (click)="postoffer(1)">Search</button>
+          </form> -->
 
-            <div class="admin-home-palceholder">
-                <span>Total Records: {{personal?.totalItems}}</span>
-                <div class="icons">
-                   <button class="refrash" (click)="viewuser(1)">
-                      <i class="fa fa-refresh"></i>
-                   </button> 
-                  
-            
-                   <button data-toggle="modal" data-target="#exampleModalCenter2" >
-                                        
-                      <i class="fa fa-search"></i></button>
-            
-                   
-                </div>
-            </div>
+          <div class="admin-home-palceholder">
+              <span>Total Subscriptions: {{personal?.totalItems}}</span>
+              <div class="icons">
+                 <button class="refrash" (click)="viewuser(1)">
+                    <i class="fa fa-refresh"></i>
+                 </button> 
+                
+          
+                 <button data-toggle="modal" data-target="#exampleModalCenter2" >
+                                      
+                    <i class="fa fa-search"></i></button>
+          
+                 
+              </div>
+          </div>
 
-        </div>
+      </div>
 
 
 <!-- Start model -->
 <div  class="modal fade login-or-signup" id="exampleModalCenter2" tabindex="-1" role="dialog"
 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered custom-model" style="animation-delay: 15s" role="document">
-    <div class="modal-content login-template">
-       
-        <div class="on-load-popup">
-            <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
-                    aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div>
-
-                   <div class="date-bar">
-                    <form  class="date-picker">
-                      <mat-form-field>
-                              <input matInput [matDatepicker] = "picker"   placeholder = "From Date" [(ngModel)]="model.datefrom" name="datefrom" >
-                              <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
-                              <mat-datepicker #picker></mat-datepicker>
-                           </mat-form-field>
-                      <mat-form-field>
-                        <input matInput [matDatepicker] = "picker1"  placeholder = "To Date" [(ngModel)]="model.dateto" name="datefrom">
-                        <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
-                        <mat-datepicker #picker1></mat-datepicker>
-                     </mat-form-field>
-                   
-                     <mat-form-field class="example-full-width">
-                      <input matInput placeholder="First Name" [(ngModel)]="model.fname" name="fname">
-                    </mat-form-field>
-
-                    <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Last Name" [(ngModel)]="model.lname" name="lname">
-                    </mat-form-field>
-
-                  
-                    <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Email" [(ngModel)]="model.email" name="email">
-                    </mat-form-field>
-
-
-                  
-                      
-                      </form>
-                   </div>
-        </div>
-        <div class="modal-footer text-center"> 
+  <div class="modal-content login-template">
+     
+      <div class="on-load-popup">
           
-               
+
+                 <div class="date-bar">
+                    <div class="pop-header">
+                        <h1>Filter</h1>
+                        <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
+                            aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                        </div>
+                    </div>
+                  <form  class="date-picker">
+                    <mat-form-field>
+                            <input matInput [matDatepicker] = "picker"   placeholder = "From Date" [(ngModel)]="model.datefrom" name="datefrom" >
+                            <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                         </mat-form-field>
+                    <mat-form-field>
+                      <input matInput [matDatepicker] = "picker1"  placeholder = "To Date" [(ngModel)]="model.dateto" name="datefrom">
+                      <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                   </mat-form-field>
                  
-            <button class="btn btn-fill" (click)="postoffer(1)" data-dismiss="modal">Search</button>
+                   <mat-form-field class="example-full-width">
+                    <input matInput placeholder="First Name" [(ngModel)]="model.fname" name="fname">
+                  </mat-form-field>
 
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Last Name" [(ngModel)]="model.lname" name="lname">
+                  </mat-form-field>
+
+                
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Email" [(ngModel)]="model.email" name="email">
+                  </mat-form-field>
+
+
+                
                     
-                     
-        </div>
-                    <!-- <countdown class="benner-conter mainpagee"  [text]="text" units=" Days | Hours | Minutes | Seconds" end="July 08, 2019 18:40:00"> </countdown> -->
+                    </form>
+                 </div>
+      </div>
+      <div class="modal-footer text-center"> 
+        
+             
+          <button title="Subscribe Now" type="button"
+          class="btn btn-fill" data-dismiss="modal">Cancel</button> 
+          <button class="btn btn-fill" (click)="postoffer(1)" data-dismiss="modal">Search</button>
 
-    </div>
+                  
+                   
+      </div>
+                  <!-- <countdown class="benner-conter mainpagee"  [text]="text" units=" Days | Hours | Minutes | Seconds" end="July 08, 2019 18:40:00"> </countdown> -->
+
+  </div>
 </div>
 </div>
 <!-- End Model -->
 
 
 
-        <div class="table-responsive">
-          <table>
-              <thead>
-                  <tr>
-                      <th>User Name</th>
-                  
-                      <th>First Name</th>
+
+
+
+
+
+      <div class="table-responsive">
+        <table class="">
+            <thead >
+                <tr>
+                    <th>User Name</th>
                 
-                      <th>Last Name</th>
-                      <th>Email</th>
-                      <th>Date</th>
-                      <th>Action</th>
+                    <th>First Name</th>
+              
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Action</th>
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr  *ngFor="let item of personal?.results">
-                    <td>{{item.username}}</td>
-                    <td>{{item.first_name}}</td>
-                    <td>{{item.last_name}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.date_joined | date}}</td>
-                    <td class="text-center">
-                        <a [routerLink]="['/viewsingleuser']"
-                        [queryParams]="{ ProID:item.id}">
-                        <button class="detail-btn">Detail</button>
-                      </a>
-                    </td>
-                </tr>
-            </tbody>
-          
-        </table>  
+              </tr>
+          </thead>
+          <tbody>
+              <tr  *ngFor="let item of personal?.results">
+                  <td>{{item.username}}</td>
+                  <td>{{item.first_name}}</td>
+                  <td>{{item.last_name}}</td>
+                  <td>{{item.email}}</td>
+                  <td>{{item.date_joined | date}}</td>
+                  <td class="text-center">
+                      <a [routerLink]="['/viewsingleuser']"
+                      [queryParams]="{ ProID:item.id}">
+                      <button class="detail-btn">Detail</button>
+                    </a>
+                  </td>
+              </tr>
+          </tbody>
         
+      </table>  
+      
 
-                      
                     
                   
-            
-    
-        </div>  
-          <!-- <div class="pagination-nav">
-
-                <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
-                    <li [ngClass]="{hide:pager.currentPage === 1}">
-                        <a   (click)="viewuser(1)" class="view-1s" class="btn btn-fill">
-                            <i class="fa fa-angle-double-left"></i>
-                        </a>
-                    </li>
-                    <li [ngClass]="{hide:pager.currentPage === 1}">
-                        <a   (click)="viewuser(pager.currentPage - 1)" class="view-1s" class="btn btn-fill">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                    </li>
-                     
-                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-                        <a  (click)="viewuser(page)" class="view-plan-details">{{page | number}}</a>
-                    </li>
-
-                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"
-                        *ngIf="(pager.startPage  + 3) <= pager.totalPages">
-                        <a   (click)="viewuser(pager.currentPage + 3)">...</a>
-                    </li>
-                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>Of</a></li>
-                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                        <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
-                                    | number}}</a>
-                    </li>
-                    <li *ngIf="pager.currentPage === pager.totalPages"> <a>Of</a></li>
-                    <li *ngIf="pager.currentPage === pager.totalPages">
-                        <a    (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
-                                    | number}}</a>
-                    </li>
-                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                        <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details"
-                            class="btn btn-fill" type="Next">
-                            <i class="fa fa-angle-right top-set"></i>
-                        </a>
-                    </li>
-                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                        <a   (click)="viewuser(pager.totalPages)" class="view-plan-details"
-                            class="btn btn-fill" type="Next">
-                            <i class="fa fa-angle-double-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>  -->
-            <div class="pagination-nav">   
-            <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
-
-
-                    <li [ngClass]="{hide:pager.currentPage === 1}">
-                      <a (click)="viewuser(pager.currentPage - 1)" class="view-1s" class="btn btn-fill">
-                        <i class="fa fa-angle-left"></i>
-                      </a>
-                    </li>
-                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-                      <a   (click)="viewuser(page)" class="view-plan-details">{{page}}</a>
-                    </li>
+                
+          
   
-                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}" *ngIf="(pager.startPage  + 3) <= pager.totalPages">
+      </div>  
+        <!-- <div class="pagination-nav">
+
+              <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
+                  <li [ngClass]="{hide:pager.currentPage === 1}">
+                      <a   (click)="viewuser(1)" class="view-1s" class="btn btn-fill">
+                          <i class="fa fa-angle-double-left"></i>
+                      </a>
+                  </li>
+                  <li [ngClass]="{hide:pager.currentPage === 1}">
+                      <a   (click)="viewuser(pager.currentPage - 1)" class="view-1s" class="btn btn-fill">
+                          <i class="fa fa-angle-left"></i>
+                      </a>
+                  </li>
+                   
+                  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                      <a  (click)="viewuser(page)" class="view-plan-details">{{page | number}}</a>
+                  </li>
+
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"
+                      *ngIf="(pager.startPage  + 3) <= pager.totalPages">
                       <a   (click)="viewuser(pager.currentPage + 3)">...</a>
-                    </li>
-                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>OF</a></li>
-                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                      <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
-                    </li>
-                    <!-- <li *ngIf="pager.currentPage === pager.totalPages"> <a>OF</a></li>
-                    <li *ngIf="pager.currentPage === pager.totalPages">
-                      <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
-                    </li> -->
-                    <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                      <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details" class="btn btn-fill" type="Next">
-                        <i class="fa fa-angle-right top-set"></i>
+                  </li>
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>Of</a></li>
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                      <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
+                                  | number}}</a>
+                  </li>
+                  <li *ngIf="pager.currentPage === pager.totalPages"> <a>Of</a></li>
+                  <li *ngIf="pager.currentPage === pager.totalPages">
+                      <a    (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
+                                  | number}}</a>
+                  </li>
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                      <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details"
+                          class="btn btn-fill" type="Next">
+                          <i class="fa fa-angle-right top-set"></i>
                       </a>
-                    </li>
-  
-                  </ul>
-                  </div>
-                  <!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-                        <li [ngClass]="{hide:pager.currentPage === 1}">
-                          <a (click)=" viewuser(1)" class="btn btn-fill">First</a>
-                        </li>
-                        <li [ngClass]="{hide:pager.currentPage === 1}">
-                          <a (click)=" viewuser(pager.currentPage - 1)" class="btn btn-fill">Previous</a>
-                        </li>
-                        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-                          <a (click)=" viewuser(page)" class="btn btn-fill">{{page}}</a>
-                        </li>
-                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                          <a (click)=" viewuser(pager.currentPage + 1)" class="btn btn-fill" type="Next">Next</a>
-                        </li>
-                        <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                          <a (click)=" viewuser(pager.totalPages)" class="btn btn-fill" type="Last">Last</a>
-                        </li>
-                      </ul> -->
- 
-    </div>
+                  </li>
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                      <a   (click)="viewuser(pager.totalPages)" class="view-plan-details"
+                          class="btn btn-fill" type="Next">
+                          <i class="fa fa-angle-double-right"></i>
+                      </a>
+                  </li>
+              </ul>
+          </div>  -->
+          <div class="pagination-nav">   
+          <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
+
+
+                  <li [ngClass]="{hide:pager.currentPage === 1}">
+                    <a (click)="viewuser(pager.currentPage - 1)" class="view-1s" class="btn btn-fill">
+                      <i class="fa fa-angle-left"></i>
+                    </a>
+                  </li>
+                  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a   (click)="viewuser(page)" class="view-plan-details">{{page}}</a>
+                  </li>
+
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}" *ngIf="(pager.startPage  + 3) <= pager.totalPages">
+                    <a   (click)="viewuser(pager.currentPage + 3)">...</a>
+                  </li>
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>OF</a></li>
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                    <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
+                  </li>
+                  <!-- <li *ngIf="pager.currentPage === pager.totalPages"> <a>OF</a></li>
+                  <li *ngIf="pager.currentPage === pager.totalPages">
+                    <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages}}</a>
+                  </li> -->
+                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                    <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details" class="btn btn-fill" type="Next">
+                      <i class="fa fa-angle-right top-set"></i>
+                    </a>
+                  </li>
+
+                </ul>
+                </div>
+                <!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                      <li [ngClass]="{hide:pager.currentPage === 1}">
+                        <a (click)=" viewuser(1)" class="btn btn-fill">First</a>
+                      </li>
+                      <li [ngClass]="{hide:pager.currentPage === 1}">
+                        <a (click)=" viewuser(pager.currentPage - 1)" class="btn btn-fill">Previous</a>
+                      </li>
+                      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                        <a (click)=" viewuser(page)" class="btn btn-fill">{{page}}</a>
+                      </li>
+                      <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                        <a (click)=" viewuser(pager.currentPage + 1)" class="btn btn-fill" type="Next">Next</a>
+                      </li>
+                      <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
+                        <a (click)=" viewuser(pager.totalPages)" class="btn btn-fill" type="Last">Last</a>
+                      </li>
+                    </ul> -->
+
+  </div>
 </div>
