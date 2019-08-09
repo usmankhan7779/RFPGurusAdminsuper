@@ -60,6 +60,7 @@ import { ViewuserreplyComponent } from './viewuserreply/viewuserreply.component'
  
 @NgModule({
   exports: [
+    // MaterialModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,

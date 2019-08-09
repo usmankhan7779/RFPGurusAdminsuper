@@ -6,14 +6,16 @@ import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl, FormG
 import * as moment from 'moment';
 import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
 declare var $: any; 
+ 
+ 
 @Component({
   selector: 'app-viewuser',
   templateUrl: './viewuser.component.html',
   styleUrls: ['./viewuser.component.scss']
 })
+ 
 
-
-
+ 
 export class ViewuserComponent implements OnInit {
   // personal: any ;
   personal :any;

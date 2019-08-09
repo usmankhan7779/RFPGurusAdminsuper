@@ -14,15 +14,15 @@
     </div>
     <div class="msg-area">
    
-    <div *ngFor="let data of show; let i=index">
-    <div class="row">
+    <div class="row" *ngFor="let data of show; let i=index">
+    <div class="col-sm-12">
     <div class=" user-text" *ngIf="data?.super_admin_status != true">
     <span class="me">Me</span>
     {{data?.description}}
     </div>
     </div>
-    <div class="row">
-    <div class=" admin-text" *ngIf="data?.super_admin_status == true">
+    <div class="col-sm-12">
+    <div class="admin-text" *ngIf="data?.super_admin_status == true">
     <span class="admin">A</span>
     {{data?.description}}
     </div>
@@ -33,7 +33,7 @@
     <div class="submit-div">
     <textarea placeholder="Description" class="form-control" formControlName="des"></textarea>
     <button class="btn btn-primary" (click)="descriptionpost()" [disabled]="!form.valid">
-    <i class="fa fa-angle-up"></i>
+    Send
     </button>
     </div>
    
