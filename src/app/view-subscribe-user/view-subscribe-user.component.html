@@ -20,7 +20,7 @@
             </form> -->
 
     <div class="admin-home-palceholder">
-    <span>Total Subscriptions: {{pagers}}</span>
+    <span>Total Trial Subscriptions: {{personal?.totalItems}}</span>
     <div class="icons">
        <button class="refrash" (click)="viewuser(1)">
           <i class="fa fa-refresh"></i>
@@ -132,8 +132,8 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <td>{{item.User.company}}</td>
                         <td>{{item.User.user.first_name +" "+ item.User.user.last_name}}</td>
                         
-                        <td>{{item.timecreated |date}}</td>
-                        <td>{{item.endtime | date}}</td>
+                        <td>{{item.timecreated |date:"MMM d, y":"UTC"}}</td>
+                        <td>{{item.endtime | date:"MMM d, y":"UTC"}}</td>
                         <td *ngIf="item.payed == false">Active </td>
                         <td *ngIf="item.payed == true">Expire </td>
                         

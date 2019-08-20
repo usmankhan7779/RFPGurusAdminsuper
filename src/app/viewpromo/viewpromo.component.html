@@ -1,0 +1,161 @@
+<div class="view">
+  <div class="table-box">
+      <div class="">
+          <!-- <form [formGroup]="date" class="date-picker">
+          <mat-form-field>
+                  <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
+                  <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+               </mat-form-field>
+         <mat-form-field>
+            <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
+            <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+         </mat-form-field>
+          <button class="serch-btn" (click)="postoffer(1)">Search</button>
+          </form> -->
+
+          <div class="admin-home-palceholder">
+              <span></span>
+              
+          </div>
+
+      </div>
+
+
+      
+
+
+
+      <div class="table-responsive">
+      <table>
+          <thead>
+              <tr>
+                  <th>Promo Code</th>
+              
+                  <th>Subscription</th>
+             
+                  <th>Promo Type</th>
+              
+                  <th>Discount</th>
+                  <th>Valid From</th>
+                  <th>Valid To</th>
+                  <th>Status</th>
+                  <!-- <th>Date</th> -->
+                  <th>Action</th>
+                
+              </tr>
+          </thead>
+          <tbody>
+              <tr  *ngFor="let item of personal">
+                  <td>{{item.code}}</td>
+                  <!-- <td>{{item.duration}}</td> -->
+                  <td *ngIf="item.subscription_type == 'V'">Vendor</td>
+                  <td *ngIf="item.subscription_type == 'A'">Agency</td>
+                  
+                  <!-- <td>{{item.pkg_type}}</td> -->
+                  <td *ngIf="item.promo_type == 'T'">Trial </td>
+                  <td *ngIf="item.promo_type == 'M'">Monthly </td>
+                  <td *ngIf="item.promo_type == 'Y'">Yearly </td>
+                  
+                 
+                  <td>{{item.discount}}%</td>
+                  <td>{{item.timegenerated | date:"MMM d, y":"UTC"}}</td>
+                  <td>{{item.exp_time | date:"MMM d, y":"UTC"}}</td>
+                  <td>{{item.valid}}</td>
+                                    
+                 
+                  <!-- <td>{{item.date_joined | date}}</td> -->
+                  <td class="text-center">
+                      
+                      <button class="detail-btn" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.discount,item.valid,item.timegenerated,item.exp_time,item.id)">
+                          
+                          Update</button>
+
+                    
+                  </td>
+              </tr>
+          </tbody>
+        
+      </table>
+      
+      
+      
+
+
+
+      </div>
+
+
+
+  </div>
+</div>
+
+<div  class="modal fade login-or-signup" id="exampleModalCenter" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered custom-model" style="animation-delay: 15s" role="document">
+  <div class="modal-content login-template">
+     
+      <div class="on-load-popup">
+          
+              <div class="date-bar">
+                  <div class="pop-header">
+                      <h1>Promo Code</h1>
+                      <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
+                          aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                      </div>
+                  </div>
+                  <form class="date-picker">
+                    
+                      <!-- <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Duration" value={{duration}}>
+                        </mat-form-field>
+          
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Package Type" value="{{package}}">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Package Price"  [(ngModel)]="price" value="{{price}}" [ngModelOptions]="{standalone: true}">   
+                        </mat-form-field>   -->
+                        <mat-form-field class="example-full-width">
+                            <input  matInput [matDatepicker]="myPicker" value="{{datefrom}}"  placeholder="Valid From">
+                            <mat-datepicker-toggle  matSuffix [for]="myPicker"></mat-datepicker-toggle>
+                            <mat-datepicker #myPicker></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input  matInput [matDatepicker]="myPicker1" value="{{dateto}}"  placeholder="Valid To">
+                            <mat-datepicker-toggle  matSuffix [for]="myPicker1"></mat-datepicker-toggle>
+                            <mat-datepicker #myPicker1></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Discount"   value="{{discount}}">   
+                        </mat-form-field>
+                        <mat-form-field>
+                            <!-- <mat-label *ngIf="valid=='true'">Active</mat-label>
+                            <mat-label *ngIf="!status">Expire</mat-label> -->
+                            <mat-select  [(ngModel)]="valid" name="valid">
+                              <mat-option  [value]="valid"  >{{valid}}</mat-option>
+                              <mat-option  value="false" >Expire</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                  </form>
+                 
+              </div>
+      </div>
+      <div class="modal-footer text-center"> 
+        
+             
+               
+                   <button title="Subscribe Now" type="button"
+                  class="btn btn-fill" data-dismiss="modal">Cancel</button>  
+               <!-- <button title="Subscribe Now" type="button" (click)="activeClick(price)"
+                  class="btn btn-fill" data-dismiss="modal">Update</button>  -->
+
+                   
+      </div>
+                  <!-- <countdown class="benner-conter mainpagee"  [text]="text" units=" Days | Hours | Minutes | Seconds" end="July 08, 2019 18:40:00"> </countdown> -->
+
+  </div>
+</div>
+</div>

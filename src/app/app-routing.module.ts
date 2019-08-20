@@ -37,7 +37,7 @@ const routes: Routes = [
       { path: 'viewticket', loadChildren: './view-ticket-receive/viewticketuser.module#ViewticketUserModule', canActivate: [AuthGuard] },
       { path: 'viewprice', loadChildren: './viewprice/viewprice.module#ViewpriceModule', canActivate: [AuthGuard] },
       { path: 'viewimage', loadChildren: './viewimage/viewimage.module#ViewimageModule', canActivate: [AuthGuard] },
-
+      { path: 'viewpromo', loadChildren: './viewpromo/viewpromo.module#ViewpromoModule' },
 
 
 
