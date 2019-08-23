@@ -25,6 +25,7 @@
     width: 100%;
     margin-top: 10px;
     border: 1px solid #ccc;
+    table-layout: auto;
 }
 .table-box table th{
     background: #000;
@@ -107,4 +108,15 @@
 }
 .close{
     font-size: 25px;
+}
+
+.sm-heading{
+    font-size: 20px;
+    margin: 0;
+}
+.redio-lable{
+    font-size: 15px !important;
+}
+.radio{
+    margin-bottom: 5px;
 }

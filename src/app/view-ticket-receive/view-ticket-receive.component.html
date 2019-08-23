@@ -1,20 +1,9 @@
 <div class="view">
         <div class="table-box">
             <div class="">
-                <!-- <form [formGroup]="date" class="date-picker">
-                <mat-form-field>
-                        <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
-                        <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                     </mat-form-field>
-               <mat-form-field>
-                  <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
-                  <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
-                  <mat-datepicker #picker1></mat-datepicker>
-               </mat-form-field>
-                <button class="serch-btn" (click)="postoffer(1)">Search</button>
-                </form> -->
-    
+              <div class="page-title">
+                <h3 class="text-center">Subscription Plan Pricing</h3>
+              </div>
                 <div class="admin-home-palceholder">
                     <span>Total Tickets : {{personal?.totalItems}}</span>
                     <div class="icons">
@@ -36,7 +25,7 @@
     
             </div>
         <div class="table-responsive">
-            <table class="fixed_header">
+            <table class="">
                 <thead>
                     <tr>
                         <th>Ticket Id#</th>
@@ -44,9 +33,9 @@
                         <th>Ticket Issue User</th>
                    
                          
-                        <th>Subject</th>
+                        <th colspan="2">Subject</th>
                         <th>Priority</th>
-                        <th>Description</th>
+                        <th >Description</th>
                         <th>Status</th>
                         <th>Action</th>
                       
@@ -61,11 +50,11 @@
                         <td *ngIf="item.pkg_fk.duration == 'M'">Monthly</td>
                         <td *ngIf="item.pkg_fk.duration == 'Y'">Yearly</td> -->
                       
-                        <td>{{item.subject}}</td>
+                        <td colspan="2">{{item.subject}}</td>
                      
                         <td *ngIf="item.priority == 'M'">Medium </td>
                         <td *ngIf="item.priority == 'H'">High </td>
-                        <td>{{item.description}}</td>
+                        <td >{{item.description}}</td>
                         <td *ngIf="item.status == true">Done </td>
                         <td *ngIf="item.status == false">Pending </td>
                         

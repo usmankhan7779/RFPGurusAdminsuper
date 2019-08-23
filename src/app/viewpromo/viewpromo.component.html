@@ -1,9 +1,12 @@
 <div class="view">
   <div class="table-box">
       <div class="">
+            <div class="page-title">
+                    <h3 class="text-center">Promo Code</h3>
+                  </div>
         <div class="admin-home-palceholder">
             <span></span>
-            <button class="detail-btn" data-toggle="modal" data-target="#aexampleModalCenter">
+            <button class="btn-fill" data-toggle="modal" data-target="#aexampleModalCenter">
 
                 Add new Promo Code </button>
 
@@ -179,18 +182,16 @@
                             <input matInput placeholder="Code" [(ngModel)]="postcode" name="postcode">
                         </mat-form-field>
 
-                        <div class="col-sm-12">
+                        <div class="">
                             <h4 class="sm-heading">Status</h4>
                             <div class="radio">
-                                <label class="redio-lable">
-                                    <input checked="true" type="radio" (change)="checked13($event,i)" ng-Model="pricing"
-                                        name="postcodeT" [value]="true">
-                                    <!-- <input  type="radio" (change)="checked10($event,i)"   ng-Model="market"  name="fixed" [value]="market" > -->
-                                    <span class="circle"></span><span class="check"></span>
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="radio">
+                                    <label class="redio-lable">
+                                            <input checked="true" type="radio" (change)="checked13($event,i)" ng-Model="pricing"
+                                                name="postcodeT" [value]="true">
+                                            <!-- <input  type="radio" (change)="checked10($event,i)"   ng-Model="market"  name="fixed" [value]="market" > -->
+                                            <span class="circle"></span><span class="check"></span>
+                                            Yes
+                                        </label>
                                 <label class="redio-lable">
                                     <input type="radio" (change)="checked14($event,i)" ng-Model="billing"
                                         name="postcodeT" [value]="false"><span class="circle"></span><span
@@ -201,8 +202,8 @@
 
                         </div>
 
-                        <div class="col-sm-12">
-                            <h4 class="sm-heading"> subscription Type</h4>
+                        <div class="">
+                            <h4 class="sm-heading"> Subscription Type</h4>
                             <div class="radio">
                                 <label class="redio-lable">
                                     <input checked="true" type="radio" (change)="checked8($event,i)" ng-Model="pricing"
@@ -211,19 +212,18 @@
                                     <span class="circle"></span><span class="check"></span>
                                     Agency
                                 </label>
-                            </div>
-                            <div class="radio">
                                 <label class="redio-lable">
-                                    <input type="radio" (change)="checked9($event,i)" ng-Model="billing"
-                                        name="postcodeA" [value]="V"><span class="circle"></span><span
-                                        class="check"></span>
-                                    Vendor
-                                </label>
+                                        <input type="radio" (change)="checked9($event,i)" ng-Model="billing"
+                                            name="postcodeA" [value]="V"><span class="circle"></span><span
+                                            class="check"></span>
+                                        Vendor
+                                    </label>
                             </div>
+                            
 
                         </div>
-                        <div class="col-sm-12">
-                            <h4 class="sm-heading"> subscription Type</h4>
+                        <div class="">
+                            <h4 class="sm-heading"> Subscription Type</h4>
                             <div class="radio">
                                 <label class="redio-lable">
                                     <input checked="true" type="radio" (change)="checked10($event,i)" ng-Model="pricing"
@@ -231,23 +231,20 @@
                                     <span class="circle"></span><span class="check"></span>
                                     Trial
                                 </label>
-                            </div>
-                            <div class="radio">
                                 <label class="redio-lable">
-                                    <input type="radio" (change)="checked11($event,i)" ng-Model="billing"
-                                        name="postcodeY" [value]="M"><span class="circle"></span><span
-                                        class="check"></span>
-                                    Monthly
-                                </label>
+                                        <input type="radio" (change)="checked11($event,i)" ng-Model="billing"
+                                            name="postcodeY" [value]="M"><span class="circle"></span><span
+                                            class="check"></span>
+                                        Monthly
+                                    </label>
+                                    <label class="redio-lable">
+                                            <input type="radio" (change)="checked12($event,i)" ng-Model="billing"
+                                                name="postcodeY" [value]="Y"><span class="circle"></span><span
+                                                class="check"></span>
+                                            yearly
+                                        </label>
                             </div>
-                            <div class="radio">
-                                <label class="redio-lable">
-                                    <input type="radio" (change)="checked12($event,i)" ng-Model="billing"
-                                        name="postcodeY" [value]="Y"><span class="circle"></span><span
-                                        class="check"></span>
-                                    yearly
-                                </label>
-                            </div>
+                            
 
                         </div>
 

@@ -1,20 +1,9 @@
 <div class="view">
     <div class="table-box">
       <div class="">
-        <!-- <form [formGroup]="date" class="date-picker">
-         <mat-form-field>
-                <input matInput [matDatepicker] = "picker" formControlName="datefrom"  placeholder = "From Date">
-                <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-             </mat-form-field>
-          <mat-form-field>
-              <input matInput [matDatepicker] = "picker1" formControlName="dateto" placeholder = "To Date">
-              <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
-              <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
-        <button class="serch-btn" (click)="postoffer(1)">Search</button>
-        </form> -->
-
+        <div class="page-title">
+          <h3 class="text-center"> Paid Subscription Users</h3>
+        </div>
         <div class="admin-home-palceholder">
             <span>Total Subscriptions: {{personal?.totalItems}}</span>
             <div class="icons">
@@ -124,7 +113,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <table>
             <thead>
                 <tr>
-                    <th>Company Name</th>
+                    <th colspan="2">Company Name</th>
                 
                     <th>Full Name</th>
                
@@ -140,7 +129,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             </thead>
             <tbody>
                 <tr  *ngFor="let item of personal?.results">
-                    <td>{{item.reg_fk.company}}</td>
+                    <td colspan="2">{{item.reg_fk.company}}</td>
                     <td>{{item.reg_fk.user.first_name +" "+ item.reg_fk.user.last_name}}</td>
                     <td *ngIf="item.pkg_fk.pkg_type == 'B'">Basic</td>
                     <td *ngIf="item.pkg_fk.pkg_type == 'P'">Premium</td>

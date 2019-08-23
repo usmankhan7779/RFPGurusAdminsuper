@@ -173,9 +173,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-weight: bold;
 }
 /////////////////////////////End Form/////////////////////////////////////
-
-
-
+.page-title{
+    text-align: center;
+}
+.page-title h3 {
+    display: inline-block;
+    padding-bottom: 0px;
+    color: #000;
+    font-size: 35px !important;
+    font-weight: 500 !important;
+    line-height: 28px;
+    margin-bottom: 0 !important;
+    font-family: inherit;
+    letter-spacing: 0px;
+    border-bottom: 2px solid #C00;
+    padding: 0 5px 7px;
+}
+.table-box table{
+    table-layout: fixed;
+}
 
 
 
@@ -198,12 +214,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .table-box table th{
     white-space: nowrap;
     font-size: 15px;
+    font-weight: 500;
 }
 .table-box table td{
     text-overflow: ellipsis;
     overflow: hidden;
     cursor: pointer;
     white-space: nowrap;
+    text-align: center;
 }
 .icons button{
     box-shadow: 2px 2px 6px 2px #ccc;
