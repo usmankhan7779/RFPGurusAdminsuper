@@ -56,7 +56,10 @@ import { PagerService } from './servicefile/paginator.service';
 import { ViewuserComponent } from './viewuser/viewuser.component';
  import { userService} from './viewuser/viewuser.service'
 import { from } from 'rxjs';
-import { ViewuserreplyComponent } from './viewuserreply/viewuserreply.component'; 
+import { ViewuserreplyComponent } from './viewuserreply/viewuserreply.component';
+import { ViewpromoComponent } from './viewpromo/viewpromo.component';
+// import { ViewupdaterfpComponent } from './viewupdaterfp/viewupdaterfp.component';
+// import { ViewnewrfpComponent } from './viewnewrfp/viewnewrfp.component'; 
  
 @NgModule({
   exports: [
@@ -95,7 +98,9 @@ import { ViewuserreplyComponent } from './viewuserreply/viewuserreply.component'
     FormsModule,
     MatFormFieldModule
   ],
-  declarations: [],
+  // declarations: [ViewupdaterfpComponent],
+  // declarations: [ViewnewrfpComponent],
+
   
 })
 export class MaterialModule { }
@@ -108,7 +113,8 @@ export class MaterialModule { }
     HomeComponent,
     SidebarComponent,
     SidebarViewComponent, 
-    ViewuserComponent
+    // ViewuserComponent
+    
      
        
     

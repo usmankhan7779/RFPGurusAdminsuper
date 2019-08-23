@@ -1,0 +1,271 @@
+<div class="view">
+  <div class="table-box">
+      <div class="">
+        <div class="admin-home-palceholder">
+            <span></span>
+            <button class="detail-btn" data-toggle="modal" data-target="#aexampleModalCenter">
+
+                Add new Promo Code </button>
+
+        </div>
+
+      </div>
+
+
+      
+
+
+
+      <div class="table-responsive">
+      <table>
+          <thead>
+              <tr>
+                  <th>Promo Code</th>
+              
+                  <th>Subscription</th>
+             
+                  <th>Promo Type</th>
+              
+                  <th>Discount</th>
+                  <th>Valid From</th>
+                  <th>Valid To</th>
+                  <th>Status</th>
+                  <!-- <th>Date</th> -->
+                  <th>Action</th>
+                
+              </tr>
+          </thead>
+          <tbody>
+              <tr  *ngFor="let item of personal">
+                  <td>{{item.code}}</td>
+                  <!-- <td>{{item.duration}}</td> -->
+                  <td *ngIf="item.subscription_type == 'V'">Vendor</td>
+                  <td *ngIf="item.subscription_type == 'A'">Agency</td>
+                  
+                  <!-- <td>{{item.pkg_type}}</td> -->
+                  <td *ngIf="item.promo_type == 'T'">Trial </td>
+                  <td *ngIf="item.promo_type == 'M'">Monthly </td>
+                  <td *ngIf="item.promo_type == 'Y'">Yearly </td>
+                  
+                 
+                  <td>{{item.discount}}%</td>
+                  <td>{{item.timegenerated | date:"MMM d, y":"UTC"}}</td>
+                  <td>{{item.exp_time | date:"MMM d, y":"UTC"}}</td>
+                  <td>{{item.valid}}</td>
+                                    
+                 
+                  <!-- <td>{{item.date_joined | date}}</td> -->
+                  <td class="text-center">
+                      
+                        <button class="detail-btn" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.discount,item.valid,item.timegenerated,item.exp_time,item.id)">
+                          
+                          Update</button>
+                        <button class="detail-btn" (click)="activeClick(item.id)">
+                          
+                            Delete</button>
+
+                    
+                  </td>
+              </tr>
+          </tbody>
+        
+      </table>
+      
+      
+      
+
+
+
+      </div>
+
+
+
+  </div>
+</div>
+
+
+<div class="modal fade login-or-signup" id="exampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-model" style="animation-delay: 15s" role="document">
+        <div class="modal-content login-template">
+
+            <div class="on-load-popup">
+
+                <div class="date-bar">
+                    <div class="pop-header">
+                        <h1>Promo Code</h1>
+                        <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
+                                aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                        </div>
+                    </div>
+                    <form class="date-picker">
+
+                        <mat-form-field class="example-full-width">
+                            <input matInput [matDatepicker]="myPicker" value="{{datefrom}}" [(ngModel)]="datefrom"
+                                name="datefrom" placeholder="Valid From">
+                            <mat-datepicker-toggle matSuffix [for]="myPicker"></mat-datepicker-toggle>
+                            <mat-datepicker #myPicker></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput [matDatepicker]="myPicker1" value="{{dateto}}" [(ngModel)]="dateto"
+                                name="dateto" placeholder="Valid To">
+                            <mat-datepicker-toggle matSuffix [for]="myPicker1"></mat-datepicker-toggle>
+                            <mat-datepicker #myPicker1></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Discount" [(ngModel)]="discount" name="discount"
+                                value="{{discount}}">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <!-- <mat-label *ngIf="valid=='true'">Active</mat-label>
+                            <mat-label *ngIf="!status">Expire</mat-label> -->
+                            <mat-select [(ngModel)]="valid" [(ngModel)]="valid" name="valid">
+                                <mat-option [value]="true">Active</mat-option>
+                                <mat-option [value]="false">Expire</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer text-center">
+
+
+
+                <button title="Subscribe Now" type="button" class="btn btn-fill" data-dismiss="modal"
+                    (click)="promocode_update()">Update</button>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade login-or-signup" id="aexampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom-model" style="animation-delay: 15s" role="document">
+        <div class="modal-content login-template">
+
+            <div class="on-load-popup">
+
+                <div class="date-bar">
+                    <div class="pop-header">
+                        <h1>Add new Promo Code</h1>
+                        <div class="close-button"> <button type="button" class="close sh" data-dismiss="modal"
+                                aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                        </div>
+                    </div>
+                    <form class="date-picker">
+
+                        <mat-form-field class="example-full-width">
+                            <input matInput [matDatepicker]="myPicker3" [(ngModel)]="postdatefrom" name="datefrom"
+                                placeholder="Valid From">
+                            <mat-datepicker-toggle matSuffix [for]="myPicker3"></mat-datepicker-toggle>
+                            <mat-datepicker #myPicker3></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput [matDatepicker]="myPicker4" [(ngModel)]="postdateto" name="dateto"
+                                placeholder="Valid To">
+                            <mat-datepicker-toggle matSuffix [for]="myPicker4"></mat-datepicker-toggle>
+                            <mat-datepicker #myPicker4></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Discount" [(ngModel)]="postdiscount" name="postdiscount">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Code" [(ngModel)]="postcode" name="postcode">
+                        </mat-form-field>
+
+                        <div class="col-sm-12">
+                            <h4 class="sm-heading">Status</h4>
+                            <div class="radio">
+                                <label class="redio-lable">
+                                    <input checked="true" type="radio" (change)="checked13($event,i)" ng-Model="pricing"
+                                        name="postcodeT" [value]="true">
+                                    <!-- <input  type="radio" (change)="checked10($event,i)"   ng-Model="market"  name="fixed" [value]="market" > -->
+                                    <span class="circle"></span><span class="check"></span>
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="redio-lable">
+                                    <input type="radio" (change)="checked14($event,i)" ng-Model="billing"
+                                        name="postcodeT" [value]="false"><span class="circle"></span><span
+                                        class="check"></span>
+                                    No
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-12">
+                            <h4 class="sm-heading"> subscription Type</h4>
+                            <div class="radio">
+                                <label class="redio-lable">
+                                    <input checked="true" type="radio" (change)="checked8($event,i)" ng-Model="pricing"
+                                        name="postcodeA" [value]="A">
+                                    <!-- <input  type="radio" (change)="checked10($event,i)"   ng-Model="market"  name="fixed" [value]="market" > -->
+                                    <span class="circle"></span><span class="check"></span>
+                                    Agency
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="redio-lable">
+                                    <input type="radio" (change)="checked9($event,i)" ng-Model="billing"
+                                        name="postcodeA" [value]="V"><span class="circle"></span><span
+                                        class="check"></span>
+                                    Vendor
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-12">
+                            <h4 class="sm-heading"> subscription Type</h4>
+                            <div class="radio">
+                                <label class="redio-lable">
+                                    <input checked="true" type="radio" (change)="checked10($event,i)" ng-Model="pricing"
+                                        name="postcodeY" [value]="T">
+                                    <span class="circle"></span><span class="check"></span>
+                                    Trial
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="redio-lable">
+                                    <input type="radio" (change)="checked11($event,i)" ng-Model="billing"
+                                        name="postcodeY" [value]="M"><span class="circle"></span><span
+                                        class="check"></span>
+                                    Monthly
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="redio-lable">
+                                    <input type="radio" (change)="checked12($event,i)" ng-Model="billing"
+                                        name="postcodeY" [value]="Y"><span class="circle"></span><span
+                                        class="check"></span>
+                                    yearly
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer text-center">
+
+
+
+                <button title="Subscribe Now" type="button" class="btn btn-fill" data-dismiss="modal"
+                    (click)="addpromocode_update()">Update</button>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

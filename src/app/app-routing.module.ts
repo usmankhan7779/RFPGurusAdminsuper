@@ -25,8 +25,8 @@ const routes: Routes = [
     component: SidebarViewComponent,
     children: [
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#ConsumerDashboardModule', canActivate: [AuthGuard] },
-      // { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule', canActivate: [AuthGuard] },
-       { path : 'viewuser' , component: ViewuserComponent},
+      { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule', canActivate: [AuthGuard] },
+      //  { path : 'viewuser' , component: ViewuserComponent},
       { path: 'viewreply', loadChildren: './viewuserreply/viewuserreply.module#ViewUserReplyModule', canActivate: [AuthGuard] },
 
 
@@ -37,7 +37,9 @@ const routes: Routes = [
       { path: 'viewticket', loadChildren: './view-ticket-receive/viewticketuser.module#ViewticketUserModule', canActivate: [AuthGuard] },
       { path: 'viewprice', loadChildren: './viewprice/viewprice.module#ViewpriceModule', canActivate: [AuthGuard] },
       { path: 'viewimage', loadChildren: './viewimage/viewimage.module#ViewimageModule', canActivate: [AuthGuard] },
-
+      { path: 'viewpromo', loadChildren: './viewpromo/viewpromo.module#ViewpromoModule' },
+      { path: 'viewnewrfp', loadChildren: './viewnewrfp/viewnewrfp.module#ViewnewrfpModule' },
+      { path: 'viewupdaterfp', loadChildren: './viewupdaterfp/viewupdaterfp.module#ViewupdaterfpModule' },
 
 
 

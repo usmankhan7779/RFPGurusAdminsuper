@@ -20,11 +20,7 @@ export class userService {
     headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/userDetailandfilter/'+ '?page=' + page,{headers:headers});
     }
-    hamzasaeed() {
-    //     let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
-    // headers.append('Content-Type', 'application/json');
-        return this.http.get('https://apis.rfpgurus.com/payment/testreq/');
-    }
+   
     get_user_payment(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
     headers.append('Content-Type', 'application/json');
@@ -108,6 +104,49 @@ postdate2(datefrom, dateto, page) {
         return this._https.get('https://apis.rfpgurus.com/ticket/Ticketreply_admin/' + id +'/' , {headers: headers}).map((response: Response) => response.json());
     }
     }
+    promocode_update(id,datefrom, dateto, discount, valid) {
+        if (localStorage.getItem('currentUser') != null) {
+            const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+            headers.append('Content-Type', 'application/json');
+            return this._https.put('https://apis.rfpgurus.com/super/promocode_update/'+ id + '/',
+            JSON.stringify({
+                "validfrom": datefrom,
+                "validto" : dateto,
+                "discount" : discount,
+                "status" : valid,
+           
+    
+    
+            }),{headers:headers})
+            }
+        }
+        promocode_add(datefrom, dateto, discount,status,code,subscription_type,promo_type) {
+            if (localStorage.getItem('currentUser') != null) {
+                const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+                headers.append('Content-Type', 'application/json');
+                return this._https.post('https://apis.rfpgurus.com/super/promocode_get_post/',
+                JSON.stringify({
+                    "validfrom": datefrom,
+                    "validto" : dateto,
+                    "discount" : discount,
+                    "status" : status,
+                    "code":code,
+                    "subscription_type":subscription_type,
+                    "promo_type":promo_type
+
+//                     validfrom
+// validto
+// discount
+// status
+// code
+// subscription_type .......A for agency ,.... V for vendor
+// promo_type    T for Trial .... M for Monthly .... Y yearly
+               
+        
+        
+                }),{headers:headers})
+                }
+            }
         
 
         postprice(id,price) {
@@ -125,6 +164,16 @@ postdate2(datefrom, dateto, page) {
                 }), 
                 {headers: headers}).map((response: Response) => response.json());
                 }
+                delpromo(id) {
+                    //mydate,updateddate,id,updatedtitle,updatedprofileurl,upactive,updatedprofile_logo,updatedrating_logo,updatedprice500kwh,updatedprice1000kwh,updatedprice2000kwh,updatedcancelation_fee,updatedfact_sheet,updatedterms_of_service,updatedphone,updatedsign_up,updatedproduct_name,updatedterms_month,updatedrenewable,updatedrate_type,updatedcustomer_type
+                    console.log(" service object",id)
+                    // const headers = new Headers();
+                    const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+                          headers.append('Content-Type', 'application/json');
+                
+                    return this._https.delete('http://192.168.29.234:8000/super/promocode_update/'+ id +'/',
+                    {headers: headers}).map((response: Response) => response.json());
+                    }
 
 
 
@@ -147,6 +196,21 @@ postdate2(datefrom, dateto, page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
     headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/pakagepriceset/',{headers:headers});
+    }
+    get_promo() {
+        let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+    headers.append('Content-Type', 'application/json');
+        return this._https.get('https://apis.rfpgurus.com/super/promocode_get_post/',{headers:headers}).map((response:Response)=>(response.json()));
+    }
+    get_newrfp() {
+        let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+    headers.append('Content-Type', 'application/json');
+        return this._https.get('http://192.168.29.234:8000/super/allpending_agencypost/',{headers:headers}).map((response:Response)=>(response.json()));
+    }
+    get_updaterfp() {
+        let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+    headers.append('Content-Type', 'application/json');
+        return this._https.get('http://192.168.29.234:8000/super/allpending_agencyupdate/',{headers:headers}).map((response:Response)=>(response.json()));
     }
     get_price_img() {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });

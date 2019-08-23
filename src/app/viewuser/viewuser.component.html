@@ -16,7 +16,7 @@
           </form> -->
 
           <div class="admin-home-palceholder">
-              <span>Total Subscriptions: {{personal?.totalItems}}</span>
+              <span>Total Registered Users : {{personal?.totalItems}}</span>
               <div class="icons">
                  <button class="refrash" (click)="viewuser(1)">
                     <i class="fa fa-refresh"></i>
@@ -126,7 +126,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <td>{{item.first_name}}</td>
                   <td>{{item.last_name}}</td>
                   <td>{{item.email}}</td>
-                  <td>{{item.date_joined | date}}</td>
+                  <td>{{item.date_joined | date:"MMM d, y":"UTC"}}</td>
                   <td class="text-center">
                       <a [routerLink]="['/viewsingleuser']"
                       [queryParams]="{ ProID:item.id}">

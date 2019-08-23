@@ -3,60 +3,60 @@
         <div class="row">
             <div class="col-md-6 detail-box">
                 <label>First Name:</label>
-                <span>{{personal.user.first_name}}</span>
+                <span>{{personal?.UserDetail.user.first_name}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>Last Name:</label>
-                <span>{{personal.user.last_name}}</span>
+                <span>{{personal?.UserDetail.user.last_name}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>UserName:</label>
-                <span>{{personal.user.username}}</span>
+                <span>{{personal?.UserDetail.user.username}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>Zip Code:    </label>
-                <span>{{personal.zipcode}}</span>
+                <span>{{personal?.UserDetail.zipcode}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>City:</label>
-                <span>{{personal.city}}</span>
+                <span>{{personal?.UserDetail.city}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>Country:</label>
-                <span>{{personal.country}}</span>
+                <span>{{personal?.UserDetail.country}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>States:</label>
-                <span>{{personal.state}}</span>
+                <span>{{personal?.UserDetail.state}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>Phone no:</label>
-                <span>{{personal.phone_no}}</span>
+                <span>{{personal?.UserDetail.phone_no}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>Comapany:</label>
-                <span>{{personal.company}}</span>
+                <span>{{personal?.UserDetail.company}}</span>
             </div>
             <div class="col-md-12 detail-box">
                     <label class="width">Address:</label>
-                    <span>{{personal.address}}</span>
+                    <span>{{personal?.UserDetail.address}}</span>
                 </div>
             <div class="col-md-12 detail-box">
                 <label class="width">User Preference:</label>
-                <span>{{personal.user_preference}}</span>
+                <span>{{personal?.UserDetail.user_preference}}</span>
             </div>
             <div class="col-md-12 detail-box">
                 <label class="width">State Preference:</label>
-                <span>{{personal.state_preference}}</span>
+                <span>{{personal?.UserDetail.state_preference}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label class="width">Country Preference:</label>
-                <span>{{personal.county_preference}}</span>
+                <span>{{personal?.UserDetail.county_preference}}</span>
             </div>
             
             <div class="col-md-12 detail-box">
                 <label class="width">Agency Preference:</label>
-                <span>{{personal.agency_preference}}</span>
+                <span>{{personal?.UserDetail.agency_preference}}</span>
             </div>
                 
                 <ng-template #pkg1>
@@ -66,7 +66,7 @@
         </div>
     </div>
     <div class="table-box">
-        <h3> Crad Detail </h3>
+        <h3> Card Detail </h3>
             <table>
                     <thead>
                         <tr>
@@ -80,10 +80,10 @@
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <td >laraib </td>
-                            <td>************4383</td>
-                            <td>09/2021</td>
+                        <tr *ngFor="let item of personal?.CardDetail">
+                            <td >{{item.name}} </td>
+                            <td>{{item.cardNumber}}</td>
+                            <td>{{item.expiryDate | slice:0:2}}/20{{item.expiryDate | slice:2:4}}</td>
                         </tr>
                       
                     </tbody>

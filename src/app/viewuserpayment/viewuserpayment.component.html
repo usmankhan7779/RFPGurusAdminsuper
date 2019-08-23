@@ -147,8 +147,8 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <td *ngIf="item.pkg_fk.duration == 'M'">Monthly</td>
                     <td *ngIf="item.pkg_fk.duration == 'Y'">Yearly</td>
                   
-                    <td>{{item.pay_date | date}}</td>
-                    <td>{{item.end_date | date}}</td>
+                    <td>{{item.pay_date | date:"MMM d, y":"UTC"}}</td>
+                    <td>{{item.end_date | date:"MMM d, y":"UTC"}}</td>
                     <td *ngIf="item.is_expired == false">Active </td>
                     <td *ngIf="item.is_expired == true">Expire </td>
                     <!-- <td>{{item.is_expired}}</td> -->

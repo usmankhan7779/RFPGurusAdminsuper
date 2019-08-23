@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.viewuser()
-    this.hamzasaeed()
+    
   }
   viewuser(){
    
@@ -29,17 +29,7 @@ export class DashboardComponent implements OnInit {
           // this.pager = this.pagerService.getPager(data['totalItems'], page, 20);
       });
   }
-  hamzasaeed(){
-   
-    // alert(page)
-    this._serv.hamzasaeed().subscribe(
-      data => {
-          this.personals = data;
-   console.log(data)
-          // console.log(this.personal['Total_Yearly_Subscriber'])
-          // this.pager = this.pagerService.getPager(data['totalItems'], page, 20);
-      });
-  }
+  
 
   
 
