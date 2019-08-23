@@ -203,7 +203,7 @@ export class userService {
     get_newrfp() {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('http://192.168.29.235:8000/super/allpending_agencypost/', { headers: headers }).map((response: Response) => (response.json()));
+        return this._https.get('https://apis.rfpgurus.com/super/allpending_agencypost/', { headers: headers }).map((response: Response) => (response.json()));
     }
     Approvenewrfp(id) {
         // let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
@@ -212,7 +212,7 @@ export class userService {
         headers.append('Content-Type', 'application/json');
         // headers.append('Authorization', 'Token ' +  this.authentication);
         headers.append('Authorization', 'JWT ' + localStorage.getItem('currentUser'));
-        return this._https.get('http://192.168.29.235:8000/super/newrfp_aprove/' + id + '/', { headers: headers }).map((response: Response) => response.json());
+        return this._https.get('https://apis.rfpgurus.com/super/newrfp_aprove/' + id + '/', { headers: headers }).map((response: Response) => response.json());
     }
     Approveudpaterfp(id) {
         // let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
@@ -221,12 +221,12 @@ export class userService {
         headers.append('Content-Type', 'application/json');
         // headers.append('Authorization', 'Token ' +  this.authentication);
         headers.append('Authorization', 'JWT ' + localStorage.getItem('currentUser'));
-        return this._https.get('http://192.168.29.235:8000/super/updaterfp_aprove/' + id + '/', { headers: headers }).map((response: Response) => response.json());
+        return this._https.get('https://apis.rfpgurus.com/super/updaterfp_aprove/' + id + '/', { headers: headers }).map((response: Response) => response.json());
     }
     get_newrfp_details(id) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('http://192.168.29.235:8000/super/allpending_agency_detail/' + id + '/', { headers: headers }).map((response: Response) => (response.json()));
+        return this._https.get('https://apis.rfpgurus.com/super/allpending_agency_detail/' + id + '/', { headers: headers }).map((response: Response) => (response.json()));
     }
     allpending_agency_detail
     get_updaterfp() {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { userService } from '../viewuser/viewuser.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-viewnewrfp',
@@ -44,7 +45,23 @@ export class ViewnewrfpComponent implements OnInit {
         alert(data)
         this.personal = data;
         // this.pagers = data['totalItems']
-
+        if (data['msg']== "Successfully Aproved"){
+          swal({
+            type: 'success',
+            title: 'You have successfully Approve New RFP',
+            showConfirmButton: false,
+            timer: 1500, width: '512px',
+          });
+        }
+        else {
+           // alert(this.status)
+           swal({
+            type: 'error',
+            title: ' Please Try again ',
+            showConfirmButton: true,
+            timer: 1500, width: '512px',
+          });
+        }
 
       });
   }
