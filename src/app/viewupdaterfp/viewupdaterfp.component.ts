@@ -10,6 +10,11 @@ import { Router } from '@angular/router';
 })
 export class ViewupdaterfpComponent implements OnInit {
   personal :any;
+  myPicker1;
+  discount;
+  dateto;
+  datefrom;
+  valid;
   pager: any = {};
   pageSize = '10';
   pagers;
@@ -28,6 +33,18 @@ export class ViewupdaterfpComponent implements OnInit {
           this.pagers = data['totalItems']
           
           
+      });
+  }
+  updaterfpApprove(id) {
+
+
+    this._serv.Approveudpaterfp(id).subscribe(
+      data => {
+        alert(data['msg'])
+        this.personal = data;
+        // this.pagers = data['totalItems']
+// Approveudpaterfp
+
       });
   }
 }

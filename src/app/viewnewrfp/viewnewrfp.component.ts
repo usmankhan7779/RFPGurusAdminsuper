@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./viewnewrfp.component.css']
 })
 export class ViewnewrfpComponent implements OnInit {
-  personal :any;
+  personal: any;
   pager: any = {};
   pageSize = '10';
   pagers;
@@ -24,16 +24,30 @@ export class ViewnewrfpComponent implements OnInit {
   ngOnInit() {
     this.viewnewrfp()
   }
-  viewnewrfp(){
-    
-    
+  viewnewrfp() {
+
+
     this._serv.get_newrfp().subscribe(
       data => {
-          this.personal = data;
-          this.pagers = data['totalItems']
-          
-          
+        this.personal = data;
+        this.pagers = data['totalItems']
+
+
       });
   }
+
+  newrfpApprove(id) {
+
+
+    this._serv.Approvenewrfp(id).subscribe(
+      data => {
+        alert(data)
+        this.personal = data;
+        // this.pagers = data['totalItems']
+
+
+      });
+  }
+
 
 }
