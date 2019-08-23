@@ -45,22 +45,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { Http, HttpModule } from '@angular/http';
 import { SidebarViewComponent } from './layouts/sidebar-view/sidebar-view.component';
 import { HomeService } from '../app/home/home.service';
-import { ReactiveFormsModule , FormsModule} from '@angular/forms';
-import { ViewsignaluserComponent } from './viewsignaluser/viewsignaluser.component';
-import { ViewSubscribeUserComponent } from './view-subscribe-user/view-subscribe-user.component';
-import { ViewTicketReceiveComponent } from './view-ticket-receive/view-ticket-receive.component';
-import { ViewpriceComponent } from './viewprice/viewprice.component';
-import { ViewimageComponent } from './viewimage/viewimage.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { AuthGuard } from './AuthGuards/auth.guard';
 import { PagerService } from './servicefile/paginator.service';
-import { ViewuserComponent } from './viewuser/viewuser.component';
- import { userService} from './viewuser/viewuser.service'
-import { from } from 'rxjs';
-import { ViewuserreplyComponent } from './viewuserreply/viewuserreply.component';
-import { ViewpromoComponent } from './viewpromo/viewpromo.component';
-// import { ViewupdaterfpComponent } from './viewupdaterfp/viewupdaterfp.component';
-// import { ViewnewrfpComponent } from './viewnewrfp/viewnewrfp.component'; 
- 
+
+import { userService } from './viewuser/viewuser.service'
+
+
+
 @NgModule({
   exports: [
     // MaterialModule,
@@ -98,13 +91,13 @@ import { ViewpromoComponent } from './viewpromo/viewpromo.component';
     FormsModule,
     MatFormFieldModule
   ],
-  // declarations: [ViewupdaterfpComponent],
-  // declarations: [ViewnewrfpComponent],
 
-  
+
+
+
 })
 export class MaterialModule { }
-  @NgModule({
+@NgModule({
 
   declarations: [
     AppComponent,
@@ -112,18 +105,18 @@ export class MaterialModule { }
     CommonComponent,
     HomeComponent,
     SidebarComponent,
-    SidebarViewComponent, 
+    SidebarViewComponent,
     // ViewuserComponent
-    
-     
-       
-    
+
+
+
+
   ],
   imports: [
-    BrowserModule /* or CommonModule */, 
-   
-     ReactiveFormsModule,
-     MaterialModule,
+    BrowserModule /* or CommonModule */,
+
+    ReactiveFormsModule,
+    MaterialModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,

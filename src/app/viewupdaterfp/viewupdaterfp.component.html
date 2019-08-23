@@ -47,12 +47,14 @@
                   <!-- <td>{{item.date_joined | date}}</td> -->
                   <td class="text-center">
                       
-                        <button class="detail-btn">
-                          
-                          Detail</button>
-                        <button class="detail-btn">
-                          
-                            Aprove</button>
+                        <a routerLink="/viewnewrfpDetails" [queryParams]="{ ProID:item.id}">    
+                            <button class="detail-btn">                      
+                      Details
+                    </button>
+                    </a>
+
+                            <button (click)="updaterfpApprove(item.id)" class="detail-btn">
+                          Aprove</button>
 
                     
                   </td>

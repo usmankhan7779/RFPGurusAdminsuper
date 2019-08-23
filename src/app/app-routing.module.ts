@@ -37,9 +37,11 @@ const routes: Routes = [
       { path: 'viewticket', loadChildren: './view-ticket-receive/viewticketuser.module#ViewticketUserModule', canActivate: [AuthGuard] },
       { path: 'viewprice', loadChildren: './viewprice/viewprice.module#ViewpriceModule', canActivate: [AuthGuard] },
       { path: 'viewimage', loadChildren: './viewimage/viewimage.module#ViewimageModule', canActivate: [AuthGuard] },
-      { path: 'viewpromo', loadChildren: './viewpromo/viewpromo.module#ViewpromoModule' },
-      { path: 'viewnewrfp', loadChildren: './viewnewrfp/viewnewrfp.module#ViewnewrfpModule' },
-      { path: 'viewupdaterfp', loadChildren: './viewupdaterfp/viewupdaterfp.module#ViewupdaterfpModule' },
+      { path: 'viewpromo', loadChildren: './viewpromo/viewpromo.module#ViewpromoModule', canActivate: [AuthGuard] },
+      { path: 'viewnewrfp', loadChildren: './viewnewrfp/viewnewrfp.module#ViewnewrfpModule', canActivate: [AuthGuard] },
+      { path: 'viewupdaterfp', loadChildren: './viewupdaterfp/viewupdaterfp.module#ViewupdaterfpModule', canActivate: [AuthGuard] },
+      { path: 'viewnewrfpDetails', loadChildren: './viewnewrfpdetails/viewnewrfpdetails.module#ViewnewrfpdetailsModule' , canActivate: [AuthGuard]},
+      
 
 
 

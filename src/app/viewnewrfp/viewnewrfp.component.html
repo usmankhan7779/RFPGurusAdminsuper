@@ -32,19 +32,24 @@
               </tr>
           </thead>
           <tbody>
-              <tr  *ngFor="let item of personal">
+              <tr  *ngFor="let item of personal.results">
                 
                   <td>{{item.rfpkey}}</td>
-                  <td>{{item.title | slice : 0 : 25 }}...</td>
-                  <td>{{item.agency | slice : 0 : 25}}...</td>
+                  <td>{{item.title | slice : 0 : 45 }}...</td>
+                  <td>{{item.agency | slice : 0 : 45}}...</td>
                   <td>{{item.timestamp | date:"MMM d, y":"UTC"}}</td>
                   
                   <!-- <td>{{item.date_joined | date}}</td> -->
                   <td class="text-center">
                       
-                        <button class="detail-btn">                          
-                          Detail</button>
-                        <button class="detail-btn">
+                       
+                            <a routerLink="/viewnewrfpDetails" [queryParams]="{ ProID:item.id}">    
+                                <button class="detail-btn">                      
+                          Details
+                        </button>
+                        </a>
+              
+                        <button (click)="newrfpApprove(item.id)" class="detail-btn">
                           Aprove</button>
 
                   </td>

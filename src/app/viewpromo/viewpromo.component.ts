@@ -11,6 +11,13 @@ import swal from 'sweetalert2';
 })
 export class ViewpromoComponent implements OnInit {
   personal :any;
+  A;
+  f;
+  V;
+  T;
+  M;
+  Y;
+  i;
   pager: any = {};
   pageSize = '10';
   pagers;
