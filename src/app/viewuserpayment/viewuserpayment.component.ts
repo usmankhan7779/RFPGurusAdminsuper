@@ -15,9 +15,11 @@ export class ViewuserpaymentComponent implements OnInit {
 // personal: any ;
 public personal;
 pager: any = {};
-pageSize = '10';
+ 
 model;
 date;
+item ;
+pageSize = '10';
 constructor(private _nav: Router, private formbuilders : FormBuilder , private _serv: userService,private pagerService: PagerService  ) { }
 
 ngOnInit() {  
@@ -28,18 +30,35 @@ this.date = this.formbuilders.group({
  
   })
 }
-
+ 
+ 
+page(pageSize) {
+  // alert(pageSize)
+  if (pageSize) {
+    this.pageSize = pageSize;
+    
+      this.viewuser(1)
+    // }
+  }
+  else {
+    delete this.pageSize;
+  }
+}
+ 
 viewuser(page){
+  // alert(page)
   if (page < 1 || page > this.pager.totalPages) {
     return;
   }
   // alert(page)
-  this._serv.get_user_payment(page).subscribe(
+  this._serv.get_user_payment(this.pageSize,page).subscribe(
     data => {
         this.personal = data.json();
  
         console.log(this.personal)
-        this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
+        this.pager = this.pagerService.getPager(this.personal['totalItems'], page, this.pageSize);
+
+        // this.pager = this.pagerService.getPager(this.item, page, this.pageSize);
     });
 }
 sorting;

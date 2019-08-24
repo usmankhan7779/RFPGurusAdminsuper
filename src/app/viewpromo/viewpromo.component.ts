@@ -3,6 +3,7 @@ import { userService } from '../viewuser/viewuser.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import { PagerService } from '../servicefile/paginator.service';
 
 @Component({
   selector: 'app-viewpromo',
@@ -22,10 +23,10 @@ export class ViewpromoComponent implements OnInit {
   pageSize = '10';
   pagers;
   pagersss;
-  constructor(private _nav: Router, private _serv: userService ) { }
+  constructor(private _nav: Router,private pagerService: PagerService, private _serv: userService ) { }
 
   ngOnInit() {
-    this.viewpromo()
+    this.viewpromo(1)
   }
   personal1 :any;
   valid;
@@ -38,13 +39,17 @@ export class ViewpromoComponent implements OnInit {
   //   {value:'Active', veiwvalue:'Active'},
   //   {value:'Expire', veiwvalue:'Expire'}
   // ]
-  viewpromo(){
+  viewpromo(page){
     
-    
-    this._serv.get_promo().subscribe(
+     
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+    }
+    this._serv.get_promo(page).subscribe(
       data => {
           this.personal = data;
           this.pagers = data['totalItems']
+          this.pager = this.pagerService.getPager(this.pagers, page, 10);
           this.valid= data[0]['valid']
           if(this.valid==true){
             return this.valid='Active'
@@ -80,7 +85,7 @@ export class ViewpromoComponent implements OnInit {
             timer: 1500
         })
 
-        this.viewpromo();
+        this.viewpromo(1);
     }
     );
 }
@@ -188,7 +193,7 @@ data => {
     showConfirmButton: true,
     timer: 1500, width: '512px',
   });
-  this.viewpromo()
+  this.viewpromo(1)
   console.log(data['msg'])
   
   

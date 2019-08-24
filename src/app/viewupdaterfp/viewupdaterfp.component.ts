@@ -3,6 +3,7 @@ import { userService } from '../viewuser/viewuser.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import { PagerService } from '../servicefile/paginator.service';
 
 @Component({
   selector: 'app-viewupdaterfp',
@@ -20,19 +21,21 @@ export class ViewupdaterfpComponent implements OnInit {
   pageSize = '10';
   pagers;
   pagersss;
-  constructor(private _nav: Router, private _serv: userService) { }
+  constructor(private _nav: Router,private pagerService: PagerService, private _serv: userService) { }
 
   ngOnInit() {
-    this.viewupdaterfp()
+    this.viewupdaterfp(1)
   }
-  viewupdaterfp(){
+  viewupdaterfp(page){
     
-    
-    this._serv.get_updaterfp().subscribe(
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+    }
+    this._serv.get_updaterfp(page).subscribe(
       data => {
-          this.personal = data;
+          this.personal = data['results'];
           this.pagers = data['totalItems']
-          
+          this.pager = this.pagerService.getPager(this.pagers, page, 10);
           
       });
   }

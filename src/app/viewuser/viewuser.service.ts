@@ -13,16 +13,16 @@ export class userService {
 
     constructor(private http: HttpClient, private _https: Http) { }
 
-    get_user(page) {
+    get_user(id,page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('https://apis.rfpgurus.com/super/userDetailandfilter/' + '?page=' + page, { headers: headers });
+        return this._https.get('http://192.168.29.235:8000/super/userDetailandfilter/'+id +'/' + '?page=' + page, { headers: headers });
     }
 
-    get_user_payment(page) {
+    get_user_payment(id,page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('https://apis.rfpgurus.com/super/paymentDetailandfilter/' + '?page=' + page, { headers: headers });
+        return this._https.get('http://192.168.29.235:8000/super/paymentDetailandfilter/'+id +'/' + '?page=' + page, { headers: headers });
     }
     postdesc(des, id) {
         let headers = new Headers();
@@ -195,15 +195,15 @@ export class userService {
         headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/pakagepriceset/', { headers: headers });
     }
-    get_promo() {
+    get_promo(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('https://apis.rfpgurus.com/super/promocode_get_post/', { headers: headers }).map((response: Response) => (response.json()));
+        return this._https.get('https://apis.rfpgurus.com/super/promocode_get_post/' + '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
     }
-    get_newrfp() {
+    get_newrfp(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('https://apis.rfpgurus.com/super/allpending_agencypost/', { headers: headers }).map((response: Response) => (response.json()));
+        return this._https.get('https://apis.rfpgurus.com/super/allpending_agencypost/' + '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
     }
     Approvenewrfp(id) {
         // let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
@@ -228,11 +228,11 @@ export class userService {
         headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/allpending_agency_detail/' + id + '/', { headers: headers }).map((response: Response) => (response.json()));
     }
-    allpending_agency_detail
-    get_updaterfp() {
+   
+    get_updaterfp(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('https://apis.rfpgurus.com/super/allpending_agencyupdate/', { headers: headers }).map((response: Response) => (response.json()));
+        return this._https.get('https://apis.rfpgurus.com/super/allpending_agencyupdate/' + '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
     }
     get_price_img() {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });

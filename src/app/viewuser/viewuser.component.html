@@ -7,6 +7,19 @@
           </div>
           <div class="admin-home-palceholder">
               <span>Total Registered Users : {{personal?.totalItems}}</span>
+              <label class="product-label">Items per page:
+              </label>
+              <mat-form-field>
+  
+                  <mat-select class="width-sec" placeholder="" value="{{pageSize}}" #val
+                      (valueChange)="page(val.value)" value="pageSize" required [(ngModel)]="pageSize"
+                      name="pageSize">
+                      <mat-option  value="10" selected="true">10</mat-option>
+                      <mat-option  value="20">20 </mat-option>
+                      <mat-option  value="30">30</mat-option>
+                      <mat-option  value="50">50</mat-option>
+                  </mat-select>
+              </mat-form-field>
               <div class="icons">
                  <button class="refrash" (click)="viewuser(1)">
                     <i class="fa fa-refresh"></i>
@@ -135,53 +148,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           
   
       </div>  
-        <!-- <div class="pagination-nav">
-
-              <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
-                  <li [ngClass]="{hide:pager.currentPage === 1}">
-                      <a   (click)="viewuser(1)" class="view-1s" class="btn btn-fill">
-                          <i class="fa fa-angle-double-left"></i>
-                      </a>
-                  </li>
-                  <li [ngClass]="{hide:pager.currentPage === 1}">
-                      <a   (click)="viewuser(pager.currentPage - 1)" class="view-1s" class="btn btn-fill">
-                          <i class="fa fa-angle-left"></i>
-                      </a>
-                  </li>
-                   
-                  <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-                      <a  (click)="viewuser(page)" class="view-plan-details">{{page | number}}</a>
-                  </li>
-
-                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"
-                      *ngIf="(pager.startPage  + 3) <= pager.totalPages">
-                      <a   (click)="viewuser(pager.currentPage + 3)">...</a>
-                  </li>
-                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}"> <a>Of</a></li>
-                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                      <a   (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
-                                  | number}}</a>
-                  </li>
-                  <li *ngIf="pager.currentPage === pager.totalPages"> <a>Of</a></li>
-                  <li *ngIf="pager.currentPage === pager.totalPages">
-                      <a    (click)="viewuser(pager.totalPages)" class="view-plan-details" type="Last">{{pager.totalPages
-                                  | number}}</a>
-                  </li>
-                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                      <a   (click)="viewuser(pager.currentPage + 1)" class="view-plan-details"
-                          class="btn btn-fill" type="Next">
-                          <i class="fa fa-angle-right top-set"></i>
-                      </a>
-                  </li>
-                  <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                      <a   (click)="viewuser(pager.totalPages)" class="view-plan-details"
-                          class="btn btn-fill" type="Next">
-                          <i class="fa fa-angle-double-right"></i>
-                      </a>
-                  </li>
-              </ul>
-          </div>  -->
-          <div class="pagination-nav">   
+      <div class="pagination-nav">   
           <ul class="pagination" *ngIf="pager.pages && pager.pages.length">
 
 
@@ -213,23 +180,7 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
                 </ul>
                 </div>
-                <!-- <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
-                      <li [ngClass]="{hide:pager.currentPage === 1}">
-                        <a (click)=" viewuser(1)" class="btn btn-fill">First</a>
-                      </li>
-                      <li [ngClass]="{hide:pager.currentPage === 1}">
-                        <a (click)=" viewuser(pager.currentPage - 1)" class="btn btn-fill">Previous</a>
-                      </li>
-                      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
-                        <a (click)=" viewuser(page)" class="btn btn-fill">{{page}}</a>
-                      </li>
-                      <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                        <a (click)=" viewuser(pager.currentPage + 1)" class="btn btn-fill" type="Next">Next</a>
-                      </li>
-                      <li [ngClass]="{hide:pager.currentPage === pager.totalPages}">
-                        <a (click)=" viewuser(pager.totalPages)" class="btn btn-fill" type="Last">Last</a>
-                      </li>
-                    </ul> -->
+               
 
   </div>
 </div>

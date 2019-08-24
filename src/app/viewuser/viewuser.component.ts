@@ -40,19 +40,31 @@ export class ViewuserComponent implements OnInit {
 
 
   }
+  page(pageSize) {
+    // alert(pageSize)
+    if (pageSize) {
+      this.pageSize = pageSize;
+      
+        this.viewuser(1)
+      // }
+    }
+    else {
+      delete this.pageSize;
+    }
+  }
   viewuser(page){
     if (page < 1 || page > this.pager.totalPages) {
       return;
     }
     
-    this._serv.get_user(page).subscribe(
+    this._serv.get_user(this.pageSize,page).subscribe(
       data => {
           this.personal = data.json();
           this.pagers = data['totalItems']
 
    
           console.log(this.personal)
-          this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
+          this.pager = this.pagerService.getPager(this.personal['totalItems'], page, this.pageSize);
       });
   }
   datefrom;

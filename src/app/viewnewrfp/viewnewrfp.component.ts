@@ -3,6 +3,7 @@ import { userService } from '../viewuser/viewuser.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import { PagerService } from '../servicefile/paginator.service';
 
 @Component({
   selector: 'app-viewnewrfp',
@@ -20,18 +21,19 @@ export class ViewnewrfpComponent implements OnInit {
   discount;
   datefrom;
   valid;
-  constructor(private _nav: Router, private _serv: userService) { }
+  constructor(private _nav: Router,private pagerService: PagerService,  private _serv: userService) { }
 
   ngOnInit() {
-    this.viewnewrfp()
+    this.viewnewrfp(1)
   }
-  viewnewrfp() {
+  viewnewrfp(page) {
 
 
-    this._serv.get_newrfp().subscribe(
+    this._serv.get_newrfp(page).subscribe(
       data => {
         this.personal = data;
         this.pagers = data['totalItems']
+        this.pager = this.pagerService.getPager(this.pagers, page, 10);
 
 
       });

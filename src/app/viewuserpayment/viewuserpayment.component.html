@@ -6,9 +6,23 @@
         </div>
         <div class="admin-home-palceholder">
             <span>Total Subscriptions: {{personal?.totalItems}}</span>
+            <label class="product-label">Items per page:
+            </label>
+            <mat-form-field>
+
+                <mat-select class="width-sec" placeholder="" value="{{pageSize}}" #val
+                    (valueChange)="page(val.value)" value="pageSize" required [(ngModel)]="pageSize"
+                    name="pageSize">
+                    <mat-option  value="10" selected="true">10</mat-option>
+                    <mat-option  value="20">20 </mat-option>
+                    <mat-option  value="30">30</mat-option>
+                    <mat-option  value="50">50</mat-option>
+                </mat-select>
+            </mat-form-field>
             <div class="icons">
-<form>
-              <label>Sort by</label>
+<!-- <form [formGroup]="date" class="date-picker">
+             
+              <label>Sort page by</label>
               &nbsp;
               <select>
                 <option selected  >Select</option>
@@ -16,8 +30,8 @@
                 <option value="Y"  name="Y" >Yearly</option>
               </select>
               <button (click)="postoffersort()">Done</button>
-              </form>
-              &nbsp;
+              </form> -->
+      
                <button class="refrash" (click)="viewuser(1)">
                   <i class="fa fa-refresh"></i>
                </button> 
