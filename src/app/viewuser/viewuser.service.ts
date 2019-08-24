@@ -122,7 +122,7 @@ export class userService {
         if (localStorage.getItem('currentUser') != null) {
             const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
             headers.append('Content-Type', 'application/json');
-            return this._https.post('https://apis.rfpgurus.com/super/promocode_get_post/',
+            return this._https.post('https://apis.rfpgurus.com/super/promocode_add/',
                 JSON.stringify({
                     "validfrom": datefrom,
                     "validto": dateto,
@@ -200,10 +200,10 @@ export class userService {
         headers.append('Content-Type', 'application/json');
         return this._https.get('http://192.168.29.235:8000/super/promocode_get_post/' + id + '/'+ '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
     }
-    get_newrfp(page) {
+    get_newrfp(id,page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('https://apis.rfpgurus.com/super/allpending_agencypost/' + '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
+        return this._https.get('http://192.168.29.235:8000/super/allpending_agencypost/' + id + '/'+ '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
     }
     Approvenewrfp(id) {
         // let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
@@ -229,10 +229,10 @@ export class userService {
         return this._https.get('https://apis.rfpgurus.com/super/allpending_agency_detail/' + id + '/', { headers: headers }).map((response: Response) => (response.json()));
     }
    
-    get_updaterfp(page) {
+    get_updaterfp(id,page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('https://apis.rfpgurus.com/super/allpending_agencyupdate/' + '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
+        return this._https.get('http://192.168.29.235:8000/super/allpending_agencyupdate/'+ id + '/' + '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
     }
     get_price_img() {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });

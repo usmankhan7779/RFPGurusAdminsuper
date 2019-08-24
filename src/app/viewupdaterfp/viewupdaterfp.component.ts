@@ -26,16 +26,28 @@ export class ViewupdaterfpComponent implements OnInit {
   ngOnInit() {
     this.viewupdaterfp(1)
   }
+  page(pageSize) {
+    // alert(pageSize)
+    if (pageSize) {
+      this.pageSize = pageSize;
+
+      this.viewupdaterfp(1)
+      // }
+    }
+    else {
+      delete this.pageSize;
+    }
+  }
   viewupdaterfp(page){
     
     if (page < 1 || page > this.pager.totalPages) {
       return;
     }
-    this._serv.get_updaterfp(page).subscribe(
+    this._serv.get_updaterfp(this.pageSize,page).subscribe(
       data => {
           this.personal = data['results'];
           this.pagers = data['totalItems']
-          this.pager = this.pagerService.getPager(this.pagers, page, 10);
+          this.pager = this.pagerService.getPager(this.pagers, page, this.pageSize);
           
       });
   }

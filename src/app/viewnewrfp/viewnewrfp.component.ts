@@ -26,14 +26,26 @@ export class ViewnewrfpComponent implements OnInit {
   ngOnInit() {
     this.viewnewrfp(1)
   }
+  page(pageSize) {
+    // alert(pageSize)
+    if (pageSize) {
+      this.pageSize = pageSize;
+
+      this.viewnewrfp(1)
+      // }
+    }
+    else {
+      delete this.pageSize;
+    }
+  }
   viewnewrfp(page) {
 
 
-    this._serv.get_newrfp(page).subscribe(
+    this._serv.get_newrfp(this.pageSize,page).subscribe(
       data => {
         this.personal = data;
         this.pagers = data['totalItems']
-        this.pager = this.pagerService.getPager(this.pagers, page, 10);
+        this.pager = this.pagerService.getPager(this.pagers, page, this.pageSize);
 
 
       });
