@@ -32,19 +32,31 @@ this.date = this.formbuilders.group({
  
   })
 }
+page(pageSize) {
+  // alert(pageSize)
+  if (pageSize) {
+    this.pageSize = pageSize;
+    
+      this.viewuser(1)
+    // }
+  }
+  else {
+    delete this.pageSize;
+  }
+}
 viewuser(page){
   if (page < 1 || page > this.pager.totalPages) {
     return;
   }
   // alert(page)
-  this._serv.get_user_subscriber(page).subscribe(
+  this._serv.get_user_subscriber(this.pageSize,page).subscribe(
     data => {
         this.personal = data.json();
         this.pagers = data['totalItems']
 
 //  console.log(this.pagers.json())
         console.log(this.personal)
-        this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
+        this.pager = this.pagerService.getPager(this.personal['totalItems'], page, this.pageSize);
     });
 }
 model : any = {};
