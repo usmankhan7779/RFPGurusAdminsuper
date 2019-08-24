@@ -39,18 +39,30 @@ export class ViewpromoComponent implements OnInit {
   //   {value:'Active', veiwvalue:'Active'},
   //   {value:'Expire', veiwvalue:'Expire'}
   // ]
+  page(pageSize) {
+    // alert(pageSize)
+    if (pageSize) {
+      this.pageSize = pageSize;
+
+      this.viewpromo(1)
+      // }
+    }
+    else {
+      delete this.pageSize;
+    }
+  }
   viewpromo(page){
     
      
     if (page < 1 || page > this.pager.totalPages) {
       return;
     }
-    this._serv.get_promo(page).subscribe(
+    this._serv.get_promo(this.pageSize,page).subscribe(
       data => {
-          this.personal = data;
+          this.personal = data['results'];
           this.pagers = data['totalItems']
-          this.pager = this.pagerService.getPager(this.pagers, page, 10);
-          this.valid= data[0]['valid']
+          this.pager = this.pagerService.getPager(this.pagers, page, this.pageSize);
+          this.valid= data['results'][0]['valid']
           if(this.valid==true){
             return this.valid='Active'
           }

@@ -195,10 +195,10 @@ export class userService {
         headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/pakagepriceset/', { headers: headers });
     }
-    get_promo(page) {
+    get_promo(id,page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
-        return this._https.get('https://apis.rfpgurus.com/super/promocode_get_post/' + '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
+        return this._https.get('http://192.168.29.235:8000/super/promocode_get_post/' + id + '/'+ '?page=' + page, { headers: headers }).map((response: Response) => (response.json()));
     }
     get_newrfp(page) {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
