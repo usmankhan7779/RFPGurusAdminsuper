@@ -38,7 +38,7 @@
               
                   <th>Posted Date</th>
                   
-                  <!-- <th>Date</th> -->
+                  <th>Status</th>
                   <th>Action</th>
                   
                 
@@ -54,7 +54,9 @@
                   <td>{{item.agency | slice : 0 : 25}}...</td>
                   <td>{{item.timestamp | date:"MMM d, y":"UTC"}}</td>
                   
-                                    
+                               
+                  <td *ngIf="item.admin_approved == false">Pending</td>
+                  <td *ngIf="item.admin_approved == ture">Approve</td>     
                  
                   <!-- <td>{{item.date_joined | date}}</td> -->
                   <td class="text-center">
@@ -65,7 +67,7 @@
                     </button>
                     </a>
 
-                            <button (click)="updaterfpApprove(item.id)" class="detail-btn">
+                            <button *ngIf="item.admin_approved == false" (click)="updaterfpApprove(item.id)" class="detail-btn">
                           Aprove</button>
 
                     
