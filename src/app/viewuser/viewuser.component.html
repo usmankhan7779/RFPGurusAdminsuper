@@ -7,20 +7,21 @@
           </div>
           <div class="admin-home-palceholder">
               <span>Total Registered Users : {{personal?.totalItems}}</span>
-              <label class="product-label">Items per page:
-              </label>
-              <mat-form-field>
-  
-                  <mat-select class="width-sec" placeholder="" value="{{pageSize}}" #val
-                      (valueChange)="page(val.value)" value="pageSize" required [(ngModel)]="pageSize"
-                      name="pageSize">
-                      <mat-option  value="10" selected="true">10</mat-option>
-                      <mat-option  value="20">20 </mat-option>
-                      <mat-option  value="30">30</mat-option>
-                      <mat-option  value="50">50</mat-option>
-                  </mat-select>
-              </mat-form-field>
+              
               <div class="icons">
+                  <label class="product-label">Items per page:
+                    </label>
+                    <mat-form-field>
+        
+                        <mat-select class="width-sec" placeholder="" value="{{pageSize}}" #val
+                            (valueChange)="page(val.value)" value="pageSize" required [(ngModel)]="pageSize"
+                            name="pageSize">
+                            <mat-option  value="10" selected="true">10</mat-option>
+                            <mat-option  value="20">20 </mat-option>
+                            <mat-option  value="30">30</mat-option>
+                            <mat-option  value="50">50</mat-option>
+                        </mat-select>
+                    </mat-form-field>
                  <button class="refrash" (click)="viewuser(1)">
                     <i class="fa fa-refresh"></i>
                  </button> 

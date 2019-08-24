@@ -57,9 +57,12 @@
 .admin-home-palceholder span{
     font-size: 16px;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 19px;
 }
 .admin-home-palceholder .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: auto;
 }
 .admin-home-palceholder .icons button{
@@ -117,9 +120,17 @@
   table {
     width: 100%;
   }
-  
- 
-
+.product-label{
+    margin-right: 10px;
+    font-weight: bold;
+}
+.icons .mat-form-field{
+    margin-bottom: 0px;
+    width: 100px !important;
+}
+.table-responsive{
+    margin-top: -13px;
+}
 // ////////////////////////////////////
 
 
