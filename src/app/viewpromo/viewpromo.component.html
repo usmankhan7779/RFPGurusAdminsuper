@@ -5,30 +5,31 @@
                     <h3 class="text-center">Promo Code</h3>
                   </div>
         <div class="admin-home-palceholder">
-            <span></span>
             <button class="btn-fill" data-toggle="modal" data-target="#aexampleModalCenter">
-
                 Add new Promo Code </button>
-
+                
+                <div class="icons">     
+                        <label class="product-label">Items per page:
+                            </label>
+                            <mat-form-field>
+                        
+                                <mat-select class="width-sec" placeholder="" value="{{pageSize}}" #val
+                                    (valueChange)="page(val.value)" value="pageSize" required [(ngModel)]="pageSize"
+                                    name="pageSize">
+                                    <mat-option  value="10" selected="true">10</mat-option>
+                                    <mat-option  value="20">20 </mat-option>
+                                    <mat-option  value="30">30</mat-option>
+                                    <mat-option  value="50">50</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                    </div>
         </div>
 
       </div>
 
 
       
-      <label class="product-label">Items per page:
-    </label>
-    <mat-form-field>
-
-        <mat-select class="width-sec" placeholder="" value="{{pageSize}}" #val
-            (valueChange)="page(val.value)" value="pageSize" required [(ngModel)]="pageSize"
-            name="pageSize">
-            <mat-option  value="10" selected="true">10</mat-option>
-            <mat-option  value="20">20 </mat-option>
-            <mat-option  value="30">30</mat-option>
-            <mat-option  value="50">50</mat-option>
-        </mat-select>
-    </mat-form-field>
+      
 
 
       <div class="table-responsive">

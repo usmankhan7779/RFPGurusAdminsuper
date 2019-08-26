@@ -108,3 +108,14 @@
 .close{
     font-size: 25px;
 }
+.product-label{
+    margin-right: 10px;
+    font-weight: bold;
+}
+.icons .mat-form-field{
+    margin-bottom: 0px;
+    width: 100px !important;
+}
+.table-responsive{
+    margin-top: -13px;
+}

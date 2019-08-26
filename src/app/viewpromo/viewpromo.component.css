@@ -68,6 +68,8 @@
 
 .admin-home-palceholder{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .icons{
     margin-left: auto;
@@ -119,4 +121,15 @@
 }
 .radio{
     margin-bottom: 5px;
+}
+.product-label{
+    margin-right: 10px;
+    font-weight: bold;
+}
+.icons .mat-form-field{
+    margin-bottom: 0px;
+    width: 100px !important;
+}
+.table-responsive{
+    margin-top: -13px;
 }
