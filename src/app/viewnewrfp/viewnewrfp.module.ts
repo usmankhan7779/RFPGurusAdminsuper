@@ -27,6 +27,8 @@ import { MaterialModule } from '../app.module';
         HttpClientModule,
         HttpModule,
         MaterialModule,
+        CommonModule,
+ 
         
       
       
