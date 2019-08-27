@@ -64,7 +64,7 @@ export class userService {
 // 
 
 
-postnewrfpfilter(item,datefrom, dateto, fname, lname, email,page) {
+postnewrfpfilter(item,datefrom, dateto,agency, status ,page) {
     if (localStorage.getItem('currentUser')) {
         const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
@@ -72,15 +72,32 @@ postnewrfpfilter(item,datefrom, dateto, fname, lname, email,page) {
             JSON.stringify({
                 'datefrom': datefrom,
                 'dateto': dateto,
-                'fname': fname,
-                'lname': lname,
-                'email': email
+                'agency': agency,
+                'status': status,
 
 
             }), { headers: headers })
     }
 }
-postupdaterfpfilter(item,datefrom, dateto, fname, lname, email,page) {
+
+promocode_get_post(item,datefrom, dateto, code, active,subscription,page) {
+    if (localStorage.getItem('currentUser')) {
+        const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+        headers.append('Content-Type', 'application/json');
+        return this._https.post('http://192.168.29.235:8000/super/promocode_get_post/' + item + '/'+ '?page=' + page,
+            JSON.stringify({
+                'datefrom': datefrom,
+                'dateto': dateto,
+                'code': code,
+                'active': active,
+                'subscription':subscription
+                 
+
+
+            }), { headers: headers })
+    }
+}
+postupdaterfpfilter(item,datefrom, dateto, agency, status,page) {
     if (localStorage.getItem('currentUser')) {
         const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');
@@ -88,9 +105,9 @@ postupdaterfpfilter(item,datefrom, dateto, fname, lname, email,page) {
             JSON.stringify({
                 'datefrom': datefrom,
                 'dateto': dateto,
-                'fname': fname,
-                'lname': lname,
-                'email': email
+                'agency': agency,
+                'status': status,
+                 
 
 
             }), { headers: headers })

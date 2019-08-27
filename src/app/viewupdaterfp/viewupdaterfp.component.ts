@@ -89,7 +89,7 @@ export class ViewupdaterfpComponent implements OnInit {
     
     postoffer(page) {
     
-      return this._serv.postupdaterfpfilter(this.pageSize, moment(this.model.datefrom).format('YYYY-MM-DD'), moment(this.model.dateto).format('YYYY-MM-DD'), this.model.fname , this.model.lname , this.model.email,page ).subscribe(
+      return this._serv.postupdaterfpfilter(this.pageSize, moment(this.model.datefrom).format('YYYY-MM-DD'), moment(this.model.dateto).format('YYYY-MM-DD'),  this.model.agency , this.model.status ,page ).subscribe(
         // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
     data => {
       // moment(this.date.value['datefrom']).format('YYYY-MM-DD'),
