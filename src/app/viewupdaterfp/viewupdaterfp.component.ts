@@ -3,6 +3,7 @@ import { userService } from '../viewuser/viewuser.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import * as moment from 'moment';
 import { PagerService } from '../servicefile/paginator.service';
 
 @Component({
@@ -81,4 +82,21 @@ export class ViewupdaterfpComponent implements OnInit {
 
       });
   }
+    // datefrom;
+    model : any = {}
+    postpage:any;
+    // dateto;
+    
+    postoffer(page) {
+    
+      return this._serv.postupdaterfpfilter(this.pageSize, moment(this.model.datefrom).format('YYYY-MM-DD'), moment(this.model.dateto).format('YYYY-MM-DD'), this.model.fname , this.model.lname , this.model.email,page ).subscribe(
+        // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
+    data => {
+      // moment(this.date.value['datefrom']).format('YYYY-MM-DD'),
+      console.log(data)
+      this.personal = data.json()
+      console.log(this.postpage)
+      this.pager = this.pagerService.getPager(this.personal['totalItems'], page, this.pageSize);
+    })
+    }
 }

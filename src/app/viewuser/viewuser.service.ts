@@ -80,6 +80,22 @@ postnewrfpfilter(item,datefrom, dateto, fname, lname, email,page) {
             }), { headers: headers })
     }
 }
+postupdaterfpfilter(item,datefrom, dateto, fname, lname, email,page) {
+    if (localStorage.getItem('currentUser')) {
+        const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+        headers.append('Content-Type', 'application/json');
+        return this._https.post('https://apis.rfpgurus.com/super/allpending_agencyupdate/' + item + '/'+ '?page=' + page,
+            JSON.stringify({
+                'datefrom': datefrom,
+                'dateto': dateto,
+                'fname': fname,
+                'lname': lname,
+                'email': email
+
+
+            }), { headers: headers })
+    }
+}
     postdate(item,datefrom, dateto, fname, lname, email,page) {
         if (localStorage.getItem('currentUser')) {
             const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
