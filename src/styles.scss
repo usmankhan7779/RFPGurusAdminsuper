@@ -52,9 +52,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border: none;
     box-shadow: 2px 2px 6px 2px #ccc;
 }
-.btn-fill:hover{
+.btn-fill:hover , .aprove-btn:hover{
     background: #c00;
     color: #fff;
+}
+.aprove-btn{
+    background: #000;
+    color: #fff;
+    padding: 6px 25px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 2px 2px 6px 2px #ccc;
 }
 .detail-btn{
     box-shadow: 2px 2px 6px 2px #ccc;

@@ -1,6 +1,5 @@
 <div class="single-page">
-    <button (click)="newrfpApprove(item?.id)" class="detail-btn">
-        Aprove</button>
+    
   <div class="card">
     <div class="row">
       <div class="col-md-6 detail-box">
@@ -176,6 +175,10 @@
         ---
       </ng-template>
       <!-- county_preference -->
+      <div class="col-md-12 detail-box">
+        <button (click)="newrfpApprove(item?.id)" class="aprove-btn pull-right">
+          Aprove</button>
+      </div>
     </div>
   </div>
 
