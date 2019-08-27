@@ -245,7 +245,7 @@ export class ViewpromoComponent implements OnInit {
       data => {
         // moment(this.date.value['datefrom']).format('YYYY-MM-DD'),
         console.log(data)
-        this.personal = data.json()
+        this.personal = data['results'].json()
         console.log(this.postpage)
         this.pager = this.pagerService.getPager(this.personal['totalItems'], page, this.pageSize);
       })
