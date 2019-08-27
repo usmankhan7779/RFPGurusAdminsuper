@@ -55,14 +55,14 @@ export class ViewTicketReceiveComponent implements OnInit {
   postpage;
   postoffer2(page) {
 
-    return this._serv.postdate2(moment(this.date.value['datefrom']).format('YYYY-MM-DD'), moment(this.date.value['dateto']).format('YYYY-MM-DD'), this.pager).subscribe(
+    return this._serv.postdate2(this.pageSize,moment(this.date.value['datefrom']).format('YYYY-MM-DD'), moment(this.date.value['dateto']).format('YYYY-MM-DD'), page).subscribe(
       // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
       data => {
 
         console.log(data)
         this.personal = data.json()
         console.log(this.postpage)
-        this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
+        this.pager = this.pagerService.getPager(this.personal['totalItems'], page, this.pageSize);
       })
   }
 

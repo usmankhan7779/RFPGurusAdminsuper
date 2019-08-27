@@ -55,6 +55,7 @@ export class ViewnewrfpdetailsComponent implements OnInit {
           
       });
   }
+  item;
   newrfpApprove(id) {
 
 
