@@ -4,9 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { CommonComponent } from './layouts/common/common.component';
 import { AuthGuard } from './AuthGuards/auth.guard';
 import { SidebarViewComponent } from './layouts/sidebar-view/sidebar-view.component';
-import { ViewuserComponent } from './viewuser/viewuser.component';
-
  
+
+
 const routes: Routes = [
   { path: "", component: HomeComponent },
 
@@ -28,8 +28,9 @@ const routes: Routes = [
       { path: 'viewuser', loadChildren: './viewuser/viewuser.module#ViewUserModule', canActivate: [AuthGuard] },
       //  { path : 'viewuser' , component: ViewuserComponent},
       { path: 'viewreply', loadChildren: './viewuserreply/viewuserreply.module#ViewUserReplyModule', canActivate: [AuthGuard] },
+      { path: 'paymentsingleDetail', loadChildren: './siglepayment-details/siglepayment-details.module#ViewpaymentSingleModule', canActivate: [AuthGuard] },
 
-
+      
 
       { path: 'viewuserpay', loadChildren: './viewuserpayment/viewuserpayment.module#ViewUPModule', canActivate: [AuthGuard] },
       { path: 'viewsingleuser', loadChildren: './viewsignaluser/viewsignaluser.module#ViewUserSingleModule', canActivate: [AuthGuard] },
@@ -40,8 +41,8 @@ const routes: Routes = [
       { path: 'viewpromo', loadChildren: './viewpromo/viewpromo.module#ViewpromoModule', canActivate: [AuthGuard] },
       { path: 'viewnewrfp', loadChildren: './viewnewrfp/viewnewrfp.module#ViewnewrfpModule', canActivate: [AuthGuard] },
       { path: 'viewupdaterfp', loadChildren: './viewupdaterfp/viewupdaterfp.module#ViewupdaterfpModule', canActivate: [AuthGuard] },
-      { path: 'viewnewrfpDetails', loadChildren: './viewnewrfpdetails/viewnewrfpdetails.module#ViewnewrfpdetailsModule' , canActivate: [AuthGuard]},
-      
+      { path: 'viewnewrfpDetails', loadChildren: './viewnewrfpdetails/viewnewrfpdetails.module#ViewnewrfpdetailsModule', canActivate: [AuthGuard] },
+
 
 
 

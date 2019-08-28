@@ -263,6 +263,13 @@ postupdaterfpfilter(item,datefrom, dateto, agency, status,page) {
         headers.append('Content-Type', 'application/json');
         return this._https.get('https://apis.rfpgurus.com/super/singleuserdetail/' + id + '/', { headers: headers });
     }
+    get_user_single_payment(id) {
+        let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
+        headers.append('Content-Type', 'application/json');
+        return this._https.get('https://apis.rfpgurus.com/super/paymentsingleDetail/' + id + '/', { headers: headers }).map((response: Response) => response.json());
+    }
+
+ 
     get_price_payment() {
         let headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
         headers.append('Content-Type', 'application/json');

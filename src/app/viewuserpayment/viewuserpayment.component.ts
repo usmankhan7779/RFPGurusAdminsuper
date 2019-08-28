@@ -66,7 +66,7 @@ postpage:any;
 
 postoffer(page) {
    
-  return this._serv.postdatepayment(this.pageSize,moment(this.date.value['datefrom']).format('YYYY-MM-DD'),  moment(this.date.value['dateto']).format('YYYY-MM-DD'),page ).subscribe(
+  return this._serv.postdatepayment(this.pageSize,this.date.value['datefrom'], this.date.value['dateto'],page ).subscribe(
    
     // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
 data => {

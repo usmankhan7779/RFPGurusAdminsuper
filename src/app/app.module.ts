@@ -50,7 +50,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthGuard } from './AuthGuards/auth.guard';
 import { PagerService } from './servicefile/paginator.service';
 
-import { userService } from './viewuser/viewuser.service'
+import { userService } from './viewuser/viewuser.service';
+import { SiglepaymentDetailsComponent } from './siglepayment-details/siglepayment-details.component'; 
 
 
 
@@ -90,7 +91,7 @@ import { userService } from './viewuser/viewuser.service'
     MatTooltipModule,
     FormsModule,
     MatFormFieldModule
-  ],
+  ] 
 
 
 
