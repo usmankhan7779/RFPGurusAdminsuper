@@ -47,21 +47,29 @@
             <div class="col-md-12 detail-box tag">
                 <label class="width">User Preference:</label>
                 <!-- <span>{{personal?.UserDetail.user_preference}}</span> -->
-                <span *ngFor="let item of user_preference">{{item}}</span>
+                <div class="tag-width">
+                    <span *ngFor="let item of user_preference">{{item}}</span>
+                </div>
             </div>
             <div class="col-md-12 detail-box tag">
                 <label class="width">State Preference:</label>
                 <!-- <span>{{personal?.UserDetail.state_preference}}</span> -->
-                <span *ngFor="let item of state_preference">{{item}}</span>
+                <div class="tag-width">
+                    <span *ngFor="let item of state_preference">{{item}}</span>
+                </div>
             </div>
-            <div class="col-md-6 detail-box tag">
+            <div class="col-md-12 detail-box tag">
                 <label class="width">Country Preference:</label>
-                <span>{{personal?.UserDetail.county_preference}}</span>
+                <div class="tag-width">
+                    <span>{{personal?.UserDetail.county_preference}}</span>
+                </div>
             </div>
             
             <div class="col-md-12 detail-box tag">
                 <label class="width">Agency Preference:</label>
-                <span>{{personal?.UserDetail.agency_preference}}</span>
+                <div class="tag-width">
+                    <span>{{personal?.UserDetail.agency_preference}}</span>
+                </div>
             </div>
                 
                 <ng-template #pkg1>
