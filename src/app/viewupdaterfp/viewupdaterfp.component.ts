@@ -18,6 +18,7 @@ export class ViewupdaterfpComponent implements OnInit {
   dateto;
   datefrom;
   valid;
+  viewuser;
   pager: any = {};
   pageSize = '10';
   pagers;
