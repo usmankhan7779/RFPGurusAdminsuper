@@ -33,6 +33,7 @@ export class ViewsignaluserComponent implements OnInit {
   user_preference:any=[];
   county_preference :any=[];
   city_preference:any=[];
+  state_preference_error : boolean = false;
   viewuser() {
 
 
@@ -40,12 +41,13 @@ export class ViewsignaluserComponent implements OnInit {
       data => {
         this.personal = data.json();
         this.pagers = this.personal
-
+        console.log(this.personal.UserDetail.state_preference)
 
         let democompprods;
         democompprods = this.personal.UserDetail;
         console.log(democompprods)
-
+//  if (this.personal.UserDetail.state_preference !== null){
+   this.state_preference_error = false;
         for (let prod of democompprods.state_preference) {
 
           this.state_preference.push(prod.split(',', 50))
@@ -53,6 +55,11 @@ export class ViewsignaluserComponent implements OnInit {
           console.log(this.state_preference, 'state preference')
 
         }
+      // }
+      // else if (this.personal.UserDetail.state_preference == null) {
+      //   this.state_preference_error = true;
+      // }
+
         for (let prod of democompprods.user_preference) {
 
           this.user_preference.push(prod.split(',', 50))
