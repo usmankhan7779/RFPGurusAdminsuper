@@ -5,73 +5,84 @@
     <div class="card">
         <div class="row">
             <div class="col-md-6 detail-box">
-                <label>First Name:</label>
+                <label>Full Name:</label>
                 <span>{{personal?.UserDetail.user.first_name +' '+ personal?.UserDetail.user.last_name}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>UserName:</label>
+                <label>User Name:</label>
                 <span>{{personal?.UserDetail.user.username}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>Email:</label>
-                <span class="blue-color">{{personal?.UserDetail.user.email}}</span>
+                <label>Company:</label>
+                <span>{{personal?.UserDetail.company}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>Zip Code:    </label>
                 <span>{{personal?.UserDetail.zipcode}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>City:</label>
-                <span>{{personal?.UserDetail.city}}</span>
-            </div>
-            <div class="col-md-6 detail-box">
                 <label>Country:</label>
                 <span>{{personal?.UserDetail.country}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>States:</label>
+                <label>State:</label>
                 <span>{{personal?.UserDetail.state}}</span>
             </div>
+            <div class="col-md-6 detail-box">
+                <label>City:</label>
+                <span>{{personal?.UserDetail.city}}</span>
+            </div>
+            
             <div class="col-md-6 detail-box">
                 <label>Phone no:</label>
                 <span>{{personal?.UserDetail.phone_no}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>Comapany:</label>
-                <span>{{personal?.UserDetail.company}}</span>
+                <label>Email:</label>
+                <span class="blue-color">{{personal?.UserDetail.user.email}}</span>
             </div>
             <div class="col-md-12 detail-box">
-                    <label class="width">Address:</label>
+                    <label class="">Address:</label>
                     <span>{{personal?.UserDetail.address}}</span>
                 </div>
             <div class="col-md-12 detail-box tag">
                 <label class="width">User Preference:</label>
                 <!-- <span>{{personal?.UserDetail.user_preference}}</span> -->
-                <span *ngFor="let item of user_preference">{{item}}</span>
+                <div class="tag-width">
+                    <span *ngFor="let item of user_preference">{{item}}</span>
+                </div>
             </div>
             
             
             <div    class="col-md-12 detail-box tag">
                 <label class="width">State Preference:</label>
                 <!-- <span>{{personal?.UserDetail.state_preference}}</span> -->
-                <span *ngFor="let item of state_preference">{{item}}</span>
+                <div class="tag-width">
+                    <span *ngFor="let item of state_preference">{{item}}</span>
+                </div>
             </div>
-            <div class="col-md-6 detail-box tag">
+            <div class="col-md-12 detail-box tag">
                 <label class="width">City Preference:</label>
-                <span *ngFor="let item of city_preference">{{item}}</span>
+                <div class="tag-width">
+                    <span *ngFor="let item of city_preference">{{item}}</span>
+                </div>
                 <!-- <span>{{personal?.UserDetail.county_preference}}</span> -->
             </div>
             
-            <div  class="col-md-6 detail-box tag">
+            <div  class="col-md-12 detail-box tag">
                 <label class="width">Country Preference:</label>
-                <span *ngFor="let item of county_preference">{{item}}</span>
+                <div class="tag-width">
+                    <span *ngFor="let item of county_preference">{{item}}</span>
+                </div>
                 <!-- <span>{{personal?.UserDetail.county_preference}}</span> -->
             </div>
             
             <div class="col-md-12 detail-box tag">
                 <label class="width">Agency Preference:</label>
                 <!-- <span>{{personal?.UserDetail.agency_preference}}</span> -->
-                <span *ngFor="let item of agency_preference">{{item}}</span>
+                <div class="tag-width">
+                    <span *ngFor="let item of agency_preference">{{item}}</span>
+                </div>
             </div>
                 
                 <ng-template #pkg1>

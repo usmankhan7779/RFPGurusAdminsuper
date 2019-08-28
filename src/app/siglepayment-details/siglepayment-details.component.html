@@ -1,60 +1,59 @@
 <div class="single-page">
+        <div class="page-title">
+            <h3 class="text-center">Subscription User Detail</h3>
+        </div>
     <div class="card">
         <div class="row">
             <div class="col-md-6 detail-box">
-                <label>First Name:</label>
-                <span>{{personal?.reg_fk.user.first_name}}</span>
+                <label>Full Name:</label>
+                <span>{{personal?.reg_fk.user.first_name +' '+ personal?.reg_fk.user.last_name}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>Last Name:</label>
-                <span>{{personal?.reg_fk.user.last_name}}</span>
-            </div>
-            <div class="col-md-6 detail-box">
-                <label>UserName:</label>
+                <label>User Name:</label>
                 <span>{{personal?.reg_fk.user.username}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>Email:</label>
-                <span>{{personal?.reg_fk.user.email}}</span>
+                <label >Email:</label>
+                <span class="blue-color">{{personal?.reg_fk.user.email}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>Zip Code:    </label>
                 <span>{{personal?.reg_fk.zipcode}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>City:</label>
-                <span>{{personal?.reg_fk.city}}</span>
-            </div>
-            <div class="col-md-6 detail-box">
                 <label>Country:</label>
                 <span>{{personal?.reg_fk.country}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>States:</label>
+                <label>State:</label>
                 <span>{{personal?.reg_fk.state}}</span>
+            </div>
+            <div class="col-md-6 detail-box">
+                <label>City:</label>
+                <span>{{personal?.reg_fk.city}}</span>
             </div>
             <div class="col-md-6 detail-box">
                 <label>Phone no:</label>
                 <span>{{personal?.reg_fk.phone_no}}</span>
             </div>
             <div class="col-md-6 detail-box">
-                <label>Comapany:</label>
+                <label>Company:</label>
                 <span>{{personal?.reg_fk.company}}</span>
             </div>
-            <div class="col-md-12 detail-box">
-                    <label class="width">Address:</label>
+            <div class="col-md-6 detail-box">
+                    <label class="">Address:</label>
                     <span>{{personal?.reg_fk.address}}</span>
                 </div>
-            <div class="col-md-12 detail-box">
-                <label class="width">News Letter:</label>
+            <div class="col-md-6 detail-box">
+                <label class="">News Letter:</label>
                 <span>{{personal?.reg_fk.newsletter}}</span>
             </div>
-            <!-- <div class="col-md-12 detail-box">
-                <label class="width">Package ID:</label>
+            <!-- <div class="col-md-6 detail-box">
+                <label class="">Package ID:</label>
                 <span>{{personal?.pkg_fk.id}}</span>
             </div> -->
             <div class="col-md-6 detail-box">
-                <label class="width">Package Type:</label>
+                <label class="">Package Type:</label>
                 <span *ngIf="personal?.pkg_fk.pkg_type == 'P'">Premium </span>
 
                 <span *ngIf="personal?.pkg_fk.pkg_type == 'B'">Basic</span>
@@ -63,8 +62,8 @@
             </div>
             
            
-            <div class="col-md-12 detail-box">
-                <label class="width">Duration:</label>
+            <div class="col-md-6 detail-box">
+                <label class="">Duration:</label>
                 <span *ngIf="personal?.pkg_fk.duration == 'M'">Monthly </span>
                 <span *ngIf="personal?.pkg_fk.duration == 'Y'">Yearly </span>
 
@@ -75,8 +74,8 @@
                 <!-- <span>{{personal?.pkg_fk.duration}}</span> -->
             </div>
            
-            <div class="col-md-12 detail-box">
-                <label class="width">Package Price:</label>
+            <div class="col-md-6 detail-box">
+                <label class="">Package Price:</label>
                 <span>${{personal?.pkg_fk.pkg_price}}</span>
             </div>
 
@@ -86,23 +85,23 @@
 
  
 
-            <div class="col-md-12 detail-box">
-                <label class="width">Pay Date:</label>
+            <div class="col-md-6 detail-box">
+                <label class="">Pay Date:</label>
                 <span>{{personal?.pay_date}}</span>
             </div>
-            <div class="col-md-12 detail-box">
-                <label class="width">Expire Date:</label>
+            <div class="col-md-6 detail-box">
+                <label class="">Expire Date:</label>
                 <span>{{personal?.end_date}}</span>
             </div>
          
-            <div class="col-md-12 detail-box">
-                <label class="width">Status:</label>
+            <div class="col-md-6 detail-box">
+                <label class="">Status:</label>
                 <span *ngIf="personal?.is_expired == true">Expire </span>
                 <span *ngIf="personal?.is_expired == false">Active </span>
               </div>
                 
-            <div class="col-md-12 detail-box">
-                <label class="width">Package Amount:</label>
+            <div class="col-md-6 detail-box">
+                <label class="">Package Amount:</label>
                 <span>${{personal?.amount/100}}</span>
             </div>
                 <ng-template #pkg1>
