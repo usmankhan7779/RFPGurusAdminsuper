@@ -28,6 +28,8 @@ export class ViewsignaluserComponent implements OnInit {
   // alert(this.CatName)
   
   }
+  state_preference: any = [];
+  
   viewuser(){
     
     // alert(page)
@@ -36,17 +38,23 @@ export class ViewsignaluserComponent implements OnInit {
           this.personal = data.json();
            this.pagers = this.personal
   //  console.log(this.pagers.json())
-          console.log(this.personal.user_preference)
+          // console.log(this.personal.user_preference)
           
-      // let democompprods;
-      // democompprods = data;
-      // console.log(democompprods)
+      let democompprods;
+      democompprods = this.personal.UserDetail.state_preference;
+      console.log(democompprods)
 
-      // for (let prods of democompprods.json) {
-      //   // this.pagers.push(prods.user_preference);
-      //   console.log(prods.user_preference)
-      //   alert(prods.user_preference)
-      // }
+      for (let prod of democompprods) {
+        // this.pagers.push(prods.user_preference);
+        // console.log(prod.user_preference)
+this.state_preference.push( prod.split(',',5))
+          // prod["state_preference"] = prod["state_preference"].split(',', 3000);
+        // alert(prod.user_preference)
+        // console.log(prod.split(',',50))
+        console.log(this.state_preference,'state preference')
+        
+      }
+      
           // this.pager = this.pagerService.getPager(this.personal['totalItems'], page, 10);
       });
   }
