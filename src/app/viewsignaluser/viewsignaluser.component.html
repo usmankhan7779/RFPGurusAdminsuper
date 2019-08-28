@@ -46,8 +46,8 @@
                 </div>
             <div class="col-md-12 detail-box tag">
                 <label class="width">User Preference:</label>
-                <span>{{personal?.UserDetail.user_preference}}</span>
-                <!-- <span *ngFor="let item of state_preference">{{item}}</span> -->
+                <!-- <span>{{personal?.UserDetail.user_preference}}</span> -->
+                <span *ngFor="let item of user_preference">{{item}}</span>
             </div>
             <div class="col-md-12 detail-box tag">
                 <label class="width">State Preference:</label>
