@@ -166,14 +166,15 @@
                                 value="{{discount}}">
                         </mat-form-field>
                         <mat-form-field>
-                            <!-- <mat-label *ngIf="valid=='true'">Active</mat-label>
-                            <mat-label *ngIf="!status">Expire</mat-label> -->
-                            <mat-select [(ngModel)]="valid" [(ngModel)]="valid" name="valid">
-                                <mat-option [value]="true">Active</mat-option>
-                                <mat-option [value]="false">Expire</mat-option>
+                            
+                            <mat-select [(ngModel)]="valid"  placeholder="Status"   value="{{status}}" name="valid">
+                                <mat-option  [value]="true" >Active</mat-option>
+                                <mat-option   [value]="false">Expire</mat-option>
                             </mat-select>
                         </mat-form-field>
-
+                        <!-- <mat-slide-toggle class="margin-bottom-10 d-block" [(ngModel)]="valid"
+                        [checked]="sell_status == false" name="valid"  >List for sale
+                      </mat-slide-toggle> -->
                     </form>
 
                 </div>

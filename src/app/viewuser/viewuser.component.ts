@@ -5,6 +5,7 @@ import { PagerService } from '../servicefile/paginator.service';
 import { FormBuilder, FormGroup, Validators, FormControl, AbstractControl, FormGroupDirective, NgForm } from '@angular/forms';
 import * as moment from 'moment';
 import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker/typings/datepicker-input';
 declare var $: any; 
  
  
@@ -24,7 +25,11 @@ export class ViewuserComponent implements OnInit {
   pagers;
   pagersss;
   date;
+  events: string[] = [];
 
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+  }
   constructor(private _nav: Router, private _serv: userService,private pagerService: PagerService,private formbuilders : FormBuilder  ) { }
 
   ngOnInit() {  
@@ -73,11 +78,13 @@ export class ViewuserComponent implements OnInit {
   dateto;
   
   postoffer(page) {
+    alert(this.model.datefrom)
   
     return this._serv.postdate(this.pageSize, this.model.datefrom, this.model.dateto, this.model.fname , this.model.lname , this.model.email,page ).subscribe(
       // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
   data => {
     // moment(this.date.value['datefrom']).format('YYYY-MM-DD'),
+    
     console.log(data)
     this.personal = data.json()
     console.log(this.postpage)

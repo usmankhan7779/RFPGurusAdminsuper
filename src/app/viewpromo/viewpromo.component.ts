@@ -79,10 +79,18 @@ export class ViewpromoComponent implements OnInit {
   datefrom;
   dateto;
   id;
-
+  sell_status :boolean = false;
   veiwvalue(val1, val2, val3, val4, val5) {
     this.discount = val1;
     this.status = val2;
+  // alert( val2)
+  if (this.status == 'true')
+  {
+    this.sell_status = true
+  }
+  else if (this.status== 'false'){
+    this.sell_status = false
+  }
     this.datefrom = val3;
     this.dateto = val4;
     this.id = val5
@@ -103,11 +111,7 @@ export class ViewpromoComponent implements OnInit {
     }
     );
   }
-  // discount;
-  // status;
-  // datefrom;
-  // dateto;
-  // id;
+   
   postdatefrom;
   postdateto;
   postdiscount;
@@ -224,7 +228,8 @@ export class ViewpromoComponent implements OnInit {
       data => {
 
         console.log(data)
-        this.personal1 = data.json()
+        this.personal1 = data.json();
+        this.viewpromo(1);
 
 
       })
