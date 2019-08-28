@@ -49,19 +49,28 @@
                 <!-- <span>{{personal?.UserDetail.user_preference}}</span> -->
                 <span *ngFor="let item of user_preference">{{item}}</span>
             </div>
-            <div class="col-md-12 detail-box tag">
+            
+            
+            <div  class="col-md-12 detail-box tag">
                 <label class="width">State Preference:</label>
                 <!-- <span>{{personal?.UserDetail.state_preference}}</span> -->
                 <span *ngFor="let item of state_preference">{{item}}</span>
             </div>
             <div class="col-md-6 detail-box tag">
+                <label class="width">City Preference:</label>
+                <span *ngFor="let item of city_preference">{{item}}</span>
+                <!-- <span>{{personal?.UserDetail.county_preference}}</span> -->
+            </div>
+            <div class="col-md-6 detail-box tag">
                 <label class="width">Country Preference:</label>
-                <span>{{personal?.UserDetail.county_preference}}</span>
+                <span *ngFor="let item of county_preference">{{item}}</span>
+                <!-- <span>{{personal?.UserDetail.county_preference}}</span> -->
             </div>
             
             <div class="col-md-12 detail-box tag">
                 <label class="width">Agency Preference:</label>
-                <span>{{personal?.UserDetail.agency_preference}}</span>
+                <!-- <span>{{personal?.UserDetail.agency_preference}}</span> -->
+                <span *ngFor="let item of agency_preference">{{item}}</span>
             </div>
                 
                 <ng-template #pkg1>
