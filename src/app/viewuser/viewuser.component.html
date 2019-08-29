@@ -55,11 +55,21 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         </div>
                     </div>
                   <form  class="date-picker">
-                    <mat-form-field>
+                    <!-- <mat-form-field>
                             <input matInput [matDatepicker] = "picker"   placeholder = "From Date" [(ngModel)]="model.datefrom" name="datefrom" >
                             <mat-datepicker-toggle matSuffix [for] = "picker"></mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
-                         </mat-form-field>
+                         </mat-form-field> -->
+                         <mat-form-field>
+                          <input matInput [matDatepicker]="picker" placeholder="Input & change events"
+                                 (dateInput)="addEvent('input', $event)"  [(ngModel)]="model.datefrom" name="datefrom"  (dateChange)="addEvent('change', $event)">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>  <mat-form-field class="margin-t-15">
+                          <input matInput [matDatepicker]="startPicker1" [(ngModel)]="publishdate" placeholder="Effective To Date" />
+                          <mat-datepicker-toggle matSuffix [for]="startPicker1"></mat-datepicker-toggle>
+                          <mat-datepicker #startPicker1></mat-datepicker>
+                        </mat-form-field>
                     <mat-form-field>
                       <input matInput [matDatepicker] = "picker1"  placeholder = "To Date" [(ngModel)]="model.dateto" name="datefrom">
                       <mat-datepicker-toggle matSuffix [for] = "picker1"></mat-datepicker-toggle>
