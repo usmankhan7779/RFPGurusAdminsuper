@@ -14,7 +14,7 @@
   
   
   
-        <div class="table-responsive">
+        <div class="">
         <table>
             <thead>
                 <tr>
@@ -47,11 +47,11 @@
                     <td>{{item.pkg_price}}</td>
                    
                     <!-- <td>{{item.date_joined | date}}</td> -->
-                    <td class="text-center">
+                    <td class="text-center td-icon">
                         
-                        <button class="detail-btn" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price,item.id)">
-                            
-                            Update</button>
+                        <a matTooltip="Update" [matTooltipClass]="{ 'tool-tip': true }" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.duration,item.pkg_type,item.pkg_price,item.id)">
+                          <i class="fa fa-edit color-green"></i>
+                        </a>
   
                       
                     </td>

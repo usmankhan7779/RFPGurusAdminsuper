@@ -1,6 +1,6 @@
 <div class="view">
   <div class="table-box">
-      <div class="">
+      <div class="fixed-header">
          
             <div class="page-title">
                 <h3 class="text-center">Update RFP Aproval Request</h3>
@@ -76,16 +76,15 @@
                   <td *ngIf="item.admin_approved == ture">Approve</td>     
                  
                   <!-- <td>{{item.date_joined | date}}</td> -->
-                  <td class="text-center">
+                  <td class="text-center td-icon">
                       
-                        <a routerLink="/viewnewrfpDetails" [queryParams]="{ ProID:item.id}">    
-                            <button class="detail-btn">                      
-                      Details
-                    </button>
+                    <a matTooltip="Detail" [matTooltipClass]="{ 'tool-tip': true }" routerLink="/viewnewrfpDetails" [queryParams]="{ ProID:item.id}">    
+                      <i class="fa fa-info-circle"></i>
                     </a>
 
-                            <button *ngIf="item.admin_approved == false" (click)="updaterfpApprove(item.id)" class="detail-btn">
-                          Aprove</button>
+                    <a matTooltip="Approve" [matTooltipClass]="{ 'tool-tip': true }" *ngIf="item.admin_approved == false" (click)="updaterfpApprove(item.id)">
+                      <i class="fa fa-thumbs-up color-green"></i>
+                    </a>
 
                     
                   </td>

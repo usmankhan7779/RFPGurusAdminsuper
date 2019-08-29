@@ -1,11 +1,11 @@
 <div class="view">
     <div class="table-box">
-      <div class="">
+      <div class="fixed-header">
         <div class="page-title">
           <h3 class="text-center"> Paid Subscription Users</h3>
         </div>
         <div class="admin-home-palceholder">
-            <span>Total Subscriptions: {{personal?.totalItems}}</span>
+            <span>Total Subscriptions:<samp class="font-normal"> {{personal?.totalItems}}</samp></span>
             
             <div class="icons">
                 <label class="product-label">Items per page:
@@ -153,16 +153,20 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   
                     <td>{{item.pay_date | date:"MMM d, y":"UTC"}}</td>
                     <td>{{item.end_date | date:"MMM d, y":"UTC"}}</td>
-                    <td *ngIf="item.is_expired == false">Active </td>
-                    <td *ngIf="item.is_expired == true">Expire </td>
+                    <td matTooltip="Active" [matTooltipClass]="{ 'tool-tip': true }" class="td-icon" *ngIf="item.is_expired == false">
+                      <i class="fa fa-check color-green" aria-hidden="true"></i>
+                    </td>
+                    <td matTooltip="Expire" [matTooltipClass]="{ 'tool-tip': true }" class="td-icon" *ngIf="item.is_expired == true">
+                      <i class="fa fa-times color-red" aria-hidden="true"></i>
+                    </td>
                     <!-- <td>{{item.is_expired}}</td> -->
                     
                     
                     
-                    <td class="text-center">
+                    <td class="text-center td-icon">
                         <a [routerLink]="['/paymentsingleDetail']"
-                        [queryParams]="{ ProID:item.id}">
-                        <button class="detail-btn">Detail</button>
+                        [queryParams]="{ ProID:item.id}"matTooltip="Detail" [matTooltipClass]="{ 'tool-tip': true }">
+                        <i class="fa fa-info-circle"></i>
                       </a>
                        
                     </td>

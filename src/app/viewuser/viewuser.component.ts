@@ -38,8 +38,13 @@ export class ViewuserComponent implements OnInit {
  
 //   })
 
-
+$('[data-toggle="tooltip"]').tooltip();
   }
+
+ 
+
+
+
   page(pageSize) {
     // alert(pageSize)
     if (pageSize) {

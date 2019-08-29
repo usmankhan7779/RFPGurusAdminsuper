@@ -1,12 +1,12 @@
 <div class="view">
         <div class="table-box">
-          <div class="">
+          <div class="fixed-header">
             <div class="page-title">
               <h3 class="text-center"> Trial Subscription Users</h3>
             </div>
 
     <div class="admin-home-palceholder">
-    <span>Total Trial Subscriptions: {{personal?.totalItems}}</span>
+    <span>Total Trial Subscriptions: <samp class="font-normal">{{personal?.totalItems}}</samp></span>
     
     <div class="icons">
 
@@ -135,8 +135,12 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         
                         <td>{{item.timecreated |date:"MMM d, y":"UTC"}}</td>
                         <td>{{item.endtime | date:"MMM d, y":"UTC"}}</td>
-                        <td *ngIf="item.payed == false">Active </td>
-                        <td *ngIf="item.payed == true">Expire </td>
+                        <td matTooltip="Active" [matTooltipClass]="{ 'tool-tip': true }" class="td-icon" *ngIf="item.payed == false">
+                          <i class="fa fa-check color-green" aria-hidden="true"></i>
+                        </td>
+                        <td matTooltip="Expire" [matTooltipClass]="{ 'tool-tip': true }" class="td-icon" *ngIf="item.payed == true">
+                          <i class="fa fa-times color-red" aria-hidden="true"></i>
+                        </td>
                         
                         <!-- <td class="text-center">
                             <button class="detail-btn">Detail</button>

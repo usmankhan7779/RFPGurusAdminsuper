@@ -1,6 +1,6 @@
 <div class="view">
   <div class="table-box">
-      <div class="">
+      <div class="fixed-header">
             <div class="page-title">
                     <h3 class="text-center">Promo Code</h3>
                   </div>
@@ -75,16 +75,14 @@
                                     
                  
                   <!-- <td>{{item.date_joined | date}}</td> -->
-                  <td class="text-center">
+                  <td class="text-center td-icon">
                       
-                        <button class="detail-btn" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.discount,item.valid,item.timegenerated,item.exp_time,item.id)">
-                          
-                          Update</button>
-                        <button class="detail-btn" (click)="activeClick(item.id)">
-                          
-                            Delete</button>
-
-                    
+                        <a matTooltip="Update" [matTooltipClass]="{ 'tool-tip': true }" data-toggle="modal" data-target="#exampleModalCenter" (click)="veiwvalue(item.discount,item.valid,item.timegenerated,item.exp_time,item.id)">  
+                            <i class="fa fa-edit color-green"></i>
+                        </a>
+                        <a matTooltip="Delete" [matTooltipClass]="{ 'tool-tip': true }" (click)="activeClick(item.id)">
+                            <i class="fa fa-trash-o color-red"></i>
+                        </a>
                   </td>
               </tr>
           </tbody>

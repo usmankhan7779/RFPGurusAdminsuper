@@ -90,7 +90,7 @@ import { SiglepaymentDetailsComponent } from './siglepayment-details/siglepaymen
     MatToolbarModule,
     MatTooltipModule,
     FormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ] 
 
 
