@@ -135,13 +135,12 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         
                         <td>{{item.timecreated |date:"MMM d, y":"UTC"}}</td>
                         <td>{{item.endtime | date:"MMM d, y":"UTC"}}</td>
-                        <td matTooltip="Active" [matTooltipClass]="{ 'tool-tip': true }" class="td-icon" *ngIf="item.payed == false">
-                          <i class="fa fa-check color-green" aria-hidden="true"></i>
+                        <td class="color-green" *ngIf="item.payed == false">
+                          Active                        
                         </td>
-                        <td matTooltip="Expire" [matTooltipClass]="{ 'tool-tip': true }" class="td-icon" *ngIf="item.payed == true">
-                          <i class="fa fa-times color-red" aria-hidden="true"></i>
+                        <td class="color-red" *ngIf="item.payed == true">
+                          Expired                        
                         </td>
-                        
                         <!-- <td class="text-center">
                             <button class="detail-btn">Detail</button>
                         </td> -->

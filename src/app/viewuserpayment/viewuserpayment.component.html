@@ -153,11 +153,11 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   
                     <td>{{item.pay_date | date:"MMM d, y":"UTC"}}</td>
                     <td>{{item.end_date | date:"MMM d, y":"UTC"}}</td>
-                    <td matTooltip="Active" [matTooltipClass]="{ 'tool-tip': true }" class="td-icon" *ngIf="item.is_expired == false">
-                      <i class="fa fa-check color-green" aria-hidden="true"></i>
+                    <td class="color-green" *ngIf="item.is_expired == false">
+                      Active
                     </td>
-                    <td matTooltip="Expire" [matTooltipClass]="{ 'tool-tip': true }" class="td-icon" *ngIf="item.is_expired == true">
-                      <i class="fa fa-times color-red" aria-hidden="true"></i>
+                    <td class="color-red" *ngIf="item.is_expired == true">
+                      Expired
                     </td>
                     <!-- <td>{{item.is_expired}}</td> -->
                     
