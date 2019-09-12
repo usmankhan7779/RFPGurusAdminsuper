@@ -83,7 +83,7 @@ $('[data-toggle="tooltip"]').tooltip();
   dateto;
   
   postoffer(page) {
-    alert(this.model.datefrom)
+    // alert(this.model.datefrom)
   
     return this._serv.postdate(this.pageSize, this.model.datefrom, this.model.dateto, this.model.fname , this.model.lname , this.model.email,page ).subscribe(
       // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
