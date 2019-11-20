@@ -62,11 +62,11 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                          </mat-form-field> -->
                          <mat-form-field>
                           <input matInput [matDatepicker]="picker" placeholder="Input & change events"
-                                 (dateInput)="addEvent('input', $event)"  [(ngModel)]="model.datefrom" name="datefrom"  (dateChange)="addEvent('change', $event)">
+                                 [(ngModel)]="model.datefrom" name="datefrom" >
                           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                           <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>  <mat-form-field class="margin-t-15">
-                          <input matInput [matDatepicker]="startPicker1" [(ngModel)]="publishdate" placeholder="Effective To Date" />
+                          <input matInput [matDatepicker]="startPicker1" [(ngModel)]="model.publishdate"  name="publishdate" placeholder="Effective To Date" />
                           <mat-datepicker-toggle matSuffix [for]="startPicker1"></mat-datepicker-toggle>
                           <mat-datepicker #startPicker1></mat-datepicker>
                         </mat-form-field>

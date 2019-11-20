@@ -129,13 +129,13 @@ postupdaterfpfilter(item,datefrom, dateto, agency, status,page) {
                 }), { headers: headers })
         }
     }
-    postdatepayment(item,datefrom, dateto, page) {
+    postdatepayment(item,publishdate, dateto, page) {
         if (localStorage.getItem('currentUser')) {
             const headers = new Headers({ 'Authorization': 'JWT ' + localStorage.getItem('currentUser') });
             headers.append('Content-Type', 'application/json');
             return this._https.post('https://apis.rfpgurus.com/super/paymentDetailandfilter/'+ item + '/' + '?page =' + page,
                 JSON.stringify({
-                    datefrom: datefrom,
+                    datefrom: publishdate,
                     dateto: dateto
 
                 }), { headers: headers })

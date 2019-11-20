@@ -149,7 +149,7 @@
                     </div>
                     <form class="date-picker">
 
-                        <mat-form-field class="example-full-width">
+                        <!-- <mat-form-field class="example-full-width">
                             <input matInput [matDatepicker]="myPicker" value="{{datefrom}}" [(ngModel)]="datefrom"
                                 name="datefrom" placeholder="Valid From">
                             <mat-datepicker-toggle matSuffix [for]="myPicker"></mat-datepicker-toggle>
@@ -160,7 +160,19 @@
                                 name="dateto" placeholder="Valid To">
                             <mat-datepicker-toggle matSuffix [for]="myPicker1"></mat-datepicker-toggle>
                             <mat-datepicker #myPicker1></mat-datepicker>
-                        </mat-form-field>
+                        </mat-form-field> -->
+                        <div class="col-lg-6 date-box">
+                            <label>Effective From Date</label>
+                            <input type="date" required value="{{datefrom}}" [(ngModel)]="datefrom"
+                            name="datefrom"
+                              style="text-transform: uppercase;padding: 10px 0px; font-size: 20px;">
+                          </div>
+                          <div class="col-lg-6 date-box">
+                            <label>Effective To Date</label>
+                            <input type="date" required  [(ngModel)]="dateto"
+                            name="dateto" value="{{dateto}}"
+                              style=" text-transform: uppercase;padding: 10px 0px; font-size: 20px;">
+                          </div>
                         <mat-form-field class="example-full-width">
                             <input matInput placeholder="Discount" [(ngModel)]="discount" name="discount"
                                 value="{{discount}}">

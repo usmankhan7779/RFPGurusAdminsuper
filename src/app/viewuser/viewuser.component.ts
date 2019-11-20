@@ -72,15 +72,17 @@ export class ViewuserComponent implements OnInit {
           this.pager = this.pagerService.getPager(this.personal['totalItems'], page, this.pageSize);
       });
   }
-  datefrom;
+
   model : any = {}
   postpage:any;
+  datefrom;
   dateto;
   
   postoffer(page) {
-    alert(this.model.datefrom)
+    alert(this.model.publishdate)
+    alert(this.model.dateto)
   
-    return this._serv.postdate(this.pageSize, this.model.datefrom, this.model.dateto, this.model.fname , this.model.lname , this.model.email,page ).subscribe(
+    return this._serv.postdate(this.pageSize, moment(this.model.publishdate).format('YYYY-MM-DD'), moment(this.model.dateto).format('YYYY-MM-DD'), this.model.fname , this.model.lname , this.model.email,page ).subscribe(
       // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
   data => {
     // moment(this.date.value['datefrom']).format('YYYY-MM-DD'),
