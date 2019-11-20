@@ -1,12 +1,12 @@
 <div class="view">
   <div class="table-box">
-      <div class="">
+      <div class="fixed-header">
           
           <div class="page-title">
             <h3 class="text-center"> Registered Users   </h3>
           </div>
           <div class="admin-home-palceholder">
-              <span>Total Registered Users : {{personal?.totalItems}}</span>
+              <span>Total Registered Users : <samp class="font-normal">{{personal?.totalItems}}</samp></span>
               
               <div class="icons">
                   <label class="product-label">Items per page:
@@ -141,11 +141,17 @@ aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                   <td>{{item.last_name}}</td>
                   <td colspan="2" >{{item.email}}</td>
                   <td>{{item.date_joined | date:"MMM d, y":"UTC"}}</td>
-                  <td class="text-center">
-                      <a [routerLink]="['/viewsingleuser']"
-                      [queryParams]="{ ProID:item.id}">
-                      <button class="detail-btn">Detail</button>
+                  <td class="text-center td-icon">
+                    <a [routerLink]="['/viewsingleuser']"
+                      [queryParams]="{ ProID:item.id}" matTooltip="Detail" [matTooltipClass]="{ 'tool-tip': true }">
+                      <i class="fa fa-info-circle"></i>
                     </a>
+
+                    
+        
+                   
+
+
                   </td>
               </tr>
           </tbody>

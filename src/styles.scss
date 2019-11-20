@@ -234,14 +234,62 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .icons button{
     box-shadow: 2px 2px 6px 2px #ccc;
 }
+.color-red{
+    color: #C00;
+}
+.color-green{
+    color: green;
+}
+.font-normal{
+    font-weight: normal;
+    font-family: sans-serif;
+}
+.table-responsive {
+    margin-top: 84px;
+}
+.fixed-header{
+    position: fixed;
+    display: block;
+    top: 74px;
+    right: 0;
+    width: 82%;
+    background: #fafafa;
+    padding: 10px 0 0 0;
+}
 
 
-
+/* setup tooltips */
+.tool-tip {
+    background: #444;
+    color: #fff;
+    font-size: 16px;
+    padding: 2px 10px;
+    margin-top: -1px !important;
+  }
+.td-icon .fa{
+    font-size: 20px;
+    margin: 0 10px;
+}
 
 @media (min-width:992px) {
     .sidebar-outlet{
         display: block !important;
     } 
+}
+@media (max-width:1366px) {
+    .fixed-header {
+        padding: 10px 0 0 20px;
+    }
+}
+@media (max-width: 1280px){
+    .fixed-header {
+        padding: 10px 0 0 30px;
+    }
+}
+@media (max-width: 1024px){
+    .fixed-header {
+        width: 78%;
+    }
 }
 @media (max-width:991px) {
     .table-box{
@@ -260,6 +308,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     .sidebarToggle{
         display: block;
         margin-top: 67px;
+        z-index: 1 !important;
+        position: fixed;
+        top: 0px;
+        left: 0px;
     }
     .sidebar-close-btn{
         position: absolute;
@@ -267,6 +319,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         top: 3px;
         background: #000;
         border-radius: 100px;
+        z-index: 9999;
     }
     .btn-close{
         display: block;
@@ -282,7 +335,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         display: none;
     } 
 }
-
+@media (max-width:768px){
+    .fixed-header {
+        width: 100%;
+        padding: 10px 0 0 0px;
+        top: 68px;
+    }
+    .table-responsive {
+        margin-top: 170px;
+    }
+}
 @media (max-width:660px) {
     .date-picker .mat-form-field {
         width: 32% !important;

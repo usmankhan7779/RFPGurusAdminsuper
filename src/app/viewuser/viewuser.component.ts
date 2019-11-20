@@ -43,8 +43,13 @@ export class ViewuserComponent implements OnInit {
  
 //   })
 
-
+$('[data-toggle="tooltip"]').tooltip();
   }
+
+ 
+
+
+
   page(pageSize) {
     // alert(pageSize)
     if (pageSize) {
@@ -79,8 +84,7 @@ export class ViewuserComponent implements OnInit {
   dateto;
   
   postoffer(page) {
-    alert(this.model.publishdate)
-    alert(this.model.dateto)
+    // alert(this.model.datefrom)
   
     return this._serv.postdate(this.pageSize, moment(this.model.publishdate).format('YYYY-MM-DD'), moment(this.model.dateto).format('YYYY-MM-DD'), this.model.fname , this.model.lname , this.model.email,page ).subscribe(
       // moment(this.date.value['dateto']).format('YYYY-MM-DD'),
