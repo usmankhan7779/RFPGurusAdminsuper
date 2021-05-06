@@ -28,7 +28,7 @@
     "rxjs": "^6.4.0",
     "rxjs-compat": "^6.4.0",
     "sweetalert2": "^6.10.1",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
